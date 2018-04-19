@@ -11,7 +11,6 @@ grammar Sql;
 
 
 //LEXER SPECIFICATION
-//
 
 INT :     'int' ;
 CHAR :    'char' ;
@@ -85,7 +84,6 @@ sql_data_statement
 	;
 
 
-
 schema_definition: 'CREATE' 'DATABASE' ID ';';
 
 table_definition: 'CREATE' 'TABLE' ID '(' (column)+ ')' ';';
@@ -98,7 +96,7 @@ drop_table_statement: 'DROP' 'TABLE' ID ';';
 alter_database_statement: 'ALTER' 'DATABASE' ID 'RENAME' 'TO' ID ';' ;
 
  show_schema_statement: 'SHOW' 'DATABASES' ';';
-
+:
 use_schema_statement: 'USE' 'DATABASE' ID ';';
 
 
