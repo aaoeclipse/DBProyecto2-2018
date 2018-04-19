@@ -3,6 +3,9 @@ import ANTLR.SqlBaseListener;
 import ANTLR.SqlBaseVisitor;
 import ANTLR.SqlParser;
 import ANTLR.SqlVisitor;
+import fileManager.FileManager;
+import fileManager.FileManagerImpl;
+import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.RuleNode;
@@ -11,399 +14,535 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 /**
  * Created by luisa on 17/04/18.
  */
-public class BD2Visitor extends SqlBaseVisitor<String> {
-    @Override
-    public String visitProgram(SqlParser.ProgramContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitSql_executable_statement(SqlParser.Sql_executable_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitSql_schema_statement(SqlParser.Sql_schema_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitSql_schema_definition_statement(SqlParser.Sql_schema_definition_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitSql_schema_manipulation_statement(SqlParser.Sql_schema_manipulation_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitSql_data_statement(SqlParser.Sql_data_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitSchema_definition(SqlParser.Schema_definitionContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitTable_definition(SqlParser.Table_definitionContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitDrop_schema_statement(SqlParser.Drop_schema_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitAlter_table_statement(SqlParser.Alter_table_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitDrop_table_statement(SqlParser.Drop_table_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitAlter_database_statement(SqlParser.Alter_database_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitShow_schema_statement(SqlParser.Show_schema_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitUse_schema_statement(SqlParser.Use_schema_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitDefcolumna(SqlParser.DefcolumnaContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitDefconstraint(SqlParser.DefconstraintContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitTipoInt(SqlParser.TipoIntContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitTipoFloat(SqlParser.TipoFloatContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitTipoChar(SqlParser.TipoCharContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitTipoDate(SqlParser.TipoDateContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitConstraint(SqlParser.ConstraintContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitPrimaryK(SqlParser.PrimaryKContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitForeignK(SqlParser.ForeignKContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitCheck(SqlParser.CheckContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRename_table_statement(SqlParser.Rename_table_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitAddColumn(SqlParser.AddColumnContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitAddConstraint(SqlParser.AddConstraintContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitDropColumn(SqlParser.DropColumnContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitDropConstraint(SqlParser.DropConstraintContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitShow_table_statement(SqlParser.Show_table_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitShow_column_statement(SqlParser.Show_column_statementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitDmlstatement(SqlParser.DmlstatementContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitInsert_value(SqlParser.Insert_valueContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitUpdate_value(SqlParser.Update_valueContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitDelete_value(SqlParser.Delete_valueContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitSelect_value(SqlParser.Select_valueContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitList_values(SqlParser.List_valuesContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitLiteral(SqlParser.LiteralContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitInt_literal(SqlParser.Int_literalContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitFloat_literal(SqlParser.Float_literalContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitDate_literal(SqlParser.Date_literalContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitChar_literal(SqlParser.Char_literalContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRelL(SqlParser.RelLContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRekB(SqlParser.RekBContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRelLE(SqlParser.RelLEContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRelBE(SqlParser.RelBEContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitEqE(SqlParser.EqEContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitEqNE(SqlParser.EqNEContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRelL2(SqlParser.RelL2Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRekB2(SqlParser.RekB2Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRelLE2(SqlParser.RelLE2Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRelBE2(SqlParser.RelBE2Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitEqE2(SqlParser.EqE2Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitEqNE2(SqlParser.EqNE2Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRelL3(SqlParser.RelL3Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRekB3(SqlParser.RekB3Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRelLE3(SqlParser.RelLE3Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitRelBE3(SqlParser.RelBE3Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitEqE3(SqlParser.EqE3Context ctx) {
-        return null;
-    }
+public class BD2Visitor extends SqlBaseVisitor<String>{
+    @Override public String visitUse_schema_statement(@NotNull SqlParser.Use_schema_statementContext ctx) {
+        System.out.println("visitUse_schema_statement visited");
+        return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitTable_definition(@NotNull SqlParser.Table_definitionContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitTipoFloat(@NotNull SqlParser.TipoFloatContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitAddConstraint(@NotNull SqlParser.AddConstraintContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitProgram(@NotNull SqlParser.ProgramContext ctx) {
+        System.out.println("visitProgram visited");
+        return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitDropColumn(@NotNull SqlParser.DropColumnContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitInt_literal(@NotNull SqlParser.Int_literalContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitSql_schema_manipulation_statement(@NotNull SqlParser.Sql_schema_manipulation_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitAlter_table_statement(@NotNull SqlParser.Alter_table_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitEqE3(@NotNull SqlParser.EqE3Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitAlter_database_statement(@NotNull SqlParser.Alter_database_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitEqE2(@NotNull SqlParser.EqE2Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitEqE(@NotNull SqlParser.EqEContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitCond_op1(@NotNull SqlParser.Cond_op1Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitUniFactorFactor(@NotNull SqlParser.UniFactorFactorContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitDelete_value(@NotNull SqlParser.Delete_valueContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitUniFactorNot(@NotNull SqlParser.UniFactorNotContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitChar_literal(@NotNull SqlParser.Char_literalContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRekB(@NotNull SqlParser.RekBContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitCond_op2(@NotNull SqlParser.Cond_op2Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitAddColumn(@NotNull SqlParser.AddColumnContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitSql_executable_statement(@NotNull SqlParser.Sql_executable_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitForeignK(@NotNull SqlParser.ForeignKContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitDefcolumna(@NotNull SqlParser.DefcolumnaContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitDropConstraint(@NotNull SqlParser.DropConstraintContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRelLE(@NotNull SqlParser.RelLEContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitDefconstraint(@NotNull SqlParser.DefconstraintContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitFactorID2(@NotNull SqlParser.FactorID2Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitCheck(@NotNull SqlParser.CheckContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRelL3(@NotNull SqlParser.RelL3Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRename_table_statement(@NotNull SqlParser.Rename_table_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitExpr31(@NotNull SqlParser.Expr31Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitDmlstatement(@NotNull SqlParser.DmlstatementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRekB3(@NotNull SqlParser.RekB3Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitExpr33(@NotNull SqlParser.Expr33Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRekB2(@NotNull SqlParser.RekB2Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitExpr32(@NotNull SqlParser.Expr32Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitExpr34(@NotNull SqlParser.Expr34Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitTipoInt(@NotNull SqlParser.TipoIntContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitShow_column_statement(@NotNull SqlParser.Show_column_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitSql_schema_definition_statement(@NotNull SqlParser.Sql_schema_definition_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRelL2(@NotNull SqlParser.RelL2Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitSql_data_statement(@NotNull SqlParser.Sql_data_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitEqNE(@NotNull SqlParser.EqNEContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitShow_schema_statement(@NotNull SqlParser.Show_schema_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitSql_schema_statement(@NotNull SqlParser.Sql_schema_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitLiteral(@NotNull SqlParser.LiteralContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitFactorID(@NotNull SqlParser.FactorIDContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitTipoDate(@NotNull SqlParser.TipoDateContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitList_values(@NotNull SqlParser.List_valuesContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitFactorExpression(@NotNull SqlParser.FactorExpressionContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitFloat_literal(@NotNull SqlParser.Float_literalContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitDrop_schema_statement(@NotNull SqlParser.Drop_schema_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitSelect_value(@NotNull SqlParser.Select_valueContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitDate_literal(@NotNull SqlParser.Date_literalContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRelBE3(@NotNull SqlParser.RelBE3Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRelBE2(@NotNull SqlParser.RelBE2Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitDrop_table_statement(@NotNull SqlParser.Drop_table_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRelL(@NotNull SqlParser.RelLContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRelLE3(@NotNull SqlParser.RelLE3Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRelBE(@NotNull SqlParser.RelBEContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitRelLE2(@NotNull SqlParser.RelLE2Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitInsert_value(@NotNull SqlParser.Insert_valueContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitEqNE2(@NotNull SqlParser.EqNE2Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitExpression2(@NotNull SqlParser.Expression2Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitSchema_definition(@NotNull SqlParser.Schema_definitionContext ctx) {
+        System.out.println("visitvisitUse_schema_statement");
+        System.out.println(ctx.getChild(2));
+        FileManager fileManager = new FileManagerImpl();
+        fileManager.createDB(ctx.getChild(2).getText());
+        return null;
+    }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitPrimaryK(@NotNull SqlParser.PrimaryKContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitExpression1(@NotNull SqlParser.Expression1Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitEqNE3(@NotNull SqlParser.EqNE3Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitUpdate_value(@NotNull SqlParser.Update_valueContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitConstraint(@NotNull SqlParser.ConstraintContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitShow_table_statement(@NotNull SqlParser.Show_table_statementContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitTipoChar(@NotNull SqlParser.TipoCharContext ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitExpr11(@NotNull SqlParser.Expr11Context ctx) { return visitChildren(ctx); }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override public String visitExpr12(@NotNull SqlParser.Expr12Context ctx) { return visitChildren(ctx); }
 
-    @Override
-    public String visitEqNE3(SqlParser.EqNE3Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitCond_op1(SqlParser.Cond_op1Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitCond_op2(SqlParser.Cond_op2Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitExpression2(SqlParser.Expression2Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitExpression1(SqlParser.Expression1Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitExpr11(SqlParser.Expr11Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitExpr12(SqlParser.Expr12Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitExpr31(SqlParser.Expr31Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitExpr33(SqlParser.Expr33Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitExpr32(SqlParser.Expr32Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitExpr34(SqlParser.Expr34Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitUniFactorNot(SqlParser.UniFactorNotContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitUniFactorFactor(SqlParser.UniFactorFactorContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitFactorExpression(SqlParser.FactorExpressionContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitFactorID(SqlParser.FactorIDContext ctx) {
-        return null;
-    }
-
-    @Override
-    public String visitFactorID2(SqlParser.FactorID2Context ctx) {
-        return null;
-    }
-
-    @Override
-    public String visit(ParseTree parseTree) {
-        return null;
-    }
-
-    @Override
-    public String visitChildren(RuleNode ruleNode) {
-        return null;
-    }
-
-    @Override
-    public String visitTerminal(TerminalNode terminalNode) {
-        return null;
-    }
-
-    @Override
-    public String visitErrorNode(ErrorNode errorNode) {
-        return null;
-    }
 }

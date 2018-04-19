@@ -1,5 +1,8 @@
 <component name="libraryTable">
   <library name="antlr-4.4-complete">
+    <ANNOTATIONS>
+      <root url="file://$PROJECT_DIR$" />
+    </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/antlr-4.4-complete.jar!/" />
     </CLASSES>

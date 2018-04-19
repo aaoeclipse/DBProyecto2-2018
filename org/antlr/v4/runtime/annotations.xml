@@ -1,0 +1,5 @@
+<root>
+    <item name='org.antlr.v4.runtime.ParserRuleContext org.antlr.v4.runtime.tree.ParseTree getChild(int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

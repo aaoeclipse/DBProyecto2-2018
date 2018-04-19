@@ -62,6 +62,7 @@ public class Main {
     private Path file = Paths.get("ErrorLog_Syntax.log");
     private List<String> Errors;
     int regNum = 0;
+    BD2Visitor conv;
 
     /**
      * Launch the application.
@@ -353,13 +354,14 @@ public class Main {
         viewr.setSize(700, 700);
         treePanel.removeAll();
         treePanel.add(viewr);
+
         //type = new Visitor();
-        //conv = new convVisitor();
+        conv = new BD2Visitor();
 
         //type.visit(tree);
-        //conv.visit(tree);
-        //conv.toString();
-        //textArea4.setText(conv.toString());
+        conv.visit(tree);
+        conv.toString();
+        textArea3.setText(conv.toString());
         //type.aString();
         //conv.aString();
         String inter = "";

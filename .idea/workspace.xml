@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0239b1cf-7bb3-4314-b030-4f3a716aad97" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/antlr_4_4_complete.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ANTLR/SqlLexer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/uvg/ThrowingErrorListener.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ANTLR Files/Sql.g4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ANTLR Files/Sql.interp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ANTLR Files/Sql.tokens" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ANTLR Files/SqlBaseListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ANTLR Files/SqlBaseVisitor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ANTLR Files/SqlLexer.interp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ANTLR Files/SqlLexer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ANTLR Files/SqlLexer.tokens" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ANTLR Files/SqlListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ANTLR Files/SqlParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ANTLR Files/SqlVisitor.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/org/antlr/v4/runtime/annotations.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/antlr_4_4_complete.xml" afterPath="$PROJECT_DIR$/.idea/libraries/antlr_4_4_complete.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proyecto2BaseDeDatos.iml" afterPath="$PROJECT_DIR$/Proyecto2BaseDeDatos.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" afterPath="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/uvg/Main.java" afterPath="$PROJECT_DIR$/src/com/uvg/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" afterPath="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/uvg/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2226">
-              <caret line="271" column="2" lean-forward="false" selection-start-line="271" selection-start-column="2" selection-end-line="271" selection-end-column="2" />
+            <state relative-caret-position="532">
+              <caret line="412" column="38" lean-forward="false" selection-start-line="411" selection-start-column="10" selection-end-line="412" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/ANTLR/Sql.g4">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="131" column="20" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="20" />
+              <caret line="86" column="17" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -68,45 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThrowingErrorListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/uvg/ThrowingErrorListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="38" column="1" lean-forward="false" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SqlVisitor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ANTLR/SqlVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="51" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SqlBaseListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ANTLR/SqlBaseListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="1" column="51" lean-forward="false" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SqlBaseVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ANTLR/SqlBaseVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="51" lean-forward="false" selection-start-line="0" selection-start-column="51" selection-end-line="0" selection-end-column="51" />
+            <state relative-caret-position="650">
+              <caret line="532" column="20" lean-forward="false" selection-start-line="532" selection-start-column="20" selection-end-line="532" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -115,12 +68,10 @@
       <file leaf-file-name="BD2Visitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+            <state relative-caret-position="458">
+              <caret line="481" column="19" lean-forward="false" selection-start-line="481" selection-start-column="19" selection-end-line="481" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1309#1310#0" expanded="true" />
-                <element signature="e#1336#1337#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,6 +92,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="51" lean-forward="false" selection-start-line="0" selection-start-column="51" selection-end-line="0" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="36" column="43" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileManagerImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -169,14 +140,21 @@
       <find>openFile</find>
       <find>tabbedPane1.</find>
       <find>tabbedPane1.SET</find>
-      <find>QueryText</find>
       <find>show</find>
       <find>show_table_statement</find>
+      <find>QueryText</find>
+      <find>CREA</find>
+      <find>CREATE</find>
+      <find>visit(</find>
+      <find>T</find>
+      <find>conv</find>
+      <find>schema_definition</find>
     </findStrings>
     <replaceStrings>
       <replace>String</replace>
       <replace>Main</replace>
       <replace>SqlParser</replace>
+      <replace>String</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -200,9 +178,7 @@
         <option value="$PROJECT_DIR$/src/objects/restrictions/PrimaryKey.java" />
         <option value="$PROJECT_DIR$/src/objects/restrictions/ForeignKey.java" />
         <option value="$PROJECT_DIR$/src/objects/Restriccion.java" />
-        <option value="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" />
         <option value="$PROJECT_DIR$/src/com/uvg/BD2VisitorImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" />
         <option value="$PROJECT_DIR$/src/com/uvg/ThrowingErrorListener.java" />
         <option value="$PROJECT_DIR$/src/ANTLR/SqlVisitor.java" />
         <option value="$PROJECT_DIR$/src/ANTLR/SqlBaseListener.java" />
@@ -211,6 +187,8 @@
         <option value="$PROJECT_DIR$/src/ANTLR/SqlParser.java" />
         <option value="$PROJECT_DIR$/src/ANTLR/SqlLexer.java" />
         <option value="$PROJECT_DIR$/src/com/uvg/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" />
+        <option value="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" />
       </list>
     </option>
   </component>
@@ -291,6 +269,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="fileManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DBProyecto2-2018" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DBProyecto2-2018" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="uvg" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -322,7 +318,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/antlr-4.4-complete.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -614,16 +610,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/uvg/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ANTLR/SqlVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -656,8 +642,6 @@
           <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1309#1310#0" expanded="true" />
-            <element signature="e#1336#1337#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -736,8 +720,6 @@
           <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1309#1310#0" expanded="true" />
-            <element signature="e#1336#1337#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -901,51 +883,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="36" column="43" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2VisitorImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1309#1310#0" expanded="true" />
-            <element signature="e#1336#1337#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ANTLR/SqlBaseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="1" column="51" lean-forward="false" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ANTLR/SqlBaseVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="51" lean-forward="false" selection-start-line="0" selection-start-column="51" selection-end-line="0" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ANTLR/SqlListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -993,21 +931,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/antlr-4.4-complete.jar!/org/antlr/v4/runtime/tree/ParseTreeVisitor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ANTLR/SqlBaseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ANTLR/Sql.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="131" column="20" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="20" />
+          <caret line="86" column="17" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ANTLR/SqlBaseVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="532" column="20" lean-forward="false" selection-start-line="532" selection-start-column="20" selection-end-line="532" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/uvg/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2226">
-          <caret line="271" column="2" lean-forward="false" selection-start-line="271" selection-start-column="2" selection-end-line="271" selection-end-column="2" />
+        <state relative-caret-position="532">
+          <caret line="412" column="38" lean-forward="false" selection-start-line="411" selection-start-column="10" selection-end-line="412" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="481" column="19" lean-forward="false" selection-start-line="481" selection-start-column="19" selection-end-line="481" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="36" column="43" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

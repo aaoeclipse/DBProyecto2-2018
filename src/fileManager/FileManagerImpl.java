@@ -5,7 +5,7 @@ import java.io.File;
 public class FileManagerImpl implements FileManager {
     @Override
     public boolean createDB(String nombre) {
-        new File(nombre).mkdirs();
+        new File("DBs/"+nombre).mkdirs();
         return true;
     }
 }
