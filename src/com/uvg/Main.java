@@ -35,6 +35,7 @@ import javax.swing.text.DefaultEditorKit;
 
 import ANTLR.SqlLexer;
 import ANTLR.SqlParser;
+import fileManager.globalVariables;
 import org.antlr.v4.runtime.tree.gui.TreeViewer;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -57,7 +58,7 @@ import java.awt.Font;
 
 
 public class Main {
-
+    public TextArea textArea3;
     private JFrame frame;
     private Path file = Paths.get("ErrorLog_Syntax.log");
     private List<String> Errors;
@@ -103,16 +104,17 @@ public class Main {
         frame.getContentPane().add(QTabbedP);
 
         JTabbedPane tabbedPane2 = new JTabbedPane(JTabbedPane.TOP);
-        tabbedPane2.setBounds(1100, 90, 300, 500);
+        tabbedPane2.setBounds(1100, 90, 500, 500);
         frame.getContentPane().add(tabbedPane2);
 
-        TextArea textArea3 = new TextArea();
+        textArea3 = new TextArea();
         textArea3.setFont(new Font("FreeSans", Font.PLAIN, 25));
         tabbedPane2.addTab("Error", null, textArea3, null);
 
 
         TextArea QueryText = new TextArea();
         QueryText.setFont(new Font("FreeSans", Font.PLAIN, 33));
+
 
 
 
@@ -361,7 +363,7 @@ public class Main {
         //type.visit(tree);
         conv.visit(tree);
         conv.toString();
-        textArea3.setText(conv.toString());
+        /**System.out.println(">>"+conv.visitProgram((SqlParser.ProgramContext) tree));*/
         //type.aString();
         //conv.aString();
         String inter = "";
@@ -373,43 +375,12 @@ public class Main {
             Files.deleteIfExists(file);
             for (int i = 0; i < Errors.size(); i++) {
                 textArea3.setText("(" + (i + 1) + "): " + Errors.get(i) + "\n");
-                //textArea3.setText(type.errores);
             }
         }
         catch ( IOException e ) {
-            // if(!(type.errores).equals("")){
-            // textArea3.setText(type.errores);
-            //}else{
             textArea3.setText("Succes");
+            textArea3.setText(conv.visitProgram((SqlParser.ProgramContext) tree));
 
-            //}
-        }/*
-        for(quadruple linea:conv.quadruple1){
-            for(int i = 0;i<(linea.cuadrupla).length;i++){
-                inter+=(linea.cuadrupla[i]);
-                lineas += (linea.cuadrupla[i]);
-
-            }
-
-            lineas = "";
-            inter += ("\n");
         }
-        textArea4.setText(inter);
-        conv.data();
-        conv.getReg();
-        for(String linea:conv.quadruple2){
-
-            ARM+=(linea);
-            ARM += ("\n");
-        }*/
-        //textArea5.setText(ARM);
-
     }
-
-
-
-
-        /*FileManager fileManager = new FileManagerImpl();
-        fileManager.createDB("newDB");*/
-    
 }

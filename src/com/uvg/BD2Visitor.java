@@ -15,9 +15,13 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  * Created by luisa on 17/04/18.
  */
 public class BD2Visitor extends SqlBaseVisitor<String>{
+    FileManager fileManager = new FileManagerImpl();
     @Override public String visitUse_schema_statement(@NotNull SqlParser.Use_schema_statementContext ctx) {
-        System.out.println("visitUse_schema_statement visited");
-        return visitChildren(ctx); }
+        String funcionoOutput = "No se logro usar esa base de datos";
+        if (fileManager.useDatabase(ctx.getChild(2).getText()))
+            funcionoOutput = "Utilizando: "+ ctx.getChild(2).getText();
+        return funcionoOutput;
+    }
     /**
      * {@inheritDoc}
      *
@@ -46,7 +50,6 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * {@link #visitChildren} on {@code ctx}.</p>
      */
     @Override public String visitProgram(@NotNull SqlParser.ProgramContext ctx) {
-        System.out.println("visitProgram visited");
         return visitChildren(ctx); }
     /**
      * {@inheritDoc}
@@ -327,7 +330,14 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitShow_schema_statement(@NotNull SqlParser.Show_schema_statementContext ctx) { return visitChildren(ctx); }
+    @Override public String visitShow_schema_statement(@NotNull SqlParser.Show_schema_statementContext ctx) {
+        String[] nombresDeDatabase = fileManager.showDatabases();
+        String returnString = "";
+        for (String s: nombresDeDatabase) {
+            returnString += s +"\n";
+        }
+        return returnString;
+    }
     /**
      * {@inheritDoc}
      *
@@ -477,9 +487,10 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
     @Override public String visitSchema_definition(@NotNull SqlParser.Schema_definitionContext ctx) {
         System.out.println("visitvisitUse_schema_statement");
         System.out.println(ctx.getChild(2));
-        FileManager fileManager = new FileManagerImpl();
-        fileManager.createDB(ctx.getChild(2).getText());
-        return null;
+        String created = "No se logro crear";
+        if(fileManager.createDB(ctx.getChild(2).getText()))
+            created = "Si se logro crear";
+        return created;
     }
     /**
      * {@inheritDoc}
@@ -522,7 +533,13 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitShow_table_statement(@NotNull SqlParser.Show_table_statementContext ctx) { return visitChildren(ctx); }
+    @Override public String visitShow_table_statement(@NotNull SqlParser.Show_table_statementContext ctx) {
+        String list = "";
+        for (String s: fileManager.listTables()) {
+            list += s +"\n";
+        }
+        return list;
+    }
     /**
      * {@inheritDoc}
      *

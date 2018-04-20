@@ -35,6 +35,9 @@ public interface FileManager {
 
 
     public boolean createDB(String nombre);
+    public String[] showDatabases();
+    public boolean useDatabase(String nombreDeBaseDeDatos);
+    public String[] listTables();
 
 
 
