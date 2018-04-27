@@ -84,20 +84,20 @@ sql_data_statement
 	;
 
 
-schema_definition: 'CREATE' 'DATABASE' ID ';';
+schema_definition: ('CREATE'|'create') ('DATABASE'|'database') ID ';';
 
-table_definition: 'CREATE' 'TABLE' ID '(' (column)+ ')' ';';
+table_definition: ('CREATE'|'create') ('TABLE'|'table') ID '(' (column)+ ')' ';';
 
-drop_schema_statement: 'DROP' 'DATABASE' ID ';';
+drop_schema_statement: ('DROP'|'drop') ('DATABASE'|'database') ID ';';
 
-alter_table_statement: 'ALTER' 'TABLE' ID accion ';';
+alter_table_statement: ('ALTER'|'alter') ('TABLE'|'table') ID accion ';';
 
-drop_table_statement: 'DROP' 'TABLE' ID ';';
-alter_database_statement: 'ALTER' 'DATABASE' ID 'RENAME' 'TO' ID ';' ;
+drop_table_statement: ('DROP'|'drop') ('TABLE'|'table') ID ';';
+alter_database_statement: ('ALTER'|'alter') ('DATABASE'|'database') ID ('RENAME'|'rename') ('TO'|'to') ID ';' ;
 
- show_schema_statement: 'SHOW' 'DATABASES' ';';
-:
-use_schema_statement: 'USE' 'DATABASE' ID ';';
+ show_schema_statement: ('SHOW'|'show') ('DATABASES'|'databases') ';';
+
+use_schema_statement: ('USE'|'use') ('DATABASE'|'database')? ID ';';
 
 
 column: ID  tipo_literal(',')?          #defcolumna
@@ -111,26 +111,26 @@ tipo_literal:
 				| 'DATE' 		   #tipoDate
 				;
 
-constraint: 'CONSTRAINT' constraintType;
+constraint: constraintType;
 
 constraintType:
             ID 'PRIMARY' 'KEY' '(' ID (',' ID)*')'                                           #primaryK
-        |   ID 'FOREIGN' 'KEY'  '(' ID (',' ID)*')' 'REFERENCES' ID '(' ID (',' ID)*')'		 #foreignK
+        |   ID 'FOREIGN' 'KEY'  '(' ID (',' ID)*')' ID '(' ID (',' ID)*')'	               	 #foreignK
         |   ID 'CHECK'  '('expression')'													 #check
         ;
 
-rename_table_statement: 'ALTER' 'TABLE' ID 'RENAME' 'TO' ID ';';
+rename_table_statement: ('ALTER'|'alter') ('TABLE'|'table') ID ('RENAME'|'rename') ('TO'|'to') ID ';';
 
 accion:
-          'ADD' 'COLUMN' ID tipo_literal (constraint)					#addColumn
-        | 'ADD' constraint												#addConstraint
-        | 'DROP' 'COLUMN' ID 											#dropColumn
-        | 'DROP' 'CONSTRAINT' ID										#dropConstraint
+          ('ADD'|'add') ('COLUMN'|'column') ID tipo_literal (constraint)					#addColumn
+        | ('ADD'|'add') constraint												#addConstraint
+        | ('DROP'|'drop') ('COLUMN'|'column') ID 											#dropColumn
+        | ('DROP'|'drop') ('CONSTRAINT'|'constraint') ID										#dropConstraint
     ;
 
 
-show_table_statement: 'SHOW' 'TABLES' ';';
-show_column_statement: 'SHOW' 'COLUMNS' 'FROM' ID ';';
+show_table_statement: ('SHOW'|'show') ('TABLES'|'tables') ';';
+show_column_statement: ('SHOW'|'show') ('COLUMNS'|'columns') ('FROM'|'from') ID ';';
        
 dmlstatement : insert_value
     | update_value
@@ -138,13 +138,13 @@ dmlstatement : insert_value
     | select_value
     ;
 
-insert_value: 'INSERT' 'INTO' ID ( '(' ((ID)(','ID)*)? ')' )? 'VALUES' '('list_values')' ';' ;
+insert_value: ('INSERT'|'insert') ('INTO'|'into') ID ( '(' ((ID)(','ID)*)? ')' )? ('VALUES'|'values') '('list_values')' ';' ;
 
-update_value: 'UPDATE' ID 'SET'  ID '=' literal (','ID '=' literal)* ('WHERE' expression)? ';' ;
+update_value: ('UPDATE'|'update') ID ('SET'|'set')  ID '=' literal (','ID '=' literal)* (('WHERE'|'where') expression)? ';' ;
 
-delete_value: 'DELETE' 'FROM' ID ('WHERE' expression)? ';' ;
+delete_value: ('DELETE'|'delete') ('FROM'|'from') ID (('WHERE'|'where') expression)? ';' ;
 
-select_value: 'SELECT' ('*' | ID (',' ID)* ) 'FROM' ID ('WHERE' expression)?  ('ORDER' 'BY' ('ASC' | 'DESC'))? ';';
+select_value: ('SELECT'|'select') ('*' | ID (',' ID)* ) ('FROM'|'from') ID (('WHERE'|'where') expression)?  (('ORDER'|'order') ('BY'|'by') (('ASC'|'asc') | ('DESC'|'desc')))? ';';
 
                   
               

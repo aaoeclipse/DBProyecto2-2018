@@ -11,6 +11,9 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.RuleNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by luisa on 17/04/18.
  */
@@ -28,7 +31,35 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitTable_definition(@NotNull SqlParser.Table_definitionContext ctx) { return visitChildren(ctx); }
+    @Override public String visitTable_definition(@NotNull SqlParser.Table_definitionContext ctx) {
+        String nombre  = ctx.getChild(2).getText();
+        List<String> atributos = new ArrayList<String>();
+        String pk = "";
+        List<String> fk = new ArrayList<String>();
+        for(int i = 4;i<ctx.getChildCount()-2;i++){
+            if (ctx.getChild(i).getChildCount() <3){
+                if(ctx.getChild(i).getChild(0).getText().contains("PRIMARY")){
+                    ParseTree palabra = ctx.getChild(i).getChild(0).getChild(0);
+                    pk = palabra.getChild(1).getText()+" "+palabra.getChild(2).getText()+" "+palabra.getChild(4).getText();
+                }
+                else{
+                    ParseTree palabra = ctx.getChild(i).getChild(0).getChild(0);
+                    fk.add(palabra.getChild(1).getText()+" "+palabra.getChild(2).getText()+" "+palabra.getChild(4)+" "+palabra.getChild(6).getText()+" "+palabra.getChild(8).getText());
+                }
+
+            }else{
+                atributos.add(ctx.getChild(i).getChild(0)+" "+ctx.getChild(i).getChild(1).getChild(0));
+            }
+
+        }
+        fileManager.createTable(nombre,atributos,pk,fk);
+
+        System.out.println(nombre);
+        System.out.println(atributos);
+        System.out.println(pk);
+        System.out.println(fk);
+
+        return visitChildren(ctx); }
     /**
      * {@inheritDoc}
      *
@@ -42,7 +73,9 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitAddConstraint(@NotNull SqlParser.AddConstraintContext ctx) { return visitChildren(ctx); }
+    @Override public String visitAddConstraint(@NotNull SqlParser.AddConstraintContext ctx) {
+
+        return visitChildren(ctx); }
     /**
      * {@inheritDoc}
      *
@@ -526,7 +559,15 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitConstraint(@NotNull SqlParser.ConstraintContext ctx) { return visitChildren(ctx); }
+    @Override public String visitConstraint(@NotNull SqlParser.ConstraintContext ctx) {
+        String key = "";
+        int limite = ctx.constraintType().getChildCount();
+        System.out.println(limite);
+        for(int i = 1; i<limite;i++){
+            key += ctx.constraintType().getChild(i)+" ";
+        }
+
+        return key; }
     /**
      * {@inheritDoc}
      *

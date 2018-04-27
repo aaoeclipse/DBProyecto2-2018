@@ -1,5 +1,7 @@
 package fileManager;
 
+import java.util.List;
+
 public interface FileManager {
     /** TODO LIST
      *      1. CREATE DB
@@ -38,6 +40,7 @@ public interface FileManager {
     public String[] showDatabases();
     public boolean useDatabase(String nombreDeBaseDeDatos);
     public String[] listTables();
+    public void createTable(String nombre, List<String> atributos, String pk, List<String> fk);
 
 
 

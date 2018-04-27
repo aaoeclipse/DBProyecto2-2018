@@ -5,6 +5,7 @@ import java.io.FilenameFilter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
 
 public class FileManagerImpl implements FileManager {
     private static String Databases = "DBs/";
@@ -57,6 +58,10 @@ public class FileManagerImpl implements FileManager {
             arrayToReturn[i] = fList[i].getName();
         }
         return arrayToReturn;
+    }
+    @Override
+    public void createTable(String nombre, List<String> atributos, String pk, List<String> fk){
+        System.out.println("holi");
     }
 
 }

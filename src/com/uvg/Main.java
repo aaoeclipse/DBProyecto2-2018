@@ -36,7 +36,7 @@ import javax.swing.text.DefaultEditorKit;
 import ANTLR.SqlLexer;
 import ANTLR.SqlParser;
 import fileManager.globalVariables;
-import org.antlr.v4.runtime.tree.gui.TreeViewer;
+import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
