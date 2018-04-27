@@ -21,8 +21,8 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
     FileManager fileManager = new FileManagerImpl();
     @Override public String visitUse_schema_statement(@NotNull SqlParser.Use_schema_statementContext ctx) {
         String funcionoOutput = "No se logro usar esa base de datos";
-        if (fileManager.useDatabase(ctx.getChild(2).getText()))
-            funcionoOutput = "Utilizando: "+ ctx.getChild(2).getText();
+        if (fileManager.useDatabase(ctx.getChild(1).getText()))
+            funcionoOutput = "Utilizando: "+ ctx.getChild(1).getText();
         return funcionoOutput;
     }
     /**

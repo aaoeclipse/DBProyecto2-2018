@@ -6,6 +6,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class FileManagerImpl implements FileManager {
     private static String Databases = "DBs/";
@@ -31,7 +36,9 @@ public class FileManagerImpl implements FileManager {
 
     @Override
     public boolean useDatabase(String nombreDeDataBase) {
+        System.out.println(nombreDeDataBase);
         File existingFile = new File("DBs/"+nombreDeDataBase);
+        System.out.println(existingFile.getName().toString()+existingFile.exists());
         if (existingFile.exists()) {
             globalVariables.setUtilizandoBaseDeDatos(true);
             globalVariables.setBaseDeDatosEnUso(nombreDeDataBase);
@@ -61,7 +68,26 @@ public class FileManagerImpl implements FileManager {
     }
     @Override
     public void createTable(String nombre, List<String> atributos, String pk, List<String> fk){
-        System.out.println("holi");
+
+        JSONObject table = new JSONObject();
+        JSONObject header = new JSONObject();
+
+        header.put("primaryKey",pk.split(" ")[2]);
+        for(int i = 0;i<atributos.size();i++){
+            String[] attr = atributos.get(i).split(" ");
+            header.put(attr[0],attr[1]);
+        }
+        table.put("header",header);
+        System.out.println(Databases);
+        try (FileWriter file = new FileWriter(Databases+"/"+globalVariables.getBaseDeDatosEnUso()+"/"+nombre+".json")) {
+
+            file.write(table.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
