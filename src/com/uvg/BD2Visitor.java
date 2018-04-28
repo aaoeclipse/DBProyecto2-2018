@@ -496,7 +496,54 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitInsert_value(@NotNull SqlParser.Insert_valueContext ctx) { return visitChildren(ctx); }
+    @Override public String visitInsert_value(@NotNull SqlParser.Insert_valueContext ctx) {
+        //TODO
+        String tableName = ctx.getChild(2).getText();
+
+        ArrayList<String> columns = null;
+        ArrayList<String> values = new ArrayList<>();
+        boolean hasColumns = false;
+        for(int i = 0; i < ctx.getChildCount(); i++){
+            if(ctx.getChild(i).getClass().getSimpleName().equals("ColumnsContext")){
+                hasColumns = true;
+                break;
+            }
+        }
+        if(hasColumns){
+            columns = new ArrayList<>();
+            for(int i = 0; i < ctx.getChildCount(); i++){
+                if(ctx.getChild(i).getClass().getSimpleName().equals("ColumnsContext")){
+                    for(int j = 0 ; j < ctx.getChild(i).getChildCount(); j++){
+                        ParseTree column = ctx.getChild(i).getChild(j);
+                        if(!column.getText().equals(",")){
+                            columns.add(column.getText());
+                        }
+                    }
+                }
+                if(ctx.getChild(i).getClass().getSimpleName().equals("List_valuesContext")){
+                    for(int j = 0 ; j < ctx.getChild(i).getChildCount(); j++){
+                        ParseTree value = ctx.getChild(i).getChild(j);
+                        if(!value.getText().equals(",")){
+                            values.add(value.getText());
+                        }
+                    }
+                }
+            }
+        }else{
+            for(int i = 0; i < ctx.getChildCount(); i++) {
+                if (ctx.getChild(i).getClass().getSimpleName().equals("List_valuesContext")) {
+                    for (int j = 0; j < ctx.getChild(i).getChildCount(); j++) {
+                        ParseTree value = ctx.getChild(i).getChild(j);
+                        if (!value.getText().equals(",")) {
+                            values.add(value.getText());
+                        }
+                    }
+                }
+            }
+        }
+        fileManager.insertIntoTable(tableName,values,columns);
+        return visitChildren(ctx);
+    }
     /**
      * {@inheritDoc}
      *

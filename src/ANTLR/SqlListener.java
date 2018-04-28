@@ -1,5 +1,5 @@
-// Generated from Sql.g4 by ANTLR 4.5.3
-package ANTLR;
+// Generated from .\Sql.g4 by ANTLR 4.5.3
+package  ANTLR;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -393,6 +393,16 @@ public interface SqlListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSelect_value(SqlParser.Select_valueContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SqlParser#columns}.
+	 * @param ctx the parse tree
+	 */
+	void enterColumns(SqlParser.ColumnsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SqlParser#columns}.
+	 * @param ctx the parse tree
+	 */
+	void exitColumns(SqlParser.ColumnsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link SqlParser#list_values}.
 	 * @param ctx the parse tree

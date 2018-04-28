@@ -1,5 +1,5 @@
-// Generated from Sql.g4 by ANTLR 4.5.3
-package ANTLR;
+// Generated from .\Sql.g4 by ANTLR 4.5.3
+package  ANTLR;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -239,6 +239,12 @@ public interface SqlVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSelect_value(SqlParser.Select_valueContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SqlParser#columns}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitColumns(SqlParser.ColumnsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link SqlParser#list_values}.
 	 * @param ctx the parse tree

@@ -1,5 +1,6 @@
 package fileManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface FileManager {
@@ -41,7 +42,7 @@ public interface FileManager {
     public boolean useDatabase(String nombreDeBaseDeDatos);
     public String[] listTables();
     public void createTable(String nombre, List<String> atributos, String pk, List<String> fk);
-
+    public void insertIntoTable(String tableName, ArrayList values, ArrayList columns);
 
 
 }

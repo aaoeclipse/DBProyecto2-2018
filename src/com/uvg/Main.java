@@ -95,16 +95,16 @@ public class Main {
     private void initialize() {
         frame = new JFrame();
         frame.getContentPane().setFont(new Font("FreeSans", Font.PLAIN, 35));
-        frame.setBounds(100, 100, 1600, 1000);
+        frame.setBounds(100, 100, 1000 , 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
         JTabbedPane QTabbedP = new JTabbedPane(JTabbedPane.TOP);
-        QTabbedP.setBounds(50, 90, 1024, 720);
+        QTabbedP.setBounds(50, 90, 400, 200);
         frame.getContentPane().add(QTabbedP);
 
         JTabbedPane tabbedPane2 = new JTabbedPane(JTabbedPane.TOP);
-        tabbedPane2.setBounds(1100, 90, 500, 500);
+        tabbedPane2.setBounds(500, 90, 200 , 200);
         frame.getContentPane().add(tabbedPane2);
 
         textArea3 = new TextArea();
@@ -241,7 +241,7 @@ public class Main {
         };
         JButton btnCompilar = new JButton("COMPILAR");
         btnCompilar.setFont(new Font("FreeSans", Font.PLAIN, 25));
-        btnCompilar.setBounds(100, 900, 180, 25);
+        btnCompilar.setBounds(100, 700, 180, 25);
         btnCompilar.setAction(compilar);
         frame.getContentPane().add(btnCompilar);
 

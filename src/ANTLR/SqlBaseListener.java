@@ -1,6 +1,5 @@
-// Generated from Sql.g4 by ANTLR 4.5.3
-
-package ANTLR;
+// Generated from .\Sql.g4 by ANTLR 4.5.3
+package  ANTLR;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
@@ -443,6 +442,18 @@ public class SqlBaseListener implements SqlListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSelect_value(SqlParser.Select_valueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterColumns(SqlParser.ColumnsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitColumns(SqlParser.ColumnsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
