@@ -10,6 +10,7 @@ import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.RuleNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitTable_definition(@NotNull SqlParser.Table_definitionContext ctx) {
+    @Override public String visitTable_definition(@NotNull SqlParser.Table_definitionContext ctx) throws JSONException {
         String nombre  = ctx.getChild(2).getText();
         List<String> atributos = new ArrayList<String>();
         String pk = "";
@@ -496,7 +497,7 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitInsert_value(@NotNull SqlParser.Insert_valueContext ctx) {
+    @Override public String visitInsert_value(@NotNull SqlParser.Insert_valueContext ctx) throws JSONException {
         //TODO
         String tableName = ctx.getChild(2).getText();
 

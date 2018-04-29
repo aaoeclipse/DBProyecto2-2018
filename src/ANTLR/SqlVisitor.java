@@ -1,6 +1,7 @@
 // Generated from .\Sql.g4 by ANTLR 4.5.3
 package  ANTLR;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
+import org.json.JSONException;
 
 /**
  * This interface defines a complete generic visitor for a parse tree produced
@@ -57,7 +58,7 @@ public interface SqlVisitor<T> extends ParseTreeVisitor<T> {
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTable_definition(SqlParser.Table_definitionContext ctx);
+	T visitTable_definition(SqlParser.Table_definitionContext ctx) throws JSONException;
 	/**
 	 * Visit a parse tree produced by {@link SqlParser#drop_schema_statement}.
 	 * @param ctx the parse tree
@@ -220,7 +221,7 @@ public interface SqlVisitor<T> extends ParseTreeVisitor<T> {
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitInsert_value(SqlParser.Insert_valueContext ctx);
+	T visitInsert_value(SqlParser.Insert_valueContext ctx) throws JSONException;
 	/**
 	 * Visit a parse tree produced by {@link SqlParser#update_value}.
 	 * @param ctx the parse tree
