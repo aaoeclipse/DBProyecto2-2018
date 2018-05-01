@@ -6,17 +6,7 @@ import java.awt.EventQueue;
 import java.awt.Point;
 
 import javax.management.StringValueExp;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.ActionMap;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JToolBar;
-import javax.swing.JTabbedPane;
+import javax.swing.*;
 
 import java.awt.TextArea;
 import java.io.*;
@@ -26,10 +16,6 @@ import java.nio.file.Paths;
 import java.nio.file.Path;
 import java.util.*;
 
-import javax.swing.JScrollBar;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
 import javax.swing.text.Caret;
 import javax.swing.text.DefaultEditorKit;
 
@@ -52,14 +38,13 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JButton;
-
 import java.awt.Font;
 
 
 public class Main {
     public TextArea textArea3;
     private JFrame frame;
+    private JTable select;
     private Path file = Paths.get("ErrorLog_Syntax.log");
     private List<String> Errors;
     int regNum = 0;
@@ -100,16 +85,17 @@ public class Main {
         frame.getContentPane().setLayout(null);
 
         JTabbedPane QTabbedP = new JTabbedPane(JTabbedPane.TOP);
-        QTabbedP.setBounds(50, 90, 400, 200);
+        QTabbedP.setBounds(50, 90, 450, 600);
         frame.getContentPane().add(QTabbedP);
 
         JTabbedPane tabbedPane2 = new JTabbedPane(JTabbedPane.TOP);
-        tabbedPane2.setBounds(500, 90, 200 , 200);
+        tabbedPane2.setBounds(500, 90, 450 , 600);
         frame.getContentPane().add(tabbedPane2);
 
         textArea3 = new TextArea();
         textArea3.setFont(new Font("FreeSans", Font.PLAIN, 25));
-        tabbedPane2.addTab("Error", null, textArea3, null);
+        tabbedPane2.addTab("Console", null, textArea3, null);
+        tabbedPane2.addTab("Select",null,select,null);
 
 
         TextArea QueryText = new TextArea();

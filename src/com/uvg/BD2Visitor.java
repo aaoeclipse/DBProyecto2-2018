@@ -434,7 +434,51 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitSelect_value(@NotNull SqlParser.Select_valueContext ctx) { return visitChildren(ctx); }
+    @Override public String visitSelect_value(@NotNull SqlParser.Select_valueContext ctx) {
+        String columns = "";
+        String tables = "";
+        List<String> where = new ArrayList<String>();
+        Boolean col = true;
+        Boolean table = false;
+        int i = 1;
+        while(col){
+            String word = ctx.getChild(i).getText();
+            System.out.println(word);
+            if((word.equals("from") || word.equals("FROM"))){
+                table = true;
+                word = "";
+
+            }else if(!table){
+                columns+=word;
+
+
+            }if((word.equals("where") || word.equals("WHERE"))){
+                col = false;
+
+            }else if(table) {
+                tables+=word;
+
+
+            }/**
+            System.out.println(".. "+ctx.getChild(7).getText());
+            if(ctx.getChild(i).getClass().getName().equals("expression")){
+                ParseTree expr = ctx.getChild(i).getChild(0);
+                for(int j = 0;j<expr.getChildCount();j++){
+                    if(!expr.getChild(j).getClass().getName().equals("cond_op")){
+                        for(int x = 0;x<expr.getChild(j).getChildCount();x++){
+                            ParseTree exprN = expr.getChild(j);
+                            System.out.println(">> "+exprN.getChild(0).getText()+" "+exprN.getChild(1).getText()+" "+exprN.getChild(2).getText());
+                            where.add(exprN.getChild(0).getText()+" "+exprN.getChild(1).getText()+" "+exprN.getChild(2).getText());
+                        }
+
+                    }
+                }
+            }**/
+            i+=1;
+
+        }
+        System.out.println("out: "+columns+"//"+tables+"//"+where.toString());
+        return visitChildren(ctx); }
     /**
      * {@inheritDoc}
      *
