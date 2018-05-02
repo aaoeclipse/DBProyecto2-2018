@@ -1,5 +1,6 @@
 package fileManager;
 
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.json.JSONException;
 
 import java.util.ArrayList;
@@ -45,6 +46,8 @@ public interface FileManager {
     public String[] listTables();
     public void createTable(String nombre, List<String> atributos, String pk, List<String> fk) throws JSONException;
     public void dropDatabase(String database);
+    public void showColumnStatement(String tableName);
+    public void deleteFromTable(String tableName, ParseTree whereClause);
     public void insertIntoTable(String tableName,  ArrayList<String> values,  ArrayList<String> columns) throws JSONException;
 
 

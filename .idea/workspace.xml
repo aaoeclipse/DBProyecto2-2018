@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" line="306" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" line="117" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0239b1cf-7bb3-4314-b030-4f3a716aad97" name="Default" comment="">
@@ -24,8 +24,8 @@
       <file leaf-file-name="Sql.g4" pinned="true" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ANTLR/Sql.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="90" column="65" selection-start-line="90" selection-start-column="63" selection-end-line="90" selection-end-column="65" />
+            <state relative-caret-position="632">
+              <caret line="202" column="24" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -33,11 +33,17 @@
       <file leaf-file-name="BD2Visitor.java" pinned="true" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="431" column="41" selection-start-line="431" selection-start-column="41" selection-end-line="431" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-561">
+              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -45,8 +51,8 @@
       <file leaf-file-name="luisa.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DBs/santiago/luisa.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+            <state>
+              <caret column="97" selection-start-column="87" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -54,13 +60,12 @@
       <file leaf-file-name="FileManagerImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="108" column="84" selection-start-line="108" selection-start-column="84" selection-end-line="108" selection-end-column="84" />
+            <state relative-caret-position="96">
+              <caret line="151" column="54" lean-forward="true" selection-start-line="151" selection-start-column="54" selection-end-line="151" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3225#3241#0" expanded="true" />
-                <element signature="e#12776#12777#0" expanded="true" />
-                <element signature="e#12821#12822#0" expanded="true" />
+                <element signature="e#16080#16081#0" expanded="true" />
+                <element signature="e#16125#16126#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,8 +84,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>constraint</find>
-      <find>tipo_literal</find>
       <find>CONSTRA</find>
       <find>cons</find>
       <find>colu</find>
@@ -109,6 +112,8 @@
       <find>SqlParser</find>
       <find>use_sc</find>
       <find>drop_schema_statement</find>
+      <find>show_column_statement</find>
+      <find>delete_value</find>
     </findStrings>
     <replaceStrings>
       <replace>String</replace>
@@ -147,8 +152,8 @@
         <option value="$PROJECT_DIR$/src/ANTLR/SqlParser.java" />
         <option value="$PROJECT_DIR$/src/com/uvg/Main.java" />
         <option value="$PROJECT_DIR$/DBs/santiago/luisa.json" />
-        <option value="$PROJECT_DIR$/src/fileManager/FileManager.java" />
         <option value="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" />
+        <option value="$PROJECT_DIR$/src/fileManager/FileManager.java" />
         <option value="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" />
       </list>
     </option>
@@ -179,12 +184,6 @@
               <item name="DBProyecto2-2018" type="b2602c69:ProjectViewProjectNode" />
               <item name="DBProyecto2-2018" type="462c0819:PsiDirectoryNode" />
               <item name="DBs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DBProyecto2-2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DBProyecto2-2018" type="462c0819:PsiDirectoryNode" />
-              <item name="DBs" type="462c0819:PsiDirectoryNode" />
-              <item name="dropme" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DBProyecto2-2018" type="b2602c69:ProjectViewProjectNode" />
@@ -481,12 +480,12 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3288889" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3288889" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32870865" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4974359" visible="true" weight="0.15885799" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4974359" visible="true" weight="0.15885799" />
       <window_info id="Structure" order="1" sideWeight="0.50256413" side_tool="true" weight="0.15925059" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -818,49 +817,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBs/santiago/luisa.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ANTLR/Sql.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="90" column="65" selection-start-line="90" selection-start-column="63" selection-end-line="90" selection-end-column="65" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/DBs/dropme/deleteme">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBs/santiago/luisa.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="97" selection-start-column="87" selection-end-column="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="431" column="41" selection-start-line="431" selection-start-column="41" selection-end-line="431" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-561">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBs/dropme/deleteme">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/ANTLR/Sql.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="202" column="24" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="24" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="108" column="84" selection-start-line="108" selection-start-column="84" selection-end-line="108" selection-end-column="84" />
+        <state relative-caret-position="96">
+          <caret line="151" column="54" lean-forward="true" selection-start-line="151" selection-start-column="54" selection-end-line="151" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3225#3241#0" expanded="true" />
-            <element signature="e#12776#12777#0" expanded="true" />
-            <element signature="e#12821#12822#0" expanded="true" />
+            <element signature="e#16080#16081#0" expanded="true" />
+            <element signature="e#16125#16126#0" expanded="true" />
           </folding>
         </state>
       </provider>

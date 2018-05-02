@@ -6,10 +6,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -110,14 +112,66 @@ public class FileManagerImpl implements FileManager {
         }
     }
 
+    public void showColumnStatement(String tableName){
+        FileReader fileJSON = null;
+        try {
+            fileJSON = new FileReader(Databases + "/" + globalVariables.getBaseDeDatosEnUso() +"/" + tableName + ".json");
+            BufferedReader bufferedReader = new BufferedReader(fileJSON);
+            JSONObject raw = new JSONObject(bufferedReader.readLine());
+            JSONObject tableHeader = (JSONObject) raw.get("header");
+            Iterator<?> iterator = tableHeader.keys();
+            String columnStatement = "Table "+tableName+" Statement:\n";
+            while( iterator.hasNext() ) {
+                String key = (String) iterator.next();
+                String keyValue = tableHeader.get(key).toString();
+                /*
+                    Special Cases
+                 */
+                if(key.equals("primaryKey")){
+                    columnStatement = columnStatement + "Primary Key : "+keyValue+"\n";
+                }else{
+                /*
+                    Standard Columns
+                 */
+                    columnStatement = columnStatement + "Column "+key+" , Type "+keyValue+"\n";
+                }
+            }
+            print(columnStatement);
+            // TODO return columnsStatement and print to screen
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void deleteFromTable(String tableName, ParseTree whereClause){
+        try {
+            FileReader fileJSON = new FileReader(Databases + "/" + globalVariables.getBaseDeDatosEnUso() + "/" + tableName + ".json");
+            BufferedReader bufferedReader = new BufferedReader(fileJSON);
+            String temporal = bufferedReader.readLine();
+            JSONObject raw = new JSONObject(temporal);
+            JSONObject tableHeader = (JSONObject) raw.get("header");
+            ArrayList<String> keys = new ArrayList<>();
+            ArrayList<String> keyValues = new ArrayList<>();
+            Iterator<?> iterator = tableHeader.keys();
+            while (iterator.hasNext()) {
+                String key = (String) iterator.next();
+                System.out.println("YALL" + key + "+" + tableHeader.get(key).toString());
+                keys.add(key);
+                keyValues.add(tableHeader.get(key).toString());
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            //TODO return error
+        }
+    }
+
     public void insertIntoTable(String tableName, ArrayList<String> values, ArrayList<String> columns) throws JSONException {
         try {
-            LinkedHashMap<String, String> jsonOrderedMap = new LinkedHashMap<String, String>();
             FileReader fileJSON = new FileReader(Databases + "/" + globalVariables.getBaseDeDatosEnUso()+ "/" + tableName + ".json");
             BufferedReader bufferedReader = new BufferedReader(fileJSON);
             String temporal = bufferedReader.readLine();
             JSONObject raw = new JSONObject(temporal);
-            System.out.println("GIRLLL + "+ temporal);
             JSONObject tableHeader = (JSONObject) raw.get("header");
             ArrayList<String> keys = new ArrayList<>();
             ArrayList<String> keyValues = new ArrayList<>();
@@ -244,6 +298,80 @@ public class FileManagerImpl implements FileManager {
             }
         } catch (IOException  e) {
             e.printStackTrace();
+        }
+    }
+
+    public boolean evaluateWhereClause(String left, String operator, String right, String type) throws ParseException {
+        if(operator.equals("<")){
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) < Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) < Float.parseFloat(right));
+            }else{
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return dateLeft.before(dateRight);
+            }
+        }else if(operator.equals("<=")){
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) <= Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) <= Float.parseFloat(right));
+            }else {
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return dateLeft.before(dateRight) || dateLeft.equals(dateRight);
+            }
+        }else if(operator.equals(">")){
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) > Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) > Float.parseFloat(right));
+            }else{
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return dateLeft.after(dateRight);
+            }
+        }else if(operator.equals(">=")){
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) >= Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) >= Float.parseFloat(right));
+            }else{
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return dateLeft.after(dateRight) || dateLeft.equals(dateRight);
+            }
+        }else if(operator.equals("<>")){
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) != Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) != Float.parseFloat(right));
+            }else if (type.equals("DATE")){
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return !dateLeft.equals(dateRight);
+            }else{
+                return !left.equals(right);
+            }
+        }else{
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) == Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) == Float.parseFloat(right));
+            }else if (type.equals("DATE")){
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return dateLeft.equals(dateRight);
+            }else{
+                return left.equals(right);
+            }
         }
     }
 

@@ -161,7 +161,14 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitDelete_value(@NotNull SqlParser.Delete_valueContext ctx) { return visitChildren(ctx); }
+    @Override public String visitDelete_value(@NotNull SqlParser.Delete_valueContext ctx) {
+        String tableName = ctx.getChild(2).getText();
+        ParseTree whereClause = null;
+        if(ctx.getChildCount()>4){
+            whereClause = ctx.getChild(4);
+        }
+        return visitChildren(ctx);
+    }
     /**
      * {@inheritDoc}
      *
@@ -329,7 +336,10 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitShow_column_statement(@NotNull SqlParser.Show_column_statementContext ctx) { return visitChildren(ctx); }
+    @Override public String visitShow_column_statement(@NotNull SqlParser.Show_column_statementContext ctx) {
+        fileManager.showColumnStatement(ctx.getChild(3).getText());
+        return visitChildren(ctx);
+    }
     /**
      * {@inheritDoc}
      *
