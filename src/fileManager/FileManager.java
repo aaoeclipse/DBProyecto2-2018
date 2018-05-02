@@ -44,6 +44,7 @@ public interface FileManager {
     public boolean useDatabase(String nombreDeBaseDeDatos);
     public String[] listTables();
     public void createTable(String nombre, List<String> atributos, String pk, List<String> fk) throws JSONException;
+    public void dropDatabase(String database);
     public void insertIntoTable(String tableName,  ArrayList<String> values,  ArrayList<String> columns) throws JSONException;
 
 

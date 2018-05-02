@@ -427,7 +427,11 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitDrop_schema_statement(@NotNull SqlParser.Drop_schema_statementContext ctx) { return visitChildren(ctx); }
+    @Override public String visitDrop_schema_statement(@NotNull SqlParser.Drop_schema_statementContext ctx) {
+        String database = ctx.getChild(2).getText();
+        fileManager.dropDatabase(database);
+        return visitChildren(ctx);
+    }
     /**
      * {@inheritDoc}
      *

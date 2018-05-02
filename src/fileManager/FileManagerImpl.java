@@ -95,10 +95,25 @@ public class FileManagerImpl implements FileManager {
 
     }
 
+    public void dropDatabase(String database){
+        try {
+            File databaseFolder = new File(Databases + "/" + database + "/");
+            String[] tables = databaseFolder.list();
+            for (String s : tables) {
+                File currentFile = new File(databaseFolder.getPath(), s);
+                currentFile.delete();
+            }
+            databaseFolder.delete();
+        }catch (Exception e){
+            e.printStackTrace();
+            // TODO return error The desired databse has not been able to be deleted
+        }
+    }
+
     public void insertIntoTable(String tableName, ArrayList<String> values, ArrayList<String> columns) throws JSONException {
         try {
             LinkedHashMap<String, String> jsonOrderedMap = new LinkedHashMap<String, String>();
-            FileReader fileJSON = new FileReader(Databases + "/" + /* TODO remove comment globalVariables.getBaseDeDatosEnUso()*/"santiago" + "/" + tableName + ".json");
+            FileReader fileJSON = new FileReader(Databases + "/" + globalVariables.getBaseDeDatosEnUso()+ "/" + tableName + ".json");
             BufferedReader bufferedReader = new BufferedReader(fileJSON);
             String temporal = bufferedReader.readLine();
             JSONObject raw = new JSONObject(temporal);
@@ -133,7 +148,7 @@ public class FileManagerImpl implements FileManager {
                         }
                     }
 
-                    FileWriter file = new FileWriter(Databases + "/" + /* TODO remove comment globalVariables.getBaseDeDatosEnUso()*/"santiago" + "/" + tableName + ".json",true);
+                    FileWriter file = new FileWriter(Databases + "/" + globalVariables.getBaseDeDatosEnUso() + "/" + tableName + ".json",true);
                     file.append("\n"+insert.toString());
                     file.close();
                 }else if ((values.size() == numberOfCol -1 )){
@@ -171,7 +186,7 @@ public class FileManagerImpl implements FileManager {
                             }
                         }
 
-                        FileWriter file = new FileWriter(Databases + "/" + /* TODO remove comment globalVariables.getBaseDeDatosEnUso()*/"santiago" + "/" + tableName + ".json",true);
+                        FileWriter file = new FileWriter(Databases + "/" + globalVariables.getBaseDeDatosEnUso() + "/" + tableName + ".json",true);
                         file.append("\n"+insert.toString());
                         file.close();
                     }else{
@@ -180,66 +195,71 @@ public class FileManagerImpl implements FileManager {
                 }else{
                     // TODO return error missing value
                 }
-            }else{
+            }else {
             /*
             2nd Case: Columns were written explicitly
             */
-                JSONObject insert = new JSONObject();
-                String primaryKey = "";
-                boolean hasKey = false;
-                for (String key : keys){
-                    if(key.equals("primaryKey")) {
-                        primaryKey = keyValues.get(keys.indexOf(key));
-                        hasKey =  true;
+                if (values.size() == columns.size()) {
+                    JSONObject insert = new JSONObject();
+                    String primaryKey = "";
+                    boolean hasKey = false;
+                    for (String key : keys) {
+                        if (key.equals("primaryKey")) {
+                            primaryKey = keyValues.get(keys.indexOf(key));
+                            hasKey = true;
+                        }
                     }
-                }
-                for(int i = 0; i<keys.size() ; i ++){
-                    if(!keys.get(i).equals("primaryKey")){
-                        boolean valueFound = false;
-                        for(int j = 0; j<columns.size(); j++){
-                            if(columns.get(j).equals(keys.get(i))){
-                                valueFound=true;
-                                boolean typeCheck = checkType(values.get(j), keyValues.get(i));
-                                if(typeCheck){
-                                    insert.put(columns.get(j), values.get(j));
+                    for (int i = 0; i < keys.size(); i++) {
+                        if (!keys.get(i).equals("primaryKey")) {
+                            boolean valueFound = false;
+                            for (int j = 0; j < columns.size(); j++) {
+                                if (columns.get(j).equals(keys.get(i))) {
+                                    valueFound = true;
+                                    boolean typeCheck = checkType(values.get(j), keyValues.get(i));
+                                    if (typeCheck) {
+                                        insert.put(columns.get(j), values.get(j));
+                                    }
                                 }
                             }
-                        }
-                        if (!valueFound){
-                            /*
-                            3rd Case: Columns were written explicitly but the primary key
-                             */
-                            if(keys.get(i).equals(primaryKey)){
-                                int primaryValue = getLastPrimaryKeyGiven(primaryKey, tableName);
-                                insert.put(primaryKey,primaryValue);
-                            }else {
-                                insert.put(keys.get(i), "");
+                            if (!valueFound) {
+                                /*
+                                3rd Case: Columns were written explicitly but the primary key
+                                 */
+                                if (keys.get(i).equals(primaryKey)) {
+                                    int primaryValue = getLastPrimaryKeyGiven(primaryKey, tableName) + 1;
+                                    insert.put(primaryKey, String.valueOf(primaryValue));
+                                } else {
+                                    insert.put(keys.get(i), "");
+                                }
                             }
+
                         }
-
                     }
+                    FileWriter file = new FileWriter(Databases + "/" + globalVariables.getBaseDeDatosEnUso() + "/" + tableName + ".json", true);
+                    file.append("\n" + insert.toString());
+                    file.close();
+                }else{
+                    // TODO return error number of values and columns don't match
                 }
-                FileWriter file = new FileWriter(Databases + "/" + /* TODO remove comment globalVariables.getBaseDeDatosEnUso()*/"santiago" + "/" + tableName + ".json",true);
-                file.append("\n"+insert.toString());
-                file.close();
             }
-
-
-            //String raw = new String(Files.readAllBytes(Paths.get(tableName)), StandardCharsets.UTF_8);
-            //FileWriter file = new FileWriter(Databases + "/" + globalVariables.getBaseDeDatosEnUso() + "/" + tableName + ".json");
-             //= new JSONObject(raw);
         } catch (IOException  e) {
             e.printStackTrace();
         }
     }
 
     public int getLastPrimaryKeyGiven(String primaryKey, String tableName) throws IOException, JSONException {
-        FileReader fileJSON = new FileReader(Databases + "/" + /* TODO remove comment tableName*/"santiago" + "/" + tableName + ".json");
+        FileReader fileJSON = new FileReader(Databases + "/" + tableName + "/" + tableName + ".json");
         BufferedReader bufferedReader = new BufferedReader(fileJSON);
         String last = "";
+        String temp = "";
         while(true){
             last = bufferedReader.readLine();
-            String temp = bufferedReader.readLine();
+            if(last ==null){
+                last = temp;
+                break;
+            }
+            print(last);
+            temp = bufferedReader.readLine();
             if(temp==null){
                 break;
             }
@@ -247,7 +267,7 @@ public class FileManagerImpl implements FileManager {
         JSONObject raw = new JSONObject(last);
         System.out.println("YAS QUEEN!"+Integer.parseInt(String.valueOf(raw.get(primaryKey))));
         fileJSON.close();
-        return Integer.parseInt((String)raw.get(primaryKey));
+        return Integer.parseInt(raw.get(primaryKey).toString());
     }
 
     public boolean checkType(String value, String desiredType){
