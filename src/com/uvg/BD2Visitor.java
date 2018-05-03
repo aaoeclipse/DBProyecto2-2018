@@ -167,6 +167,7 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
         if(ctx.getChildCount()>4){
             whereClause = ctx.getChild(4);
         }
+        fileManager.deleteFromTable(tableName,whereClause);
         return visitChildren(ctx);
     }
     /**

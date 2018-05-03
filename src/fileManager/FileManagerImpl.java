@@ -146,7 +146,9 @@ public class FileManagerImpl implements FileManager {
 
     public void deleteFromTable(String tableName, ParseTree whereClause){
         try {
-            FileReader fileJSON = new FileReader(Databases + "/" + globalVariables.getBaseDeDatosEnUso() + "/" + tableName + ".json");
+            if (whereClause.getChildCount()==1)
+                whereClause = whereClause.getChild(0);
+            FileReader fileJSON = new FileReader(Databases + "/" + /*globalVariables.getBaseDeDatosEnUso()+*/"santiago" + "/" + tableName + ".json");
             BufferedReader bufferedReader = new BufferedReader(fileJSON);
             String temporal = bufferedReader.readLine();
             JSONObject raw = new JSONObject(temporal);
@@ -156,10 +158,56 @@ public class FileManagerImpl implements FileManager {
             Iterator<?> iterator = tableHeader.keys();
             while (iterator.hasNext()) {
                 String key = (String) iterator.next();
-                System.out.println("YALL" + key + "+" + tableHeader.get(key).toString());
-                keys.add(key);
-                keyValues.add(tableHeader.get(key).toString());
+                if (!key.equals("primaryKey")){
+                    keys.add(key);
+                    keyValues.add(tableHeader.get(key).toString());
+                }
             }
+            boolean isLeftColumn = false;
+            String left=isValueAColumn(whereClause.getChild(0).getText(), keys);
+            if (left.equals("")){
+                left = whereClause.getChild(0).getText();
+            }else {
+                isLeftColumn = true;
+            }
+            boolean isRightColumn = false;
+            print(whereClause.getText());
+            String right = isValueAColumn(whereClause.getChild(2).getText(),keys);
+            if (right.equals("")) {
+                right = whereClause.getChild(2).getText();
+            }else {
+                isRightColumn = true;
+            }
+            FileWriter tempFile = new FileWriter(Databases + "/" +/*  TODO uncomment globalVariables.getBaseDeDatosEnUso()+*/"santiago" + "/temp"  + ".json");
+            BufferedWriter bufferedWriter = new BufferedWriter(tempFile);
+            bufferedWriter.write(temporal);
+            while ((temporal = bufferedReader.readLine()) != null){
+                JSONObject tempJSON = new JSONObject(temporal);
+                String leftWhere="";
+                if(isLeftColumn){
+                    leftWhere = tempJSON.getString(left);
+                }else{
+                    leftWhere = left;
+                }
+                String rightWhere = "";
+                if (isRightColumn){
+                    rightWhere = tempJSON.getString(right);
+                }else{
+                    rightWhere = right;
+                }
+                String type = getType(rightWhere);
+                if (type.equals(getType(leftWhere))) {
+                    print(String.valueOf(evaluateWhereClause(whereClause, tempJSON, keys)));
+                    if (!evaluateWhereClause(whereClause, tempJSON, keys)) {
+                        bufferedWriter.write(temporal);
+                    }
+                }else{
+                    // TODO return error where operator types missmatches
+                }
+                // TODO RENAME FILE AND DELETE BAD ONE
+            }
+            tempFile.close();
+            fileJSON.close();
         }catch (Exception e){
             e.printStackTrace();
             //TODO return error
@@ -301,7 +349,26 @@ public class FileManagerImpl implements FileManager {
         }
     }
 
-    public boolean evaluateWhereClause(String left, String operator, String right, String type) throws ParseException {
+    public boolean evaluateWhereClause( ParseTree whereClause, JSONObject row, ArrayList<String> columns) throws ParseException, JSONException {
+        //Checking that the tree is the main one
+        if(whereClause.getChildCount()==1)
+            whereClause = whereClause.getChild(0);
+        // Getting the values from the parse tree: left and right operator and the operation itself
+        String left = whereClause.getChild(0).getText();
+        String operator = whereClause.getChild(1).getText();
+        String right = whereClause.getChild(2).getText();
+        // Either obtaining the actual value or keeping it for left operator
+        String leftTest= isValueAColumn(left,columns);
+        if(!leftTest.equals("")){
+            left = row.getString(leftTest);
+        }
+        // Either obtaining the actual value or keeping it for right operator
+        String rightTest= isValueAColumn(right,columns);
+        if(!rightTest.equals("")){
+            right = row.getString(rightTest);
+        }
+        String type = getType(right);
+        // Converting and operating according to the operator
         if(operator.equals("<")){
             if(type.equals("INT")){
                 return (Integer.parseInt(left) < Integer.parseInt(right));
@@ -359,7 +426,7 @@ public class FileManagerImpl implements FileManager {
             }else{
                 return !left.equals(right);
             }
-        }else{
+        }else if(operator.equals("=")){
             if(type.equals("INT")){
                 return (Integer.parseInt(left) == Integer.parseInt(right));
             }else if (type.equals("FLOAT")){
@@ -372,6 +439,11 @@ public class FileManagerImpl implements FileManager {
             }else{
                 return left.equals(right);
             }
+            // In case of a composed evaluation recursion will be taken
+        }else if(operator.equals("AND")){
+            return evaluateWhereClause(whereClause.getChild(0), row, columns) && evaluateWhereClause(whereClause.getChild(2), row, columns);
+        }else{
+            return  evaluateWhereClause(whereClause.getChild(0), row, columns) || evaluateWhereClause(whereClause.getChild(2), row, columns);
         }
     }
 
@@ -396,6 +468,43 @@ public class FileManagerImpl implements FileManager {
         System.out.println("YAS QUEEN!"+Integer.parseInt(String.valueOf(raw.get(primaryKey))));
         fileJSON.close();
         return Integer.parseInt(raw.get(primaryKey).toString());
+    }
+
+    public String isValueAColumn(String value, ArrayList<String> keys){
+        if(value.indexOf("'") < 0)
+            return "";
+        if(getType(value).equals("CHAR")){
+            String column = "";
+            for(String t : keys){
+                if (value.equals(t))
+                    column = t;
+            }
+            return  column;
+        }else{
+            return "";
+        }
+    }
+
+    public String getType(String value){
+        try{
+            int temop = Integer.parseInt(value );
+            return "INT";
+        }catch (Exception e){
+//            e.printStackTrace();
+            try {
+                float temp = Float.parseFloat(value);
+                return "FLOAT";
+            }catch (Exception e1){
+//                e.printStackTrace();
+                try {
+                    DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                    Date date = format.parse(value);
+                    return "DATE";
+                } catch (Exception e2){
+                    return "CHAR";
+                }
+            }
+        }
     }
 
     public boolean checkType(String value, String desiredType){

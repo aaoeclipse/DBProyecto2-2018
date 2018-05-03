@@ -24,8 +24,8 @@
       <file leaf-file-name="Sql.g4" pinned="true" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ANTLR/Sql.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="202" column="24" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="24" />
+            <state relative-caret-position="836">
+              <caret line="177" column="7" selection-start-line="177" selection-start-column="7" selection-end-line="177" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -33,8 +33,11 @@
       <file leaf-file-name="BD2Visitor.java" pinned="true" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-561">
-              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="43" />
+            <state relative-caret-position="39">
+              <caret line="164" column="45" lean-forward="true" selection-start-line="164" selection-start-column="45" selection-end-line="164" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,7 +55,21 @@
         <entry file="file://$PROJECT_DIR$/DBs/santiago/luisa.json">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="97" selection-start-column="87" selection-end-column="97" />
+              <caret selection-end-line="4" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="temp.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DBs/santiago/temp.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="deleteMe.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DBs/santiago/deleteMe.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -60,12 +77,16 @@
       <file leaf-file-name="FileManagerImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="151" column="54" lean-forward="true" selection-start-line="151" selection-start-column="54" selection-end-line="151" selection-end-column="54" />
+            <state relative-caret-position="60">
+              <caret line="363" column="9" lean-forward="true" selection-start-line="363" selection-start-column="9" selection-end-line="363" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#16080#16081#0" expanded="true" />
-                <element signature="e#16125#16126#0" expanded="true" />
+                <element signature="method#createTable#0;class#FileManagerImpl#0" />
+                <element signature="method#dropDatabase#0;class#FileManagerImpl#0" />
+                <element signature="method#showColumnStatement#0;class#FileManagerImpl#0" />
+                <element signature="method#insertIntoTable#0;class#FileManagerImpl#0" />
+                <element signature="e#22581#22582#0" expanded="true" />
+                <element signature="e#22626#22627#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,7 +105,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CONSTRA</find>
       <find>cons</find>
       <find>colu</find>
       <find>table</find>
@@ -114,6 +134,7 @@
       <find>drop_schema_statement</find>
       <find>show_column_statement</find>
       <find>delete_value</find>
+      <find>import org.antlr.v4.runtime.tree.ParseTree;</find>
     </findStrings>
     <replaceStrings>
       <replace>String</replace>
@@ -152,8 +173,9 @@
         <option value="$PROJECT_DIR$/src/ANTLR/SqlParser.java" />
         <option value="$PROJECT_DIR$/src/com/uvg/Main.java" />
         <option value="$PROJECT_DIR$/DBs/santiago/luisa.json" />
-        <option value="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" />
         <option value="$PROJECT_DIR$/src/fileManager/FileManager.java" />
+        <option value="$PROJECT_DIR$/DBs/santiago/delete.json" />
+        <option value="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" />
         <option value="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" />
       </list>
     </option>
@@ -517,27 +539,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/DataBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
@@ -827,35 +828,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ANTLR/Sql.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="177" column="7" selection-start-line="177" selection-start-column="7" selection-end-line="177" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBs/santiago/something">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/DBs/santiago/luisa.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="97" selection-start-column="87" selection-end-column="97" />
+          <caret selection-end-line="4" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBs/santiago/temp.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBs/santiago/deleteMe.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561">
-          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ANTLR/Sql.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="202" column="24" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="24" />
+        <state relative-caret-position="39">
+          <caret line="164" column="45" lean-forward="true" selection-start-line="164" selection-start-column="45" selection-end-line="164" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="151" column="54" lean-forward="true" selection-start-line="151" selection-start-column="54" selection-end-line="151" selection-end-column="54" />
+        <state relative-caret-position="60">
+          <caret line="363" column="9" lean-forward="true" selection-start-line="363" selection-start-column="9" selection-end-line="363" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#16080#16081#0" expanded="true" />
-            <element signature="e#16125#16126#0" expanded="true" />
+            <element signature="method#createTable#0;class#FileManagerImpl#0" />
+            <element signature="method#dropDatabase#0;class#FileManagerImpl#0" />
+            <element signature="method#showColumnStatement#0;class#FileManagerImpl#0" />
+            <element signature="method#insertIntoTable#0;class#FileManagerImpl#0" />
+            <element signature="e#22581#22582#0" expanded="true" />
+            <element signature="e#22626#22627#0" expanded="true" />
           </folding>
         </state>
       </provider>
