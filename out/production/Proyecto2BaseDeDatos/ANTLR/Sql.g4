@@ -122,7 +122,7 @@ constraintType:
 rename_table_statement: ('ALTER'|'alter') ('TABLE'|'table') ID ('RENAME'|'rename') ('TO'|'to') ID ';';
 
 accion:
-          ('ADD'|'add') ('COLUMN'|'column') ID tipo_literal (constraint)					#addColumn
+          ('ADD'|'add') ('COLUMN'|'column') ID tipo_literal (constraint)?					#addColumn
         | ('ADD'|'add') constraint												#addConstraint
         | ('DROP'|'drop') ('COLUMN'|'column') ID 											#dropColumn
         | ('DROP'|'drop') ('CONSTRAINT'|'constraint') ID										#dropConstraint

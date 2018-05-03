@@ -2,32 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0239b1cf-7bb3-4314-b030-4f3a716aad97" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/antlr_4_5_3_complete.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/antlr_4_4_complete.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DBs/santiago/table1" beforeDir="false" afterPath="$PROJECT_DIR$/DBs/santiago/table1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto2BaseDeDatos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto2BaseDeDatos.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/antlr-4.4-complete.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto2BaseDeDatos/ANTLR/Sql.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto2BaseDeDatos/ANTLR/Sql.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto2BaseDeDatos/ANTLR/Sql.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto2BaseDeDatos/ANTLR/Sql.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto2BaseDeDatos/ANTLR/Sql.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto2BaseDeDatos/ANTLR/SqlLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto2BaseDeDatos/ANTLR/SqlLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto2BaseDeDatos/ANTLR/SqlLexer.tokens" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ANTLR/Sql.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/Sql.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/Sql.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/Sql.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/Sql.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/SqlBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/SqlBaseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ANTLR/SqlBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/SqlBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/SqlLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/SqlLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/SqlLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/SqlLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/SqlLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/SqlListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/SqlListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ANTLR/SqlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/SqlParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ANTLR/SqlVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/SqlVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/uvg/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/uvg/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fileManager/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileManager/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Tabla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Tabla.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,20 +23,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BD2Visitor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BD2Visitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="75" column="111" selection-start-line="75" selection-start-column="111" selection-end-line="75" selection-end-column="111" />
+            <state relative-caret-position="150">
+              <caret line="535" column="23" selection-start-line="535" selection-start-column="23" selection-end-line="535" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/uvg/Main.java">
+      <file leaf-file-name="FileManagerImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="-314">
+              <caret line="370" selection-start-line="370" selection-end-line="370" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+                <element signature="e#747#748#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="98" selection-start-line="31" selection-start-column="98" selection-end-line="31" selection-end-column="98" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tabla.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/Tabla.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#160#161#0" expanded="true" />
+                <element signature="e#206#207#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,9 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>openFile</find>
-      <find>tabbedPane1.</find>
-      <find>tabbedPane1.SET</find>
       <find>show_table_statement</find>
       <find>QueryText</find>
       <find>CREA</find>
@@ -100,6 +109,9 @@
       <find>btnCompilar</find>
       <find>compilar</find>
       <find>SANTIAGO</find>
+      <find>alter_table</find>
+      <find>ALTER</find>
+      <find>update</find>
     </findStrings>
     <replaceStrings>
       <replace>String</replace>
@@ -136,13 +148,13 @@
         <option value="$PROJECT_DIR$/src/objects/Header.java" />
         <option value="$PROJECT_DIR$/DBs/santiago/table2" />
         <option value="$PROJECT_DIR$/DBs/santiago/table3" />
-        <option value="$PROJECT_DIR$/src/objects/Tabla.java" />
-        <option value="$PROJECT_DIR$/DBs/santiago/table1" />
-        <option value="$PROJECT_DIR$/src/fileManager/FileManager.java" />
-        <option value="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" />
         <option value="$PROJECT_DIR$/src/ANTLR/SqlParser.java" />
         <option value="$PROJECT_DIR$/src/com/uvg/Main.java" />
+        <option value="$PROJECT_DIR$/src/objects/Tabla.java" />
+        <option value="$PROJECT_DIR$/src/fileManager/FileManager.java" />
+        <option value="$PROJECT_DIR$/DBs/santiago/table1" />
+        <option value="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" />
+        <option value="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" />
       </list>
     </option>
   </component>
@@ -186,6 +198,12 @@
               <item name="DBProyecto2-2018" type="b2602c69:ProjectViewProjectNode" />
               <item name="DBProyecto2-2018" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ANTLR" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DBProyecto2-2018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBProyecto2-2018" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="uvg" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -221,14 +239,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/ANTLR" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="utils" />
       <recent name="com.uvg" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/ANTLR" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -457,20 +475,20 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Tool Output" />
+      <window_info anchor="bottom" id="Tool Output" weight="0.3297414" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.3286638" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286638" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286638" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.31896552" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28815368" />
-      <window_info anchor="bottom" id="ANTLR Preview" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28815368" />
+      <window_info anchor="bottom" id="ANTLR Preview" weight="0.3297414" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -688,64 +706,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileManager/globalVariables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/Header.java" />
     <entry file="file://$PROJECT_DIR$/DBs/santiago/test.json" />
-    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="128" selection-start-line="43" selection-start-column="128" selection-end-line="43" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/Tabla.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#206#207#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBs/santiago/table2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="63" selection-end-line="4" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBs/santiago/table1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ANTLR/SqlBaseVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3645">
           <caret line="244" column="91" selection-start-line="244" selection-start-column="91" selection-end-line="244" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="94" column="35" selection-start-line="94" selection-start-column="35" selection-end-line="94" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -756,24 +722,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ANTLR/Sql.g4">
+    <entry file="file://$PROJECT_DIR$/src/com/uvg/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="69" column="29" lean-forward="true" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+        <state relative-caret-position="405">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/uvg/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/ANTLR/Sql.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="540">
+          <caret line="103" column="45" lean-forward="true" selection-start-line="103" selection-start-column="45" selection-end-line="103" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileManager/globalVariables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBs/santiago/table1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="52" lean-forward="true" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBs/santiago/table2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="63" selection-end-line="4" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="75" column="111" selection-start-line="75" selection-start-column="111" selection-end-line="75" selection-end-column="111" />
+        <state relative-caret-position="150">
+          <caret line="535" column="23" selection-start-line="535" selection-start-column="23" selection-end-line="535" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="98" selection-start-line="31" selection-start-column="98" selection-end-line="31" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/Tabla.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#160#161#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-314">
+          <caret line="370" selection-start-line="370" selection-end-line="370" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#747#748#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

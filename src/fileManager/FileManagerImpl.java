@@ -48,7 +48,7 @@ public class FileManagerImpl implements FileManager {
 
         if (!globalVariables.getUtilizandoBaseDeDatos()) {
             arrayToReturn = new String[1];
-            arrayToReturn[0] = "No se ha seleccionado una db";
+            arrayToReturn[0] = "ERROR: DB No Seleccionada";
             return arrayToReturn;
         }
 
@@ -66,12 +66,12 @@ public class FileManagerImpl implements FileManager {
     public boolean renameTable(String nombreTablaViejo, String nombreTablaNuevo) {
 
         if (!globalVariables.getUtilizandoBaseDeDatos()) {
-            globalVariables.addErrorMessage("No se ha seleccionado una db");
+            globalVariables.addErrorMessage("ERROR: DB No Seleccionada");
             return false;
         }
         File directory = new File("DBs/"+ globalVariables.getBaseDeDatosEnUso() +"/"+nombreTablaViejo);
         if (!directory.exists()) {
-            globalVariables.addErrorMessage("No existe la tabla");
+            globalVariables.addErrorMessage("ERROR: Tabla No Existe");
             return false;
         }
         File nuevodirectory = new File("DBs/"+ globalVariables.getBaseDeDatosEnUso() +"/"+nombreTablaNuevo);
@@ -81,7 +81,7 @@ public class FileManagerImpl implements FileManager {
         }
         boolean success = directory.renameTo(nuevodirectory);
         if(!success) {
-            globalVariables.addErrorMessage("Error con el cambio de nombre");
+            globalVariables.addErrorMessage("ERROR: No se logro cambiar el nombre");
             return false;
         }
         return true;
@@ -91,6 +91,10 @@ public class FileManagerImpl implements FileManager {
     public boolean alterAddColumn(String nombreDeTabla, String nombreDeColumna, String tipo) {
         try {
             boolean repetido = false;
+            if (! globalVariables.utilizandoBaseDeDatos){
+                globalVariables.addErrorMessage("ERROR: DB No Seleccionado");
+                return false;
+            }
             FileReader tablaFile = new FileReader("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla);
             BufferedReader bufferedReader = new BufferedReader(tablaFile);
 
@@ -109,6 +113,9 @@ public class FileManagerImpl implements FileManager {
 
             Tabla tabla = new Tabla();
             HashMap<String, String> row = new HashMap<>();
+            // agregar la nueva columna
+            row.put(nombreDeColumna, tipo);
+
             //HEADER
             while (iterator.hasNext()) {
                 String key = (String) iterator.next();
@@ -123,14 +130,14 @@ public class FileManagerImpl implements FileManager {
                 bufferedReader.close();
                 return false;
             }
-            // agregar la nueva columna
-            row.put(nombreDeColumna, tipo);
+
             // Agrega a tabla el row
             tabla.addRow(row);
 
             while ((temporal = bufferedReader.readLine()) != null){
                 // Borra el row
                 row = new HashMap<>();
+                row.put(nombreDeColumna, "");
 
                 // Read Next Line
                 raw = new JSONObject(temporal);
@@ -140,7 +147,6 @@ public class FileManagerImpl implements FileManager {
                     String key = (String) iterator.next();
                     row.put(key, raw.get(key).toString());
                 }
-                row.put(nombreDeColumna, "");
                 // Agrega a tabla el row
                 tabla.addRow(row);
             }
@@ -170,7 +176,6 @@ public class FileManagerImpl implements FileManager {
             writer.close();
         }catch (FileNotFoundException e) {
             globalVariables.addErrorMessage("ERROR: No existe la tabla");
-            e.printStackTrace();
             return false;
         } catch (IOException e) {
             globalVariables.addErrorMessage("ERROR: Lectura del archivo");
@@ -193,14 +198,17 @@ public class FileManagerImpl implements FileManager {
     public boolean alterDropColumn(String nombreDeTabla, String nombreDeColumnaParaDrop) {
         try {
             boolean columnaEncontrada = false;
-            // globalVariables.getBaseDeDatosEnUso();
+            if (! globalVariables.utilizandoBaseDeDatos){
+                globalVariables.addErrorMessage("ERROR: DB No Seleccionado");
+                return false;
+            }
             FileReader tablaFile = new FileReader("DBs/" + globalVariables.getBaseDeDatosEnUso()+ "/" + nombreDeTabla);
             BufferedReader bufferedReader = new BufferedReader(tablaFile);
 
             // Read line
             String temporal = bufferedReader.readLine();
             if (temporal == null){
-                globalVariables.addErrorMessage("No hay nada en la tabla");
+                globalVariables.addErrorMessage("ERROR: Tabla vacia");
                 return false;
             }
 
@@ -330,6 +338,96 @@ public class FileManagerImpl implements FileManager {
             e.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public boolean updateNoWhere(String nombreDeTabla, String nombreDecolumna, String nuevoValor) {
+        try {
+            if (!globalVariables.utilizandoBaseDeDatos) {
+                globalVariables.addErrorMessage("ERROR: DB No Seleccionado");
+                return false;
+            }
+            FileReader tablaFile = new FileReader("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla);
+            BufferedReader bufferedReader = new BufferedReader(tablaFile);
+
+            // Read line
+            String temporal = bufferedReader.readLine();
+            if (temporal == null) {
+                globalVariables.addErrorMessage("ERROR: Tabla vacia");
+                return false;
+            }
+
+            JSONObject raw = new JSONObject(temporal);
+
+            // head
+            JSONObject tableHeader = (JSONObject) raw.get("header");
+            Iterator<?> iterator = tableHeader.keys();
+
+            Tabla tabla = new Tabla();
+            HashMap<String, String> row = new HashMap<>();
+            //HEADER
+            while (iterator.hasNext()) {
+                String key = (String) iterator.next();
+                row.put(key, tableHeader.get(key).toString());
+            }
+            // Agrega a tabla el row
+            tabla.addRow(row);
+
+            while ((temporal = bufferedReader.readLine()) != null) {
+                // Borra el row
+                row = new HashMap<>();
+
+                // Read Next Line
+                raw = new JSONObject(temporal);
+                iterator = raw.keys();
+
+                while (iterator.hasNext()) {
+                    String key = (String) iterator.next();
+                    if (key.equals(nombreDecolumna))
+                        row.put(key, nuevoValor);
+                    else
+                        row.put(key, raw.get(key).toString());
+                }
+                // Agrega a tabla el row
+                tabla.addRow(row);
+                }
+                // Escribir
+                // Borramos primero el file
+                //globalVariables.getBaseDeDatosEnUso()
+                FileWriter writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla);
+                writer.write("");
+                writer.close();
+
+                // Lo abrimos de forma append
+                //globalVariables.getBaseDeDatosEnUso()
+                writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla, true);
+                writer.append("{\"header\":");
+                boolean isHeader = true;
+
+                for (int i = 0; i < tabla.getLines(); i++){
+                    JSONObject rowToWrite = new JSONObject(tabla.getRow(i));
+                    writer.append(rowToWrite.toString());
+                    if (isHeader) {
+                        writer.append("}\n");
+                        isHeader = false;
+                    } else {
+                        writer.append("}\n");
+                    }
+                }
+                writer.close();
+        } catch (FileNotFoundException e) {
+            globalVariables.addErrorMessage("ERROR: No existe la tabla");
+            return false;
+        } catch (IOException e) {
+            globalVariables.addErrorMessage("ERROR: Lectura del archivo");
+            return false;
+
+        } catch (JSONException e) {
+            globalVariables.addErrorMessage("ERROR: problema con el JSON");
+            return false;
+        }
+
+        return true;
     }
 
 }

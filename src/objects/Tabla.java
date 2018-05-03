@@ -24,6 +24,12 @@ public class Tabla {
     public ArrayList<HashMap<String, String>> getTabla(){
         return tabla;
     }
+    public boolean changeValuesNoWhere(String keyColumnName, String newValue){
+        for (int i = 1; i < tabla.size(); i++){
+            tabla.get(i).put(keyColumnName, newValue);
+        }
+        return true;
+    }
 
     @Override
     public String toString() {

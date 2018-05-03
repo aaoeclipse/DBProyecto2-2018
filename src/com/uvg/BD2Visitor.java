@@ -73,7 +73,21 @@ public class BD2Visitor extends SqlBaseVisitor<String> {
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitAlter_table_statement(@NotNull SqlParser.Alter_table_statementContext ctx) { return visitChildren(ctx); }
+    @Override public String visitAlter_table_statement(@NotNull SqlParser.Alter_table_statementContext ctx) {
+        switch (ctx.getChild(3).getChild(0).toString()){
+            case "ADD":
+                if (! fileManager.alterAddColumn(ctx.getChild(2).getText(), ctx.getChild(3).getChild(2).getText(),ctx.getChild(3).getChild(3).getChild(0).getText())){
+                    return globalVariables.printError();
+                }
+                break;
+            case "DROP":
+                if (! fileManager.alterDropColumn(ctx.getChild(2).getText(), ctx.getChild(3).getChild(2).getText())){
+                    return globalVariables.printError();
+                }
+                break;
+        }
+        return "Modificacion completa";
+    }
     /**
      * {@inheritDoc}
      *
@@ -518,7 +532,15 @@ public class BD2Visitor extends SqlBaseVisitor<String> {
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitUpdate_value(@NotNull SqlParser.Update_valueContext ctx) { return visitChildren(ctx); }
+    @Override public String visitUpdate_value(@NotNull SqlParser.Update_valueContext ctx) {
+        if (ctx.getChild(6).getText().equalsIgnoreCase("WHERE")) {
+            return "UNDER CONSTRUCTION";
+        }else {
+            if (! fileManager.updateNoWhere(ctx.getChild(1).getText(),ctx.getChild(3).getText(),ctx.getChild(5).getChild(0).getChild(0).getText())){
+                return globalVariables.printError();
+            }
+        }
+        return "Tabla "+ ctx.getChild(1).getText() + " Modificada"; }
     /**
      * {@inheritDoc}
      *
