@@ -40,9 +40,9 @@ public interface FileManager {
     public boolean useDatabase(String nombreDeBaseDeDatos);
     public String[] listTables();
     public boolean renameTable(String nombreTablaViejo, String nombreTablaNuevo);
-    public boolean alterAddColumn();
-    public boolean alterDeleteColumn();
-    public boolean alterDropColumn();
-    public boolean alterDropConstraint();
+    public boolean alterAddColumn(String nombreDeTabla, String nombreDeColumna, String tipo);
+    public boolean alterDeleteColumn(String nombreDeTabla, String nombreDeColumnaParaDelete);
+    public boolean alterDropColumn(String nombreDeTabla, String nombreDeColumnaParaDrop);
+    public boolean alterDropConstraint(String nombreDeTabla, String nombreDeConstraintParaBotar);
 
 }

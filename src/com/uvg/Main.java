@@ -35,6 +35,8 @@ import javax.swing.text.DefaultEditorKit;
 
 import ANTLR.SqlLexer;
 import ANTLR.SqlParser;
+import fileManager.FileManager;
+import fileManager.FileManagerImpl;
 import fileManager.globalVariables;
 import org.antlr.v4.runtime.tree.gui.TreeViewer;
 import org.antlr.v4.runtime.ANTLRInputStream;
@@ -63,6 +65,8 @@ public class Main {
     private List<String> Errors;
     int regNum = 0;
     BD2Visitor conv;
+    //TEST
+    static FileManager filemanager = new FileManagerImpl();
 
     /**
      * Launch the application.
@@ -71,8 +75,11 @@ public class Main {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Main window = new Main();
-                    window.frame.setVisible(true);
+                    // TEST
+                        filemanager.alterDeleteColumn("table1","estatura");
+                    //
+                    //Main window = new Main();
+                    //window.frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

@@ -1,37 +1,34 @@
 package objects;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Tabla {
-    private String nombre;
-    private ArrayList<Columna> columnas;
+    ArrayList<HashMap<String, String>> tabla;
 
-    public Tabla(String nombre, ArrayList<Columna> columnas) {
-        this.nombre = nombre;
-        this.columnas = columnas;
+    public Tabla (){
+        this.tabla = new ArrayList<>();
     }
-
-    public String getNombre() {
-        return nombre;
+    public Tabla(ArrayList<HashMap<String, String>> tabla) {
+        this.tabla = tabla;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public int getLines(){
+        return tabla.size();
     }
-
-    public ArrayList<Columna> getColumnas() {
-        return columnas;
+    public void addRow(HashMap<String, String> newHashmap){
+        tabla.add(newHashmap);
     }
-
-    public void setColumnas(ArrayList<Columna> columnas) {
-        this.columnas = columnas;
+    public HashMap<String, String> getRow(int row){
+        return tabla.get(row);
+    }
+    public ArrayList<HashMap<String, String>> getTabla(){
+        return tabla;
     }
 
     @Override
     public String toString() {
         return "Tabla{" +
-                "nombre='" + nombre + '\'' +
-                ", columnas=" + columnas +
+                "tabla=" + tabla +
                 '}';
     }
 }
