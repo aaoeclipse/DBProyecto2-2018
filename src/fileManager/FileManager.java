@@ -41,7 +41,7 @@ public interface FileManager {
     public String[] listTables();
     public boolean renameTable(String nombreTablaViejo, String nombreTablaNuevo);
     public boolean alterAddColumn(String nombreDeTabla, String nombreDeColumna, String tipo);
-    public boolean alterDeleteColumn(String nombreDeTabla, String nombreDeColumnaParaDelete);
+    public boolean alterAddConstraint(String nombreDeTabla, String nombreDeconstraint, String tipoDeConstraint, String columna);
     public boolean alterDropColumn(String nombreDeTabla, String nombreDeColumnaParaDrop);
     public boolean alterDropConstraint(String nombreDeTabla, String nombreDeConstraintParaBotar);
 

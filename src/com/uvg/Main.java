@@ -38,7 +38,7 @@ import ANTLR.SqlParser;
 import fileManager.FileManager;
 import fileManager.FileManagerImpl;
 import fileManager.globalVariables;
-import org.antlr.v4.runtime.tree.gui.TreeViewer;
+import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
@@ -49,9 +49,6 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 
@@ -75,11 +72,8 @@ public class Main {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    // TEST
-                        filemanager.alterDeleteColumn("table1","estatura");
-                    //
-                    //Main window = new Main();
-                    //window.frame.setVisible(true);
+                    Main window = new Main();
+                    window.frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

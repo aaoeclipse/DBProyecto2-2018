@@ -1,21 +1,15 @@
 package com.uvg;
-import ANTLR.SqlBaseListener;
 import ANTLR.SqlBaseVisitor;
 import ANTLR.SqlParser;
-import ANTLR.SqlVisitor;
 import fileManager.FileManager;
 import fileManager.FileManagerImpl;
 import fileManager.globalVariables;
 import org.antlr.v4.runtime.misc.NotNull;
-import org.antlr.v4.runtime.tree.ErrorNode;
-import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.tree.RuleNode;
-import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
  * Created by luisa on 17/04/18.
  */
-public class BD2Visitor extends SqlBaseVisitor<String>{
+public class BD2Visitor extends SqlBaseVisitor<String> {
     FileManager fileManager = new FileManagerImpl();
     @Override public String visitUse_schema_statement(@NotNull SqlParser.Use_schema_statementContext ctx) {
         String funcionoOutput = "No se logro usar esa base de datos";
