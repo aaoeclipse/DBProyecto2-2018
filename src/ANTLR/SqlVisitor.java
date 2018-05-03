@@ -1,7 +1,6 @@
-// Generated from .\Sql.g4 by ANTLR 4.5.3
-package  ANTLR;
+// Generated from Sql.g4 by ANTLR 4.5.3
+package ANTLR;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
-import org.json.JSONException;
 
 /**
  * This interface defines a complete generic visitor for a parse tree produced
@@ -58,7 +57,7 @@ public interface SqlVisitor<T> extends ParseTreeVisitor<T> {
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTable_definition(SqlParser.Table_definitionContext ctx) throws JSONException;
+	T visitTable_definition(SqlParser.Table_definitionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link SqlParser#drop_schema_statement}.
 	 * @param ctx the parse tree
@@ -221,7 +220,7 @@ public interface SqlVisitor<T> extends ParseTreeVisitor<T> {
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitInsert_value(SqlParser.Insert_valueContext ctx) throws JSONException;
+	T visitInsert_value(SqlParser.Insert_valueContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link SqlParser#update_value}.
 	 * @param ctx the parse tree
@@ -422,6 +421,20 @@ public interface SqlVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitCond_op2(SqlParser.Cond_op2Context ctx);
+	/**
+	 * Visit a parse tree produced by the {@code logic1}
+	 * labeled alternative in {@link SqlParser#cond_op}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLogic1(SqlParser.Logic1Context ctx);
+	/**
+	 * Visit a parse tree produced by the {@code logic2}
+	 * labeled alternative in {@link SqlParser#cond_op}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLogic2(SqlParser.Logic2Context ctx);
 	/**
 	 * Visit a parse tree produced by the {@code expression2}
 	 * labeled alternative in {@link SqlParser#expression}.

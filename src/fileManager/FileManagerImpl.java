@@ -146,7 +146,7 @@ public class FileManagerImpl implements FileManager {
 
     public void deleteFromTable(String tableName, ParseTree whereClause){
         try {
-            if (whereClause.getChildCount()==1)
+            while (whereClause.getChildCount()==1)
                 whereClause = whereClause.getChild(0);
             FileReader fileJSON = new FileReader(Databases + "/" + /*globalVariables.getBaseDeDatosEnUso()+*/"santiago" + "/" + tableName + ".json");
             BufferedReader bufferedReader = new BufferedReader(fileJSON);
@@ -180,7 +180,8 @@ public class FileManagerImpl implements FileManager {
             }
             FileWriter tempFile = new FileWriter(Databases + "/" +/*  TODO uncomment globalVariables.getBaseDeDatosEnUso()+*/"santiago" + "/temp"  + ".json");
             BufferedWriter bufferedWriter = new BufferedWriter(tempFile);
-            bufferedWriter.write(temporal);
+            bufferedWriter.write(temporal+"\n");
+            boolean first = true;
             while ((temporal = bufferedReader.readLine()) != null){
                 JSONObject tempJSON = new JSONObject(temporal);
                 String leftWhere="";
@@ -197,17 +198,28 @@ public class FileManagerImpl implements FileManager {
                 }
                 String type = getType(rightWhere);
                 if (type.equals(getType(leftWhere))) {
-                    print(String.valueOf(evaluateWhereClause(whereClause, tempJSON, keys)));
                     if (!evaluateWhereClause(whereClause, tempJSON, keys)) {
-                        bufferedWriter.write(temporal);
+                        print("WRITING "+temporal);
+                        if (first==true){
+                            bufferedWriter.write(temporal);
+                            first = false;
+                        }else{
+                            bufferedWriter.write("\n"+temporal);
+                        }
                     }
                 }else{
                     // TODO return error where operator types missmatches
                 }
                 // TODO RENAME FILE AND DELETE BAD ONE
             }
+            bufferedWriter.close();
+            bufferedReader.close();
             tempFile.close();
             fileJSON.close();
+            File file = new File(Databases + "/" + /*globalVariables.getBaseDeDatosEnUso()+*/"santiago" + "/" + tableName + ".json");
+            File newFile = new File(Databases + "/" +/*  TODO uncomment globalVariables.getBaseDeDatosEnUso()+*/"santiago" + "/temp"  + ".json");
+            file.delete();
+            newFile.renameTo(file);
         }catch (Exception e){
             e.printStackTrace();
             //TODO return error
@@ -351,7 +363,7 @@ public class FileManagerImpl implements FileManager {
 
     public boolean evaluateWhereClause( ParseTree whereClause, JSONObject row, ArrayList<String> columns) throws ParseException, JSONException {
         //Checking that the tree is the main one
-        if(whereClause.getChildCount()==1)
+        while (whereClause.getChildCount()==1)
             whereClause = whereClause.getChild(0);
         // Getting the values from the parse tree: left and right operator and the operation itself
         String left = whereClause.getChild(0).getText();
@@ -471,13 +483,14 @@ public class FileManagerImpl implements FileManager {
     }
 
     public String isValueAColumn(String value, ArrayList<String> keys){
-        if(value.indexOf("'") < 0)
+        if(value.indexOf("'") > 0)
             return "";
         if(getType(value).equals("CHAR")){
             String column = "";
             for(String t : keys){
-                if (value.equals(t))
+                if (value.equals(t)) {
                     column = t;
+                }
             }
             return  column;
         }else{

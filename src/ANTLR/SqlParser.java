@@ -1,12 +1,10 @@
-// Generated from .\Sql.g4 by ANTLR 4.5.3
-package  ANTLR;
+// Generated from Sql.g4 by ANTLR 4.5.3
+package ANTLR;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.misc.*;
 import org.antlr.v4.runtime.tree.*;
-import org.json.JSONException;
-
 import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -24,13 +22,14 @@ public class SqlParser extends Parser {
 		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
 		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, T__29=30, T__30=31, 
 		T__31=32, T__32=33, T__33=34, T__34=35, T__35=36, T__36=37, T__37=38, 
-		T__38=39, T__39=40, T__40=41, T__41=42, T__42=43, T__43=44, T__44=45,
-		T__45=46, T__46=47, T__47=48, T__48=49, T__49=50, T__50=51, T__51=52,
-		T__52=53, T__53=54, T__54=55, T__55=56, T__56=57, T__57=58, T__58=59,
-		T__59=60, T__60=61, T__61=62, T__62=63, T__63=64, T__64=65, T__65=66,
+		T__38=39, T__39=40, T__40=41, T__41=42, T__42=43, T__43=44, T__44=45, 
+		T__45=46, T__46=47, T__47=48, T__48=49, T__49=50, T__50=51, T__51=52, 
+		T__52=53, T__53=54, T__54=55, T__55=56, T__56=57, T__57=58, T__58=59, 
+		T__59=60, T__60=61, T__61=62, T__62=63, T__63=64, T__64=65, T__65=66, 
 		T__66=67, T__67=68, T__68=69, T__69=70, T__70=71, T__71=72, T__72=73, 
-		T__73=74, T__74=75, T__75=76, T__76=77, T__77=78, INT=79, CHAR=80, BOOLEAN=81, 
-		DATETIME=82, ID=83, NUM=84, FLOAT=85, Char=86, DATE=87, WS=88;
+		T__73=74, T__74=75, T__75=76, T__76=77, T__77=78, T__78=79, T__79=80, 
+		INT=81, CHAR=82, BOOLEAN=83, DATETIME=84, ID=85, NUM=86, FLOAT=87, Char=88, 
+		DATE=89, WS=90;
 	public static final int
 		RULE_program = 0, RULE_sql_executable_statement = 1, RULE_sql_schema_statement = 2, 
 		RULE_sql_schema_definition_statement = 3, RULE_sql_schema_manipulation_statement = 4, 
@@ -63,15 +62,15 @@ public class SqlParser extends Parser {
 		null, "'CREATE'", "'create'", "'DATABASE'", "'database'", "';'", "'TABLE'", 
 		"'table'", "'('", "')'", "'DROP'", "'drop'", "'ALTER'", "'alter'", "'RENAME'", 
 		"'rename'", "'TO'", "'to'", "'SHOW'", "'show'", "'DATABASES'", "'databases'", 
-		"'USE'", "'use'", "','", "'INT'", "'FLOAT'", "'CHAR('", "'DATE'", "'PRIMARY'", 
-		"'KEY'", "'FOREIGN'", "'CHECK'", "'ADD'", "'add'", "'COLUMN'", "'column'", 
-		"'CONSTRAINT'", "'constraint'", "'TABLES'", "'tables'", "'COLUMNS'", "'columns'", 
+		"'USE'", "'use'", "','", "'INT'", "'FLOAT'", "'CHAR('", "'DATE'", "'CONSTRAINT'", 
+		"'PRIMARY'", "'KEY'", "'FOREIGN'", "'CHECK'", "'ADD'", "'add'", "'COLUMN'", 
+		"'column'", "'constraint'", "'TABLES'", "'tables'", "'COLUMNS'", "'columns'", 
 		"'FROM'", "'from'", "'INSERT'", "'insert'", "'INTO'", "'into'", "'VALUES'", 
 		"'values'", "'UPDATE'", "'update'", "'SET'", "'set'", "'='", "'WHERE'", 
 		"'where'", "'DELETE'", "'delete'", "'SELECT'", "'select'", "'*'", "'ORDER'", 
 		"'order'", "'BY'", "'by'", "'ASC'", "'asc'", "'DESC'", "'desc'", "'<'", 
-		"'>'", "'<='", "'>='", "'<>'", "'AND'", "'OR'", "'NOT'", "'int'", "'char'", 
-		"'boolean'", "'datetime'"
+		"'>'", "'<='", "'>='", "'<>'", "'AND'", "'OR'", "'IS NULL'", "'IS NOT NULL'", 
+		"'NOT'", "'int'", "'char'", "'boolean'", "'datetime'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
@@ -80,8 +79,8 @@ public class SqlParser extends Parser {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, "INT", "CHAR", "BOOLEAN", "DATETIME", 
-		"ID", "NUM", "FLOAT", "Char", "DATE", "WS"
+		null, null, null, null, null, null, null, null, null, "INT", "CHAR", "BOOLEAN", 
+		"DATETIME", "ID", "NUM", "FLOAT", "Char", "DATE", "WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -145,15 +144,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_program; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterProgram(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterProgram(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitProgram(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitProgram(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitProgram(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitProgram(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -165,7 +164,7 @@ public class SqlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(87);
+			setState(87); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
@@ -175,7 +174,7 @@ public class SqlParser extends Parser {
 				sql_executable_statement();
 				}
 				}
-				setState(89);
+				setState(89); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__17) | (1L << T__18) | (1L << T__21) | (1L << T__22) | (1L << T__44) | (1L << T__45) | (1L << T__50) | (1L << T__51) | (1L << T__57) | (1L << T__58) | (1L << T__59) | (1L << T__60))) != 0) );
@@ -205,15 +204,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sql_executable_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterSql_executable_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterSql_executable_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitSql_executable_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitSql_executable_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitSql_executable_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitSql_executable_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -265,15 +264,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sql_schema_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterSql_schema_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterSql_schema_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitSql_schema_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitSql_schema_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitSql_schema_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitSql_schema_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -342,15 +341,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sql_schema_definition_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterSql_schema_definition_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterSql_schema_definition_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitSql_schema_definition_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitSql_schema_definition_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitSql_schema_definition_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitSql_schema_definition_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -426,15 +425,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sql_schema_manipulation_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterSql_schema_manipulation_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterSql_schema_manipulation_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitSql_schema_manipulation_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitSql_schema_manipulation_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitSql_schema_manipulation_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitSql_schema_manipulation_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -539,15 +538,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sql_data_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterSql_data_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterSql_data_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitSql_data_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitSql_data_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitSql_data_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitSql_data_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -581,15 +580,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_schema_definition; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterSchema_definition(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterSchema_definition(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitSchema_definition(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitSchema_definition(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitSchema_definition(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitSchema_definition(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -646,21 +645,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_table_definition; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterTable_definition(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterTable_definition(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitTable_definition(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitTable_definition(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) {
-				try {
-					return ((ANTLR.SqlVisitor<? extends T>)visitor).visitTable_definition(this);
-				} catch (JSONException e) {
-					return visitor.visitChildren(this);
-				}
-			}
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitTable_definition(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -690,7 +683,7 @@ public class SqlParser extends Parser {
 			match(ID);
 			setState(125);
 			match(T__7);
-			setState(127);
+			setState(127); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
@@ -700,10 +693,10 @@ public class SqlParser extends Parser {
 				column();
 				}
 				}
-				setState(129);
+				setState(129); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==ID );
+			} while ( _la==T__28 || _la==ID );
 			setState(131);
 			match(T__8);
 			setState(132);
@@ -729,15 +722,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_drop_schema_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterDrop_schema_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterDrop_schema_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitDrop_schema_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitDrop_schema_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitDrop_schema_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitDrop_schema_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -791,15 +784,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_alter_table_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterAlter_table_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterAlter_table_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitAlter_table_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitAlter_table_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitAlter_table_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitAlter_table_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -852,15 +845,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_drop_table_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterDrop_table_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterDrop_table_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitDrop_table_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitDrop_table_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitDrop_table_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitDrop_table_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -914,15 +907,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_alter_database_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterAlter_database_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterAlter_database_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitAlter_database_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitAlter_database_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitAlter_database_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitAlter_database_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -988,15 +981,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_show_schema_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterShow_schema_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterShow_schema_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitShow_schema_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitShow_schema_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitShow_schema_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitShow_schema_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1045,15 +1038,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_use_schema_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterUse_schema_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterUse_schema_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitUse_schema_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitUse_schema_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitUse_schema_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitUse_schema_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1072,23 +1065,16 @@ public class SqlParser extends Parser {
 			} else {
 				consume();
 			}
-			setState(164);
+			setState(163);
 			_la = _input.LA(1);
-			if (_la==T__2 || _la==T__3) {
-				{
-				setState(163);
-				_la = _input.LA(1);
-				if ( !(_la==T__2 || _la==T__3) ) {
-				_errHandler.recoverInline(this);
-				} else {
-					consume();
-				}
-				}
+			if ( !(_la==T__2 || _la==T__3) ) {
+			_errHandler.recoverInline(this);
+			} else {
+				consume();
 			}
-
-			setState(166);
+			setState(164);
 			match(ID);
-			setState(167);
+			setState(165);
 			match(T__4);
 			}
 		}
@@ -1108,7 +1094,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_column; }
-
+	 
 		public ColumnContext() { }
 		public void copyFrom(ColumnContext ctx) {
 			super.copyFrom(ctx);
@@ -1122,15 +1108,15 @@ public class SqlParser extends Parser {
 		public DefcolumnaContext(ColumnContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterDefcolumna(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterDefcolumna(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitDefcolumna(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitDefcolumna(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitDefcolumna(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitDefcolumna(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1141,15 +1127,15 @@ public class SqlParser extends Parser {
 		public DefconstraintContext(ColumnContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterDefconstraint(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterDefconstraint(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitDefconstraint(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitDefconstraint(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitDefconstraint(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitDefconstraint(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1159,45 +1145,46 @@ public class SqlParser extends Parser {
 		enterRule(_localctx, 28, RULE_column);
 		int _la;
 		try {
-			setState(178);
-			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
-			case 1:
+			setState(176);
+			switch (_input.LA(1)) {
+			case ID:
 				_localctx = new DefcolumnaContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(169);
+				setState(167);
 				match(ID);
-				setState(170);
+				setState(168);
 				tipo_literal();
-				setState(172);
+				setState(170);
 				_la = _input.LA(1);
 				if (_la==T__23) {
 					{
-					setState(171);
+					setState(169);
 					match(T__23);
 					}
 				}
 
 				}
 				break;
-			case 2:
+			case T__28:
 				_localctx = new DefconstraintContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(174);
+				setState(172);
 				constraint();
-				setState(176);
+				setState(174);
 				_la = _input.LA(1);
 				if (_la==T__23) {
 					{
-					setState(175);
+					setState(173);
 					match(T__23);
 					}
 				}
 
 				}
 				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1216,7 +1203,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_tipo_literal; }
-
+	 
 		public Tipo_literalContext() { }
 		public void copyFrom(Tipo_literalContext ctx) {
 			super.copyFrom(ctx);
@@ -1226,15 +1213,15 @@ public class SqlParser extends Parser {
 		public TipoDateContext(Tipo_literalContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterTipoDate(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterTipoDate(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitTipoDate(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitTipoDate(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitTipoDate(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitTipoDate(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1242,15 +1229,15 @@ public class SqlParser extends Parser {
 		public TipoIntContext(Tipo_literalContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterTipoInt(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterTipoInt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitTipoInt(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitTipoInt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitTipoInt(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitTipoInt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1258,15 +1245,15 @@ public class SqlParser extends Parser {
 		public TipoFloatContext(Tipo_literalContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterTipoFloat(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterTipoFloat(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitTipoFloat(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitTipoFloat(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitTipoFloat(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitTipoFloat(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1275,15 +1262,15 @@ public class SqlParser extends Parser {
 		public TipoCharContext(Tipo_literalContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterTipoChar(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterTipoChar(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitTipoChar(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitTipoChar(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitTipoChar(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitTipoChar(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1292,13 +1279,13 @@ public class SqlParser extends Parser {
 		Tipo_literalContext _localctx = new Tipo_literalContext(_ctx, getState());
 		enterRule(_localctx, 30, RULE_tipo_literal);
 		try {
-			setState(186);
+			setState(184);
 			switch (_input.LA(1)) {
 			case T__24:
 				_localctx = new TipoIntContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(180);
+				setState(178);
 				match(T__24);
 				}
 				break;
@@ -1306,7 +1293,7 @@ public class SqlParser extends Parser {
 				_localctx = new TipoFloatContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(181);
+				setState(179);
 				match(T__25);
 				}
 				break;
@@ -1314,11 +1301,11 @@ public class SqlParser extends Parser {
 				_localctx = new TipoCharContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(182);
+				setState(180);
 				match(T__26);
-				setState(183);
+				setState(181);
 				match(NUM);
-				setState(184);
+				setState(182);
 				match(T__8);
 				}
 				break;
@@ -1326,7 +1313,7 @@ public class SqlParser extends Parser {
 				_localctx = new TipoDateContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(185);
+				setState(183);
 				match(T__27);
 				}
 				break;
@@ -1355,15 +1342,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_constraint; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterConstraint(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterConstraint(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitConstraint(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitConstraint(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitConstraint(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitConstraint(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1374,7 +1361,9 @@ public class SqlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(188);
+			setState(186);
+			match(T__28);
+			setState(187);
 			constraintType();
 			}
 		}
@@ -1394,7 +1383,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_constraintType; }
-
+	 
 		public ConstraintTypeContext() { }
 		public void copyFrom(ConstraintTypeContext ctx) {
 			super.copyFrom(ctx);
@@ -1408,15 +1397,15 @@ public class SqlParser extends Parser {
 		public ForeignKContext(ConstraintTypeContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterForeignK(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterForeignK(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitForeignK(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitForeignK(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitForeignK(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitForeignK(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1428,15 +1417,15 @@ public class SqlParser extends Parser {
 		public CheckContext(ConstraintTypeContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterCheck(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterCheck(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitCheck(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitCheck(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitCheck(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitCheck(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1448,15 +1437,15 @@ public class SqlParser extends Parser {
 		public PrimaryKContext(ConstraintTypeContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterPrimaryK(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterPrimaryK(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitPrimaryK(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitPrimaryK(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitPrimaryK(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitPrimaryK(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1466,40 +1455,40 @@ public class SqlParser extends Parser {
 		enterRule(_localctx, 34, RULE_constraintType);
 		int _la;
 		try {
-			setState(233);
+			setState(232);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
 			case 1:
 				_localctx = new PrimaryKContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
+				setState(189);
+				match(ID);
 				setState(190);
-				match(ID);
-				setState(191);
-				match(T__28);
-				setState(192);
 				match(T__29);
-				setState(193);
+				setState(191);
+				match(T__30);
+				setState(192);
 				match(T__7);
-				setState(194);
+				setState(193);
 				match(ID);
-				setState(199);
+				setState(198);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==T__23) {
 					{
 					{
-					setState(195);
+					setState(194);
 					match(T__23);
-					setState(196);
+					setState(195);
 					match(ID);
 					}
 					}
-					setState(201);
+					setState(200);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(202);
+				setState(201);
 				match(T__8);
 				}
 				break;
@@ -1507,57 +1496,57 @@ public class SqlParser extends Parser {
 				_localctx = new ForeignKContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(203);
+				setState(202);
 				match(ID);
+				setState(203);
+				match(T__31);
 				setState(204);
 				match(T__30);
 				setState(205);
-				match(T__29);
+				match(T__7);
 				setState(206);
-				match(T__7);
-				setState(207);
 				match(ID);
-				setState(212);
+				setState(211);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==T__23) {
 					{
 					{
+					setState(207);
+					match(T__23);
 					setState(208);
-					match(T__23);
-					setState(209);
 					match(ID);
 					}
 					}
-					setState(214);
+					setState(213);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(215);
+				setState(214);
 				match(T__8);
+				setState(215);
+				match(ID);
 				setState(216);
-				match(ID);
-				setState(217);
 				match(T__7);
-				setState(218);
+				setState(217);
 				match(ID);
-				setState(223);
+				setState(222);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==T__23) {
 					{
 					{
-					setState(219);
+					setState(218);
 					match(T__23);
-					setState(220);
+					setState(219);
 					match(ID);
 					}
 					}
-					setState(225);
+					setState(224);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(226);
+				setState(225);
 				match(T__8);
 				}
 				break;
@@ -1565,15 +1554,15 @@ public class SqlParser extends Parser {
 				_localctx = new CheckContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(227);
+				setState(226);
 				match(ID);
+				setState(227);
+				match(T__32);
 				setState(228);
-				match(T__31);
-				setState(229);
 				match(T__7);
-				setState(230);
+				setState(229);
 				expression(0);
-				setState(231);
+				setState(230);
 				match(T__8);
 				}
 				break;
@@ -1601,15 +1590,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_rename_table_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRename_table_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRename_table_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRename_table_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRename_table_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRename_table_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRename_table_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1621,39 +1610,39 @@ public class SqlParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(235);
+			setState(234);
 			_la = _input.LA(1);
 			if ( !(_la==T__11 || _la==T__12) ) {
 			_errHandler.recoverInline(this);
 			} else {
 				consume();
 			}
-			setState(236);
+			setState(235);
 			_la = _input.LA(1);
 			if ( !(_la==T__5 || _la==T__6) ) {
 			_errHandler.recoverInline(this);
 			} else {
 				consume();
 			}
-			setState(237);
+			setState(236);
 			match(ID);
-			setState(238);
+			setState(237);
 			_la = _input.LA(1);
 			if ( !(_la==T__13 || _la==T__14) ) {
 			_errHandler.recoverInline(this);
 			} else {
 				consume();
 			}
-			setState(239);
+			setState(238);
 			_la = _input.LA(1);
 			if ( !(_la==T__15 || _la==T__16) ) {
 			_errHandler.recoverInline(this);
 			} else {
 				consume();
 			}
-			setState(240);
+			setState(239);
 			match(ID);
-			setState(241);
+			setState(240);
 			match(T__4);
 			}
 		}
@@ -1673,7 +1662,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_accion; }
-
+	 
 		public AccionContext() { }
 		public void copyFrom(AccionContext ctx) {
 			super.copyFrom(ctx);
@@ -1690,15 +1679,15 @@ public class SqlParser extends Parser {
 		public AddColumnContext(AccionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterAddColumn(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterAddColumn(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitAddColumn(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitAddColumn(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitAddColumn(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitAddColumn(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1707,15 +1696,15 @@ public class SqlParser extends Parser {
 		public DropConstraintContext(AccionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterDropConstraint(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterDropConstraint(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitDropConstraint(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitDropConstraint(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitDropConstraint(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitDropConstraint(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1726,15 +1715,15 @@ public class SqlParser extends Parser {
 		public AddConstraintContext(AccionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterAddConstraint(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterAddConstraint(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitAddConstraint(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitAddConstraint(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitAddConstraint(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitAddConstraint(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1743,15 +1732,15 @@ public class SqlParser extends Parser {
 		public DropColumnContext(AccionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterDropColumn(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterDropColumn(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitDropColumn(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitDropColumn(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitDropColumn(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitDropColumn(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1768,28 +1757,33 @@ public class SqlParser extends Parser {
 				_localctx = new AddColumnContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
+				setState(242);
+				_la = _input.LA(1);
+				if ( !(_la==T__33 || _la==T__34) ) {
+				_errHandler.recoverInline(this);
+				} else {
+					consume();
+				}
 				setState(243);
 				_la = _input.LA(1);
-				if ( !(_la==T__32 || _la==T__33) ) {
+				if ( !(_la==T__35 || _la==T__36) ) {
 				_errHandler.recoverInline(this);
 				} else {
 					consume();
 				}
 				setState(244);
-				_la = _input.LA(1);
-				if ( !(_la==T__34 || _la==T__35) ) {
-				_errHandler.recoverInline(this);
-				} else {
-					consume();
-				}
-				setState(245);
 				match(ID);
-				setState(246);
+				setState(245);
 				tipo_literal();
-				{
 				setState(247);
-				constraint();
+				_la = _input.LA(1);
+				if (_la==T__28) {
+					{
+					setState(246);
+					constraint();
+					}
 				}
+
 				}
 				break;
 			case 2:
@@ -1798,7 +1792,7 @@ public class SqlParser extends Parser {
 				{
 				setState(249);
 				_la = _input.LA(1);
-				if ( !(_la==T__32 || _la==T__33) ) {
+				if ( !(_la==T__33 || _la==T__34) ) {
 				_errHandler.recoverInline(this);
 				} else {
 					consume();
@@ -1820,7 +1814,7 @@ public class SqlParser extends Parser {
 				}
 				setState(252);
 				_la = _input.LA(1);
-				if ( !(_la==T__34 || _la==T__35) ) {
+				if ( !(_la==T__35 || _la==T__36) ) {
 				_errHandler.recoverInline(this);
 				} else {
 					consume();
@@ -1842,7 +1836,7 @@ public class SqlParser extends Parser {
 				}
 				setState(255);
 				_la = _input.LA(1);
-				if ( !(_la==T__36 || _la==T__37) ) {
+				if ( !(_la==T__28 || _la==T__37) ) {
 				_errHandler.recoverInline(this);
 				} else {
 					consume();
@@ -1871,15 +1865,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_show_table_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterShow_table_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterShow_table_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitShow_table_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitShow_table_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitShow_table_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitShow_table_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1928,15 +1922,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_show_column_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterShow_column_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterShow_column_statement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitShow_column_statement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitShow_column_statement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitShow_column_statement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitShow_column_statement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2005,15 +1999,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dmlstatement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterDmlstatement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterDmlstatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitDmlstatement(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitDmlstatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitDmlstatement(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitDmlstatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2085,22 +2079,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_insert_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterInsert_value(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterInsert_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitInsert_value(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitInsert_value(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) {
-				try {
-					return ((ANTLR.SqlVisitor<? extends T>)visitor).visitInsert_value(this);
-				} catch (JSONException e) {
-
-					return visitor.visitChildren(this);
-				}
-			}
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitInsert_value(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2191,15 +2178,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_update_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterUpdate_value(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterUpdate_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitUpdate_value(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitUpdate_value(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitUpdate_value(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitUpdate_value(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2295,15 +2282,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_delete_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterDelete_value(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterDelete_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitDelete_value(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitDelete_value(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitDelete_value(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitDelete_value(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2376,15 +2363,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_select_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterSelect_value(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterSelect_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitSelect_value(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitSelect_value(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitSelect_value(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitSelect_value(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2537,15 +2524,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_columns; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterColumns(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterColumns(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitColumns(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitColumns(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitColumns(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitColumns(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2603,15 +2590,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_list_values; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterList_values(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterList_values(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitList_values(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitList_values(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitList_values(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitList_values(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2675,15 +2662,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_literal; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterLiteral(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitLiteral(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitLiteral(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2745,15 +2732,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_int_literal; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterInt_literal(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterInt_literal(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitInt_literal(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitInt_literal(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitInt_literal(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitInt_literal(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2787,15 +2774,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_float_literal; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterFloat_literal(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterFloat_literal(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitFloat_literal(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitFloat_literal(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitFloat_literal(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitFloat_literal(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2829,15 +2816,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_date_literal; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterDate_literal(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterDate_literal(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitDate_literal(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitDate_literal(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitDate_literal(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitDate_literal(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2871,15 +2858,15 @@ public class SqlParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_char_literal; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterChar_literal(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterChar_literal(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitChar_literal(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitChar_literal(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitChar_literal(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitChar_literal(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2910,7 +2897,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_rel_op; }
-
+	 
 		public Rel_opContext() { }
 		public void copyFrom(Rel_opContext ctx) {
 			super.copyFrom(ctx);
@@ -2920,15 +2907,15 @@ public class SqlParser extends Parser {
 		public RelLContext(Rel_opContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRelL(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRelL(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRelL(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRelL(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRelL(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRelL(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2936,15 +2923,15 @@ public class SqlParser extends Parser {
 		public RelLEContext(Rel_opContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRelLE(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRelLE(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRelLE(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRelLE(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRelLE(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRelLE(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2952,15 +2939,15 @@ public class SqlParser extends Parser {
 		public EqEContext(Rel_opContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterEqE(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterEqE(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitEqE(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitEqE(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitEqE(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitEqE(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2968,15 +2955,15 @@ public class SqlParser extends Parser {
 		public RelBEContext(Rel_opContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRelBE(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRelBE(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRelBE(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRelBE(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRelBE(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRelBE(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2984,15 +2971,15 @@ public class SqlParser extends Parser {
 		public EqNEContext(Rel_opContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterEqNE(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterEqNE(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitEqNE(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitEqNE(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitEqNE(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitEqNE(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3000,15 +2987,15 @@ public class SqlParser extends Parser {
 		public RekBContext(Rel_opContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRekB(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRekB(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRekB(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRekB(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRekB(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRekB(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3087,7 +3074,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_rel_op2; }
-
+	 
 		public Rel_op2Context() { }
 		public void copyFrom(Rel_op2Context ctx) {
 			super.copyFrom(ctx);
@@ -3097,15 +3084,15 @@ public class SqlParser extends Parser {
 		public EqE2Context(Rel_op2Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterEqE2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterEqE2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitEqE2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitEqE2(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitEqE2(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitEqE2(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3113,15 +3100,15 @@ public class SqlParser extends Parser {
 		public RelLE2Context(Rel_op2Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRelLE2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRelLE2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRelLE2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRelLE2(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRelLE2(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRelLE2(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3129,15 +3116,15 @@ public class SqlParser extends Parser {
 		public RelL2Context(Rel_op2Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRelL2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRelL2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRelL2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRelL2(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRelL2(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRelL2(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3145,15 +3132,15 @@ public class SqlParser extends Parser {
 		public EqNE2Context(Rel_op2Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterEqNE2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterEqNE2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitEqNE2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitEqNE2(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitEqNE2(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitEqNE2(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3161,15 +3148,15 @@ public class SqlParser extends Parser {
 		public RekB2Context(Rel_op2Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRekB2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRekB2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRekB2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRekB2(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRekB2(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRekB2(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3177,15 +3164,15 @@ public class SqlParser extends Parser {
 		public RelBE2Context(Rel_op2Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRelBE2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRelBE2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRelBE2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRelBE2(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRelBE2(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRelBE2(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3264,7 +3251,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_rel_op3; }
-
+	 
 		public Rel_op3Context() { }
 		public void copyFrom(Rel_op3Context ctx) {
 			super.copyFrom(ctx);
@@ -3274,15 +3261,15 @@ public class SqlParser extends Parser {
 		public EqNE3Context(Rel_op3Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterEqNE3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterEqNE3(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitEqNE3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitEqNE3(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitEqNE3(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitEqNE3(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3290,15 +3277,15 @@ public class SqlParser extends Parser {
 		public RelL3Context(Rel_op3Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRelL3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRelL3(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRelL3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRelL3(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRelL3(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRelL3(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3306,15 +3293,15 @@ public class SqlParser extends Parser {
 		public EqE3Context(Rel_op3Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterEqE3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterEqE3(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitEqE3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitEqE3(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitEqE3(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitEqE3(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3322,15 +3309,15 @@ public class SqlParser extends Parser {
 		public RelLE3Context(Rel_op3Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRelLE3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRelLE3(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRelLE3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRelLE3(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRelLE3(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRelLE3(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3338,15 +3325,15 @@ public class SqlParser extends Parser {
 		public RekB3Context(Rel_op3Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRekB3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRekB3(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRekB3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRekB3(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRekB3(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRekB3(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3354,15 +3341,15 @@ public class SqlParser extends Parser {
 		public RelBE3Context(Rel_op3Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterRelBE3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterRelBE3(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitRelBE3(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitRelBE3(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitRelBE3(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitRelBE3(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3441,25 +3428,57 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cond_op; }
-
+	 
 		public Cond_opContext() { }
 		public void copyFrom(Cond_opContext ctx) {
 			super.copyFrom(ctx);
+		}
+	}
+	public static class Logic2Context extends Cond_opContext {
+		public Logic2Context(Cond_opContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterLogic2(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitLogic2(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitLogic2(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class Logic1Context extends Cond_opContext {
+		public Logic1Context(Cond_opContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterLogic1(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitLogic1(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitLogic1(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	public static class Cond_op1Context extends Cond_opContext {
 		public Cond_op1Context(Cond_opContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterCond_op1(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterCond_op1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitCond_op1(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitCond_op1(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitCond_op1(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitCond_op1(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3467,15 +3486,15 @@ public class SqlParser extends Parser {
 		public Cond_op2Context(Cond_opContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterCond_op2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterCond_op2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitCond_op2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitCond_op2(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitCond_op2(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitCond_op2(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3484,7 +3503,7 @@ public class SqlParser extends Parser {
 		Cond_opContext _localctx = new Cond_opContext(_ctx, getState());
 		enterRule(_localctx, 74, RULE_cond_op);
 		try {
-			setState(404);
+			setState(406);
 			switch (_input.LA(1)) {
 			case T__75:
 				_localctx = new Cond_op1Context(_localctx);
@@ -3500,6 +3519,22 @@ public class SqlParser extends Parser {
 				{
 				setState(403);
 				match(T__76);
+				}
+				break;
+			case T__77:
+				_localctx = new Logic1Context(_localctx);
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(404);
+				match(T__77);
+				}
+				break;
+			case T__78:
+				_localctx = new Logic2Context(_localctx);
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(405);
+				match(T__78);
 				}
 				break;
 			default:
@@ -3522,7 +3557,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expression; }
-
+	 
 		public ExpressionContext() { }
 		public void copyFrom(ExpressionContext ctx) {
 			super.copyFrom(ctx);
@@ -3535,15 +3570,15 @@ public class SqlParser extends Parser {
 		public Expression2Context(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterExpression2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterExpression2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitExpression2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitExpression2(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitExpression2(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitExpression2(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3560,15 +3595,15 @@ public class SqlParser extends Parser {
 		public Expression1Context(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterExpression1(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterExpression1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitExpression1(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitExpression1(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitExpression1(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitExpression1(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3593,14 +3628,14 @@ public class SqlParser extends Parser {
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
-			setState(407);
+			setState(409);
 			expr1(0);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(415);
+			setState(417);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,33,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!=ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
@@ -3608,16 +3643,16 @@ public class SqlParser extends Parser {
 					{
 					_localctx = new Expression1Context(new ExpressionContext(_parentctx, _parentState));
 					pushNewRecursionContext(_localctx, _startState, RULE_expression);
-					setState(409);
-					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(410);
-					cond_op();
 					setState(411);
+					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
+					setState(412);
+					cond_op();
+					setState(413);
 					expr1(0);
 					}
-					}
+					} 
 				}
-				setState(417);
+				setState(419);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,33,_ctx);
 			}
@@ -3639,7 +3674,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expr1; }
-
+	 
 		public Expr1Context() { }
 		public void copyFrom(Expr1Context ctx) {
 			super.copyFrom(ctx);
@@ -3658,15 +3693,15 @@ public class SqlParser extends Parser {
 		public Expr11Context(Expr1Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterExpr11(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterExpr11(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitExpr11(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitExpr11(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitExpr11(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitExpr11(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3677,15 +3712,15 @@ public class SqlParser extends Parser {
 		public Expr12Context(Expr1Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterExpr12(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterExpr12(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitExpr12(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitExpr12(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitExpr12(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitExpr12(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3710,14 +3745,14 @@ public class SqlParser extends Parser {
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
-			setState(419);
+			setState(421);
 			expr3(0);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(427);
+			setState(429);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,34,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!=ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
@@ -3725,16 +3760,16 @@ public class SqlParser extends Parser {
 					{
 					_localctx = new Expr11Context(new Expr1Context(_parentctx, _parentState));
 					pushNewRecursionContext(_localctx, _startState, RULE_expr1);
-					setState(421);
-					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(422);
-					cond_op();
 					setState(423);
+					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
+					setState(424);
+					cond_op();
+					setState(425);
 					expr3(0);
 					}
-					}
+					} 
 				}
-				setState(429);
+				setState(431);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,34,_ctx);
 			}
@@ -3756,7 +3791,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expr3; }
-
+	 
 		public Expr3Context() { }
 		public void copyFrom(Expr3Context ctx) {
 			super.copyFrom(ctx);
@@ -3775,15 +3810,15 @@ public class SqlParser extends Parser {
 		public Expr31Context(Expr3Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterExpr31(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterExpr31(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitExpr31(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitExpr31(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitExpr31(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitExpr31(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3800,15 +3835,15 @@ public class SqlParser extends Parser {
 		public Expr33Context(Expr3Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterExpr33(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterExpr33(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitExpr33(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitExpr33(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitExpr33(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitExpr33(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3819,15 +3854,15 @@ public class SqlParser extends Parser {
 		public Expr32Context(Expr3Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterExpr32(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterExpr32(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitExpr32(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitExpr32(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitExpr32(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitExpr32(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3844,15 +3879,15 @@ public class SqlParser extends Parser {
 		public Expr34Context(Expr3Context ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterExpr34(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterExpr34(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitExpr34(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitExpr34(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitExpr34(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitExpr34(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3872,17 +3907,17 @@ public class SqlParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(436);
+			setState(438);
 			switch (_input.LA(1)) {
 			case T__7:
-			case T__77:
+			case T__79:
 			case ID:
 				{
 				_localctx = new Expr32Context(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(431);
+				setState(433);
 				unifactor();
 				}
 				break;
@@ -3894,11 +3929,11 @@ public class SqlParser extends Parser {
 				_localctx = new Expr34Context(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(432);
-				literal();
-				setState(433);
-				rel_op3();
 				setState(434);
+				literal();
+				setState(435);
+				rel_op3();
+				setState(436);
 				expr3(1);
 				}
 				break;
@@ -3906,26 +3941,26 @@ public class SqlParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(448);
+			setState(450);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,37,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!=ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(446);
+					setState(448);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,36,_ctx) ) {
 					case 1:
 						{
 						_localctx = new Expr31Context(new Expr3Context(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr3);
-						setState(438);
-						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(439);
-						rel_op();
 						setState(440);
+						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
+						setState(441);
+						rel_op();
+						setState(442);
 						unifactor();
 						}
 						break;
@@ -3933,18 +3968,18 @@ public class SqlParser extends Parser {
 						{
 						_localctx = new Expr33Context(new Expr3Context(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr3);
-						setState(442);
-						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(443);
-						rel_op2();
 						setState(444);
+						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
+						setState(445);
+						rel_op2();
+						setState(446);
 						literal();
 						}
 						break;
 					}
-					}
+					} 
 				}
-				setState(450);
+				setState(452);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,37,_ctx);
 			}
@@ -3966,7 +4001,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_unifactor; }
-
+	 
 		public UnifactorContext() { }
 		public void copyFrom(UnifactorContext ctx) {
 			super.copyFrom(ctx);
@@ -3979,15 +4014,15 @@ public class SqlParser extends Parser {
 		public UniFactorFactorContext(UnifactorContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterUniFactorFactor(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterUniFactorFactor(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitUniFactorFactor(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitUniFactorFactor(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitUniFactorFactor(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitUniFactorFactor(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3998,15 +4033,15 @@ public class SqlParser extends Parser {
 		public UniFactorNotContext(UnifactorContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterUniFactorNot(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterUniFactorNot(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitUniFactorNot(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitUniFactorNot(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitUniFactorNot(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitUniFactorNot(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4015,15 +4050,15 @@ public class SqlParser extends Parser {
 		UnifactorContext _localctx = new UnifactorContext(_ctx, getState());
 		enterRule(_localctx, 82, RULE_unifactor);
 		try {
-			setState(454);
+			setState(456);
 			switch (_input.LA(1)) {
-			case T__77:
+			case T__79:
 				_localctx = new UniFactorNotContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(451);
-				match(T__77);
-				setState(452);
+				setState(453);
+				match(T__79);
+				setState(454);
 				factor();
 				}
 				break;
@@ -4032,7 +4067,7 @@ public class SqlParser extends Parser {
 				_localctx = new UniFactorFactorContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(453);
+				setState(455);
 				factor();
 				}
 				break;
@@ -4056,7 +4091,7 @@ public class SqlParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_factor; }
-
+	 
 		public FactorContext() { }
 		public void copyFrom(FactorContext ctx) {
 			super.copyFrom(ctx);
@@ -4067,15 +4102,15 @@ public class SqlParser extends Parser {
 		public FactorIDContext(FactorContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterFactorID(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterFactorID(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitFactorID(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitFactorID(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitFactorID(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitFactorID(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4086,15 +4121,15 @@ public class SqlParser extends Parser {
 		public FactorExpressionContext(FactorContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterFactorExpression(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterFactorExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitFactorExpression(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitFactorExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitFactorExpression(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitFactorExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4106,15 +4141,15 @@ public class SqlParser extends Parser {
 		public FactorID2Context(FactorContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).enterFactorID2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).enterFactorID2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ANTLR.SqlListener ) ((ANTLR.SqlListener)listener).exitFactorID2(this);
+			if ( listener instanceof SqlListener ) ((SqlListener)listener).exitFactorID2(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ANTLR.SqlVisitor ) return ((ANTLR.SqlVisitor<? extends T>)visitor).visitFactorID2(this);
+			if ( visitor instanceof SqlVisitor ) return ((SqlVisitor<? extends T>)visitor).visitFactorID2(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4123,18 +4158,18 @@ public class SqlParser extends Parser {
 		FactorContext _localctx = new FactorContext(_ctx, getState());
 		enterRule(_localctx, 84, RULE_factor);
 		try {
-			setState(464);
+			setState(466);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,39,_ctx) ) {
 			case 1:
 				_localctx = new FactorExpressionContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(456);
-				match(T__7);
-				setState(457);
-				expression(0);
 				setState(458);
+				match(T__7);
+				setState(459);
+				expression(0);
+				setState(460);
 				match(T__8);
 				}
 				break;
@@ -4142,7 +4177,7 @@ public class SqlParser extends Parser {
 				_localctx = new FactorIDContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(460);
+				setState(462);
 				match(ID);
 				}
 				break;
@@ -4150,11 +4185,11 @@ public class SqlParser extends Parser {
 				_localctx = new FactorID2Context(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(461);
-				match(ID);
-				setState(462);
-				matchWildcard();
 				setState(463);
+				match(ID);
+				setState(464);
+				matchWildcard();
+				setState(465);
 				match(ID);
 				}
 				break;
@@ -4207,7 +4242,7 @@ public class SqlParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3Z\u01d5\4\2\t\2\4"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\\\u01d7\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -4218,130 +4253,130 @@ public class SqlParser extends Parser {
 		"\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\6\t\u0082\n\t\r\t\16\t\u0083\3\t"+
 		"\3\t\3\t\3\n\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f"+
 		"\3\f\3\f\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\17\3\17"+
-		"\5\17\u00a7\n\17\3\17\3\17\3\17\3\20\3\20\3\20\5\20\u00af\n\20\3\20\3"+
-		"\20\5\20\u00b3\n\20\5\20\u00b5\n\20\3\21\3\21\3\21\3\21\3\21\3\21\5\21"+
-		"\u00bd\n\21\3\22\3\22\3\23\3\23\3\23\3\23\3\23\3\23\3\23\7\23\u00c8\n"+
-		"\23\f\23\16\23\u00cb\13\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\7\23"+
-		"\u00d5\n\23\f\23\16\23\u00d8\13\23\3\23\3\23\3\23\3\23\3\23\3\23\7\23"+
-		"\u00e0\n\23\f\23\16\23\u00e3\13\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23"+
-		"\5\23\u00ec\n\23\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\25\3\25\3\25"+
-		"\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\5\25\u0104\n\25"+
-		"\3\26\3\26\3\26\3\26\3\27\3\27\3\27\3\27\3\27\3\27\3\30\3\30\3\30\3\30"+
-		"\5\30\u0114\n\30\3\31\3\31\3\31\3\31\3\31\3\31\3\31\5\31\u011d\n\31\3"+
-		"\31\3\31\3\31\3\31\3\31\3\31\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3"+
-		"\32\3\32\7\32\u012f\n\32\f\32\16\32\u0132\13\32\3\32\3\32\5\32\u0136\n"+
-		"\32\3\32\3\32\3\33\3\33\3\33\3\33\3\33\5\33\u013f\n\33\3\33\3\33\3\34"+
+		"\3\17\3\17\3\17\3\20\3\20\3\20\5\20\u00ad\n\20\3\20\3\20\5\20\u00b1\n"+
+		"\20\5\20\u00b3\n\20\3\21\3\21\3\21\3\21\3\21\3\21\5\21\u00bb\n\21\3\22"+
+		"\3\22\3\22\3\23\3\23\3\23\3\23\3\23\3\23\3\23\7\23\u00c7\n\23\f\23\16"+
+		"\23\u00ca\13\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\7\23\u00d4\n\23"+
+		"\f\23\16\23\u00d7\13\23\3\23\3\23\3\23\3\23\3\23\3\23\7\23\u00df\n\23"+
+		"\f\23\16\23\u00e2\13\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\5\23\u00eb"+
+		"\n\23\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\25\3\25\3\25\3\25\3\25"+
+		"\5\25\u00fa\n\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\25\5\25\u0104\n"+
+		"\25\3\26\3\26\3\26\3\26\3\27\3\27\3\27\3\27\3\27\3\27\3\30\3\30\3\30\3"+
+		"\30\5\30\u0114\n\30\3\31\3\31\3\31\3\31\3\31\3\31\3\31\5\31\u011d\n\31"+
+		"\3\31\3\31\3\31\3\31\3\31\3\31\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3\32"+
+		"\3\32\3\32\7\32\u012f\n\32\f\32\16\32\u0132\13\32\3\32\3\32\5\32\u0136"+
+		"\n\32\3\32\3\32\3\33\3\33\3\33\3\33\3\33\5\33\u013f\n\33\3\33\3\33\3\34"+
 		"\3\34\3\34\3\34\3\34\7\34\u0148\n\34\f\34\16\34\u014b\13\34\5\34\u014d"+
 		"\n\34\3\34\3\34\3\34\3\34\5\34\u0153\n\34\3\34\3\34\3\34\3\34\5\34\u0159"+
 		"\n\34\5\34\u015b\n\34\3\34\3\34\3\35\3\35\3\35\7\35\u0162\n\35\f\35\16"+
 		"\35\u0165\13\35\3\36\3\36\3\36\7\36\u016a\n\36\f\36\16\36\u016d\13\36"+
 		"\3\37\3\37\3\37\3\37\5\37\u0173\n\37\3 \3 \3!\3!\3\"\3\"\3#\3#\3$\3$\3"+
 		"$\3$\3$\3$\5$\u0183\n$\3%\3%\3%\3%\3%\3%\5%\u018b\n%\3&\3&\3&\3&\3&\3"+
-		"&\5&\u0193\n&\3\'\3\'\5\'\u0197\n\'\3(\3(\3(\3(\3(\3(\3(\7(\u01a0\n(\f"+
-		"(\16(\u01a3\13(\3)\3)\3)\3)\3)\3)\3)\7)\u01ac\n)\f)\16)\u01af\13)\3*\3"+
-		"*\3*\3*\3*\3*\5*\u01b7\n*\3*\3*\3*\3*\3*\3*\3*\3*\7*\u01c1\n*\f*\16*\u01c4"+
-		"\13*\3+\3+\3+\5+\u01c9\n+\3,\3,\3,\3,\3,\3,\3,\3,\5,\u01d3\n,\3,\2\5N"+
-		"PR-\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@B"+
-		"DFHJLNPRTV\2\36\3\2\3\4\3\2\5\6\3\2\b\t\3\2\f\r\3\2\16\17\3\2\20\21\3"+
-		"\2\22\23\3\2\24\25\3\2\26\27\3\2\30\31\3\2#$\3\2%&\3\2\'(\3\2)*\3\2+,"+
-		"\3\2-.\3\2/\60\3\2\61\62\3\2\63\64\3\2\65\66\3\2\678\3\2:;\3\2<=\3\2>"+
-		"?\3\2AB\3\2CD\3\2EF\3\2GH\u01ef\2Y\3\2\2\2\4_\3\2\2\2\6c\3\2\2\2\bg\3"+
-		"\2\2\2\ns\3\2\2\2\fu\3\2\2\2\16w\3\2\2\2\20|\3\2\2\2\22\u0088\3\2\2\2"+
-		"\24\u008d\3\2\2\2\26\u0093\3\2\2\2\30\u0098\3\2\2\2\32\u00a0\3\2\2\2\34"+
-		"\u00a4\3\2\2\2\36\u00b4\3\2\2\2 \u00bc\3\2\2\2\"\u00be\3\2\2\2$\u00eb"+
-		"\3\2\2\2&\u00ed\3\2\2\2(\u0103\3\2\2\2*\u0105\3\2\2\2,\u0109\3\2\2\2."+
-		"\u0113\3\2\2\2\60\u0115\3\2\2\2\62\u0124\3\2\2\2\64\u0139\3\2\2\2\66\u0142"+
-		"\3\2\2\28\u015e\3\2\2\2:\u0166\3\2\2\2<\u0172\3\2\2\2>\u0174\3\2\2\2@"+
-		"\u0176\3\2\2\2B\u0178\3\2\2\2D\u017a\3\2\2\2F\u0182\3\2\2\2H\u018a\3\2"+
-		"\2\2J\u0192\3\2\2\2L\u0196\3\2\2\2N\u0198\3\2\2\2P\u01a4\3\2\2\2R\u01b6"+
-		"\3\2\2\2T\u01c8\3\2\2\2V\u01d2\3\2\2\2XZ\5\4\3\2YX\3\2\2\2Z[\3\2\2\2["+
-		"Y\3\2\2\2[\\\3\2\2\2\\\3\3\2\2\2]`\5\6\4\2^`\5\f\7\2_]\3\2\2\2_^\3\2\2"+
-		"\2`\5\3\2\2\2ad\5\b\5\2bd\5\n\6\2ca\3\2\2\2cb\3\2\2\2d\7\3\2\2\2eh\5\16"+
-		"\b\2fh\5\20\t\2ge\3\2\2\2gf\3\2\2\2h\t\3\2\2\2it\5\22\n\2jt\5\24\13\2"+
-		"kt\5\26\f\2lt\5\30\r\2mt\5\34\17\2nt\5\32\16\2ot\5&\24\2pt\5*\26\2qt\5"+
-		",\27\2rt\5.\30\2si\3\2\2\2sj\3\2\2\2sk\3\2\2\2sl\3\2\2\2sm\3\2\2\2sn\3"+
-		"\2\2\2so\3\2\2\2sp\3\2\2\2sq\3\2\2\2sr\3\2\2\2t\13\3\2\2\2uv\5\66\34\2"+
-		"v\r\3\2\2\2wx\t\2\2\2xy\t\3\2\2yz\7U\2\2z{\7\7\2\2{\17\3\2\2\2|}\t\2\2"+
-		"\2}~\t\4\2\2~\177\7U\2\2\177\u0081\7\n\2\2\u0080\u0082\5\36\20\2\u0081"+
-		"\u0080\3\2\2\2\u0082\u0083\3\2\2\2\u0083\u0081\3\2\2\2\u0083\u0084\3\2"+
-		"\2\2\u0084\u0085\3\2\2\2\u0085\u0086\7\13\2\2\u0086\u0087\7\7\2\2\u0087"+
-		"\21\3\2\2\2\u0088\u0089\t\5\2\2\u0089\u008a\t\3\2\2\u008a\u008b\7U\2\2"+
-		"\u008b\u008c\7\7\2\2\u008c\23\3\2\2\2\u008d\u008e\t\6\2\2\u008e\u008f"+
-		"\t\4\2\2\u008f\u0090\7U\2\2\u0090\u0091\5(\25\2\u0091\u0092\7\7\2\2\u0092"+
-		"\25\3\2\2\2\u0093\u0094\t\5\2\2\u0094\u0095\t\4\2\2\u0095\u0096\7U\2\2"+
-		"\u0096\u0097\7\7\2\2\u0097\27\3\2\2\2\u0098\u0099\t\6\2\2\u0099\u009a"+
-		"\t\3\2\2\u009a\u009b\7U\2\2\u009b\u009c\t\7\2\2\u009c\u009d\t\b\2\2\u009d"+
-		"\u009e\7U\2\2\u009e\u009f\7\7\2\2\u009f\31\3\2\2\2\u00a0\u00a1\t\t\2\2"+
-		"\u00a1\u00a2\t\n\2\2\u00a2\u00a3\7\7\2\2\u00a3\33\3\2\2\2\u00a4\u00a6"+
-		"\t\13\2\2\u00a5\u00a7\t\3\2\2\u00a6\u00a5\3\2\2\2\u00a6\u00a7\3\2\2\2"+
-		"\u00a7\u00a8\3\2\2\2\u00a8\u00a9\7U\2\2\u00a9\u00aa\7\7\2\2\u00aa\35\3"+
-		"\2\2\2\u00ab\u00ac\7U\2\2\u00ac\u00ae\5 \21\2\u00ad\u00af\7\32\2\2\u00ae"+
-		"\u00ad\3\2\2\2\u00ae\u00af\3\2\2\2\u00af\u00b5\3\2\2\2\u00b0\u00b2\5\""+
-		"\22\2\u00b1\u00b3\7\32\2\2\u00b2\u00b1\3\2\2\2\u00b2\u00b3\3\2\2\2\u00b3"+
-		"\u00b5\3\2\2\2\u00b4\u00ab\3\2\2\2\u00b4\u00b0\3\2\2\2\u00b5\37\3\2\2"+
-		"\2\u00b6\u00bd\7\33\2\2\u00b7\u00bd\7\34\2\2\u00b8\u00b9\7\35\2\2\u00b9"+
-		"\u00ba\7V\2\2\u00ba\u00bd\7\13\2\2\u00bb\u00bd\7\36\2\2\u00bc\u00b6\3"+
-		"\2\2\2\u00bc\u00b7\3\2\2\2\u00bc\u00b8\3\2\2\2\u00bc\u00bb\3\2\2\2\u00bd"+
-		"!\3\2\2\2\u00be\u00bf\5$\23\2\u00bf#\3\2\2\2\u00c0\u00c1\7U\2\2\u00c1"+
-		"\u00c2\7\37\2\2\u00c2\u00c3\7 \2\2\u00c3\u00c4\7\n\2\2\u00c4\u00c9\7U"+
-		"\2\2\u00c5\u00c6\7\32\2\2\u00c6\u00c8\7U\2\2\u00c7\u00c5\3\2\2\2\u00c8"+
-		"\u00cb\3\2\2\2\u00c9\u00c7\3\2\2\2\u00c9\u00ca\3\2\2\2\u00ca\u00cc\3\2"+
-		"\2\2\u00cb\u00c9\3\2\2\2\u00cc\u00ec\7\13\2\2\u00cd\u00ce\7U\2\2\u00ce"+
-		"\u00cf\7!\2\2\u00cf\u00d0\7 \2\2\u00d0\u00d1\7\n\2\2\u00d1\u00d6\7U\2"+
-		"\2\u00d2\u00d3\7\32\2\2\u00d3\u00d5\7U\2\2\u00d4\u00d2\3\2\2\2\u00d5\u00d8"+
-		"\3\2\2\2\u00d6\u00d4\3\2\2\2\u00d6\u00d7\3\2\2\2\u00d7\u00d9\3\2\2\2\u00d8"+
-		"\u00d6\3\2\2\2\u00d9\u00da\7\13\2\2\u00da\u00db\7U\2\2\u00db\u00dc\7\n"+
-		"\2\2\u00dc\u00e1\7U\2\2\u00dd\u00de\7\32\2\2\u00de\u00e0\7U\2\2\u00df"+
-		"\u00dd\3\2\2\2\u00e0\u00e3\3\2\2\2\u00e1\u00df\3\2\2\2\u00e1\u00e2\3\2"+
-		"\2\2\u00e2\u00e4\3\2\2\2\u00e3\u00e1\3\2\2\2\u00e4\u00ec\7\13\2\2\u00e5"+
-		"\u00e6\7U\2\2\u00e6\u00e7\7\"\2\2\u00e7\u00e8\7\n\2\2\u00e8\u00e9\5N("+
-		"\2\u00e9\u00ea\7\13\2\2\u00ea\u00ec\3\2\2\2\u00eb\u00c0\3\2\2\2\u00eb"+
-		"\u00cd\3\2\2\2\u00eb\u00e5\3\2\2\2\u00ec%\3\2\2\2\u00ed\u00ee\t\6\2\2"+
-		"\u00ee\u00ef\t\4\2\2\u00ef\u00f0\7U\2\2\u00f0\u00f1\t\7\2\2\u00f1\u00f2"+
-		"\t\b\2\2\u00f2\u00f3\7U\2\2\u00f3\u00f4\7\7\2\2\u00f4\'\3\2\2\2\u00f5"+
-		"\u00f6\t\f\2\2\u00f6\u00f7\t\r\2\2\u00f7\u00f8\7U\2\2\u00f8\u00f9\5 \21"+
-		"\2\u00f9\u00fa\5\"\22\2\u00fa\u0104\3\2\2\2\u00fb\u00fc\t\f\2\2\u00fc"+
-		"\u0104\5\"\22\2\u00fd\u00fe\t\5\2\2\u00fe\u00ff\t\r\2\2\u00ff\u0104\7"+
-		"U\2\2\u0100\u0101\t\5\2\2\u0101\u0102\t\16\2\2\u0102\u0104\7U\2\2\u0103"+
-		"\u00f5\3\2\2\2\u0103\u00fb\3\2\2\2\u0103\u00fd\3\2\2\2\u0103\u0100\3\2"+
-		"\2\2\u0104)\3\2\2\2\u0105\u0106\t\t\2\2\u0106\u0107\t\17\2\2\u0107\u0108"+
-		"\7\7\2\2\u0108+\3\2\2\2\u0109\u010a\t\t\2\2\u010a\u010b\t\20\2\2\u010b"+
-		"\u010c\t\21\2\2\u010c\u010d\7U\2\2\u010d\u010e\7\7\2\2\u010e-\3\2\2\2"+
-		"\u010f\u0114\5\60\31\2\u0110\u0114\5\62\32\2\u0111\u0114\5\64\33\2\u0112"+
-		"\u0114\5\66\34\2\u0113\u010f\3\2\2\2\u0113\u0110\3\2\2\2\u0113\u0111\3"+
-		"\2\2\2\u0113\u0112\3\2\2\2\u0114/\3\2\2\2\u0115\u0116\t\22\2\2\u0116\u0117"+
-		"\t\23\2\2\u0117\u011c\7U\2\2\u0118\u0119\7\n\2\2\u0119\u011a\58\35\2\u011a"+
-		"\u011b\7\13\2\2\u011b\u011d\3\2\2\2\u011c\u0118\3\2\2\2\u011c\u011d\3"+
-		"\2\2\2\u011d\u011e\3\2\2\2\u011e\u011f\t\24\2\2\u011f\u0120\7\n\2\2\u0120"+
-		"\u0121\5:\36\2\u0121\u0122\7\13\2\2\u0122\u0123\7\7\2\2\u0123\61\3\2\2"+
-		"\2\u0124\u0125\t\25\2\2\u0125\u0126\7U\2\2\u0126\u0127\t\26\2\2\u0127"+
-		"\u0128\7U\2\2\u0128\u0129\79\2\2\u0129\u0130\5<\37\2\u012a\u012b\7\32"+
-		"\2\2\u012b\u012c\7U\2\2\u012c\u012d\79\2\2\u012d\u012f\5<\37\2\u012e\u012a"+
-		"\3\2\2\2\u012f\u0132\3\2\2\2\u0130\u012e\3\2\2\2\u0130\u0131\3\2\2\2\u0131"+
-		"\u0135\3\2\2\2\u0132\u0130\3\2\2\2\u0133\u0134\t\27\2\2\u0134\u0136\5"+
-		"N(\2\u0135\u0133\3\2\2\2\u0135\u0136\3\2\2\2\u0136\u0137\3\2\2\2\u0137"+
-		"\u0138\7\7\2\2\u0138\63\3\2\2\2\u0139\u013a\t\30\2\2\u013a\u013b\t\21"+
-		"\2\2\u013b\u013e\7U\2\2\u013c\u013d\t\27\2\2\u013d\u013f\5N(\2\u013e\u013c"+
-		"\3\2\2\2\u013e\u013f\3\2\2\2\u013f\u0140\3\2\2\2\u0140\u0141\7\7\2\2\u0141"+
-		"\65\3\2\2\2\u0142\u014c\t\31\2\2\u0143\u014d\7@\2\2\u0144\u0149\7U\2\2"+
-		"\u0145\u0146\7\32\2\2\u0146\u0148\7U\2\2\u0147\u0145\3\2\2\2\u0148\u014b"+
-		"\3\2\2\2\u0149\u0147\3\2\2\2\u0149\u014a\3\2\2\2\u014a\u014d\3\2\2\2\u014b"+
+		"&\5&\u0193\n&\3\'\3\'\3\'\3\'\5\'\u0199\n\'\3(\3(\3(\3(\3(\3(\3(\7(\u01a2"+
+		"\n(\f(\16(\u01a5\13(\3)\3)\3)\3)\3)\3)\3)\7)\u01ae\n)\f)\16)\u01b1\13"+
+		")\3*\3*\3*\3*\3*\3*\5*\u01b9\n*\3*\3*\3*\3*\3*\3*\3*\3*\7*\u01c3\n*\f"+
+		"*\16*\u01c6\13*\3+\3+\3+\5+\u01cb\n+\3,\3,\3,\3,\3,\3,\3,\3,\5,\u01d5"+
+		"\n,\3,\2\5NPR-\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64"+
+		"\668:<>@BDFHJLNPRTV\2\36\3\2\3\4\3\2\5\6\3\2\b\t\3\2\f\r\3\2\16\17\3\2"+
+		"\20\21\3\2\22\23\3\2\24\25\3\2\26\27\3\2\30\31\3\2$%\3\2&\'\4\2\37\37"+
+		"((\3\2)*\3\2+,\3\2-.\3\2/\60\3\2\61\62\3\2\63\64\3\2\65\66\3\2\678\3\2"+
+		":;\3\2<=\3\2>?\3\2AB\3\2CD\3\2EF\3\2GH\u01f3\2Y\3\2\2\2\4_\3\2\2\2\6c"+
+		"\3\2\2\2\bg\3\2\2\2\ns\3\2\2\2\fu\3\2\2\2\16w\3\2\2\2\20|\3\2\2\2\22\u0088"+
+		"\3\2\2\2\24\u008d\3\2\2\2\26\u0093\3\2\2\2\30\u0098\3\2\2\2\32\u00a0\3"+
+		"\2\2\2\34\u00a4\3\2\2\2\36\u00b2\3\2\2\2 \u00ba\3\2\2\2\"\u00bc\3\2\2"+
+		"\2$\u00ea\3\2\2\2&\u00ec\3\2\2\2(\u0103\3\2\2\2*\u0105\3\2\2\2,\u0109"+
+		"\3\2\2\2.\u0113\3\2\2\2\60\u0115\3\2\2\2\62\u0124\3\2\2\2\64\u0139\3\2"+
+		"\2\2\66\u0142\3\2\2\28\u015e\3\2\2\2:\u0166\3\2\2\2<\u0172\3\2\2\2>\u0174"+
+		"\3\2\2\2@\u0176\3\2\2\2B\u0178\3\2\2\2D\u017a\3\2\2\2F\u0182\3\2\2\2H"+
+		"\u018a\3\2\2\2J\u0192\3\2\2\2L\u0198\3\2\2\2N\u019a\3\2\2\2P\u01a6\3\2"+
+		"\2\2R\u01b8\3\2\2\2T\u01ca\3\2\2\2V\u01d4\3\2\2\2XZ\5\4\3\2YX\3\2\2\2"+
+		"Z[\3\2\2\2[Y\3\2\2\2[\\\3\2\2\2\\\3\3\2\2\2]`\5\6\4\2^`\5\f\7\2_]\3\2"+
+		"\2\2_^\3\2\2\2`\5\3\2\2\2ad\5\b\5\2bd\5\n\6\2ca\3\2\2\2cb\3\2\2\2d\7\3"+
+		"\2\2\2eh\5\16\b\2fh\5\20\t\2ge\3\2\2\2gf\3\2\2\2h\t\3\2\2\2it\5\22\n\2"+
+		"jt\5\24\13\2kt\5\26\f\2lt\5\30\r\2mt\5\34\17\2nt\5\32\16\2ot\5&\24\2p"+
+		"t\5*\26\2qt\5,\27\2rt\5.\30\2si\3\2\2\2sj\3\2\2\2sk\3\2\2\2sl\3\2\2\2"+
+		"sm\3\2\2\2sn\3\2\2\2so\3\2\2\2sp\3\2\2\2sq\3\2\2\2sr\3\2\2\2t\13\3\2\2"+
+		"\2uv\5\66\34\2v\r\3\2\2\2wx\t\2\2\2xy\t\3\2\2yz\7W\2\2z{\7\7\2\2{\17\3"+
+		"\2\2\2|}\t\2\2\2}~\t\4\2\2~\177\7W\2\2\177\u0081\7\n\2\2\u0080\u0082\5"+
+		"\36\20\2\u0081\u0080\3\2\2\2\u0082\u0083\3\2\2\2\u0083\u0081\3\2\2\2\u0083"+
+		"\u0084\3\2\2\2\u0084\u0085\3\2\2\2\u0085\u0086\7\13\2\2\u0086\u0087\7"+
+		"\7\2\2\u0087\21\3\2\2\2\u0088\u0089\t\5\2\2\u0089\u008a\t\3\2\2\u008a"+
+		"\u008b\7W\2\2\u008b\u008c\7\7\2\2\u008c\23\3\2\2\2\u008d\u008e\t\6\2\2"+
+		"\u008e\u008f\t\4\2\2\u008f\u0090\7W\2\2\u0090\u0091\5(\25\2\u0091\u0092"+
+		"\7\7\2\2\u0092\25\3\2\2\2\u0093\u0094\t\5\2\2\u0094\u0095\t\4\2\2\u0095"+
+		"\u0096\7W\2\2\u0096\u0097\7\7\2\2\u0097\27\3\2\2\2\u0098\u0099\t\6\2\2"+
+		"\u0099\u009a\t\3\2\2\u009a\u009b\7W\2\2\u009b\u009c\t\7\2\2\u009c\u009d"+
+		"\t\b\2\2\u009d\u009e\7W\2\2\u009e\u009f\7\7\2\2\u009f\31\3\2\2\2\u00a0"+
+		"\u00a1\t\t\2\2\u00a1\u00a2\t\n\2\2\u00a2\u00a3\7\7\2\2\u00a3\33\3\2\2"+
+		"\2\u00a4\u00a5\t\13\2\2\u00a5\u00a6\t\3\2\2\u00a6\u00a7\7W\2\2\u00a7\u00a8"+
+		"\7\7\2\2\u00a8\35\3\2\2\2\u00a9\u00aa\7W\2\2\u00aa\u00ac\5 \21\2\u00ab"+
+		"\u00ad\7\32\2\2\u00ac\u00ab\3\2\2\2\u00ac\u00ad\3\2\2\2\u00ad\u00b3\3"+
+		"\2\2\2\u00ae\u00b0\5\"\22\2\u00af\u00b1\7\32\2\2\u00b0\u00af\3\2\2\2\u00b0"+
+		"\u00b1\3\2\2\2\u00b1\u00b3\3\2\2\2\u00b2\u00a9\3\2\2\2\u00b2\u00ae\3\2"+
+		"\2\2\u00b3\37\3\2\2\2\u00b4\u00bb\7\33\2\2\u00b5\u00bb\7\34\2\2\u00b6"+
+		"\u00b7\7\35\2\2\u00b7\u00b8\7X\2\2\u00b8\u00bb\7\13\2\2\u00b9\u00bb\7"+
+		"\36\2\2\u00ba\u00b4\3\2\2\2\u00ba\u00b5\3\2\2\2\u00ba\u00b6\3\2\2\2\u00ba"+
+		"\u00b9\3\2\2\2\u00bb!\3\2\2\2\u00bc\u00bd\7\37\2\2\u00bd\u00be\5$\23\2"+
+		"\u00be#\3\2\2\2\u00bf\u00c0\7W\2\2\u00c0\u00c1\7 \2\2\u00c1\u00c2\7!\2"+
+		"\2\u00c2\u00c3\7\n\2\2\u00c3\u00c8\7W\2\2\u00c4\u00c5\7\32\2\2\u00c5\u00c7"+
+		"\7W\2\2\u00c6\u00c4\3\2\2\2\u00c7\u00ca\3\2\2\2\u00c8\u00c6\3\2\2\2\u00c8"+
+		"\u00c9\3\2\2\2\u00c9\u00cb\3\2\2\2\u00ca\u00c8\3\2\2\2\u00cb\u00eb\7\13"+
+		"\2\2\u00cc\u00cd\7W\2\2\u00cd\u00ce\7\"\2\2\u00ce\u00cf\7!\2\2\u00cf\u00d0"+
+		"\7\n\2\2\u00d0\u00d5\7W\2\2\u00d1\u00d2\7\32\2\2\u00d2\u00d4\7W\2\2\u00d3"+
+		"\u00d1\3\2\2\2\u00d4\u00d7\3\2\2\2\u00d5\u00d3\3\2\2\2\u00d5\u00d6\3\2"+
+		"\2\2\u00d6\u00d8\3\2\2\2\u00d7\u00d5\3\2\2\2\u00d8\u00d9\7\13\2\2\u00d9"+
+		"\u00da\7W\2\2\u00da\u00db\7\n\2\2\u00db\u00e0\7W\2\2\u00dc\u00dd\7\32"+
+		"\2\2\u00dd\u00df\7W\2\2\u00de\u00dc\3\2\2\2\u00df\u00e2\3\2\2\2\u00e0"+
+		"\u00de\3\2\2\2\u00e0\u00e1\3\2\2\2\u00e1\u00e3\3\2\2\2\u00e2\u00e0\3\2"+
+		"\2\2\u00e3\u00eb\7\13\2\2\u00e4\u00e5\7W\2\2\u00e5\u00e6\7#\2\2\u00e6"+
+		"\u00e7\7\n\2\2\u00e7\u00e8\5N(\2\u00e8\u00e9\7\13\2\2\u00e9\u00eb\3\2"+
+		"\2\2\u00ea\u00bf\3\2\2\2\u00ea\u00cc\3\2\2\2\u00ea\u00e4\3\2\2\2\u00eb"+
+		"%\3\2\2\2\u00ec\u00ed\t\6\2\2\u00ed\u00ee\t\4\2\2\u00ee\u00ef\7W\2\2\u00ef"+
+		"\u00f0\t\7\2\2\u00f0\u00f1\t\b\2\2\u00f1\u00f2\7W\2\2\u00f2\u00f3\7\7"+
+		"\2\2\u00f3\'\3\2\2\2\u00f4\u00f5\t\f\2\2\u00f5\u00f6\t\r\2\2\u00f6\u00f7"+
+		"\7W\2\2\u00f7\u00f9\5 \21\2\u00f8\u00fa\5\"\22\2\u00f9\u00f8\3\2\2\2\u00f9"+
+		"\u00fa\3\2\2\2\u00fa\u0104\3\2\2\2\u00fb\u00fc\t\f\2\2\u00fc\u0104\5\""+
+		"\22\2\u00fd\u00fe\t\5\2\2\u00fe\u00ff\t\r\2\2\u00ff\u0104\7W\2\2\u0100"+
+		"\u0101\t\5\2\2\u0101\u0102\t\16\2\2\u0102\u0104\7W\2\2\u0103\u00f4\3\2"+
+		"\2\2\u0103\u00fb\3\2\2\2\u0103\u00fd\3\2\2\2\u0103\u0100\3\2\2\2\u0104"+
+		")\3\2\2\2\u0105\u0106\t\t\2\2\u0106\u0107\t\17\2\2\u0107\u0108\7\7\2\2"+
+		"\u0108+\3\2\2\2\u0109\u010a\t\t\2\2\u010a\u010b\t\20\2\2\u010b\u010c\t"+
+		"\21\2\2\u010c\u010d\7W\2\2\u010d\u010e\7\7\2\2\u010e-\3\2\2\2\u010f\u0114"+
+		"\5\60\31\2\u0110\u0114\5\62\32\2\u0111\u0114\5\64\33\2\u0112\u0114\5\66"+
+		"\34\2\u0113\u010f\3\2\2\2\u0113\u0110\3\2\2\2\u0113\u0111\3\2\2\2\u0113"+
+		"\u0112\3\2\2\2\u0114/\3\2\2\2\u0115\u0116\t\22\2\2\u0116\u0117\t\23\2"+
+		"\2\u0117\u011c\7W\2\2\u0118\u0119\7\n\2\2\u0119\u011a\58\35\2\u011a\u011b"+
+		"\7\13\2\2\u011b\u011d\3\2\2\2\u011c\u0118\3\2\2\2\u011c\u011d\3\2\2\2"+
+		"\u011d\u011e\3\2\2\2\u011e\u011f\t\24\2\2\u011f\u0120\7\n\2\2\u0120\u0121"+
+		"\5:\36\2\u0121\u0122\7\13\2\2\u0122\u0123\7\7\2\2\u0123\61\3\2\2\2\u0124"+
+		"\u0125\t\25\2\2\u0125\u0126\7W\2\2\u0126\u0127\t\26\2\2\u0127\u0128\7"+
+		"W\2\2\u0128\u0129\79\2\2\u0129\u0130\5<\37\2\u012a\u012b\7\32\2\2\u012b"+
+		"\u012c\7W\2\2\u012c\u012d\79\2\2\u012d\u012f\5<\37\2\u012e\u012a\3\2\2"+
+		"\2\u012f\u0132\3\2\2\2\u0130\u012e\3\2\2\2\u0130\u0131\3\2\2\2\u0131\u0135"+
+		"\3\2\2\2\u0132\u0130\3\2\2\2\u0133\u0134\t\27\2\2\u0134\u0136\5N(\2\u0135"+
+		"\u0133\3\2\2\2\u0135\u0136\3\2\2\2\u0136\u0137\3\2\2\2\u0137\u0138\7\7"+
+		"\2\2\u0138\63\3\2\2\2\u0139\u013a\t\30\2\2\u013a\u013b\t\21\2\2\u013b"+
+		"\u013e\7W\2\2\u013c\u013d\t\27\2\2\u013d\u013f\5N(\2\u013e\u013c\3\2\2"+
+		"\2\u013e\u013f\3\2\2\2\u013f\u0140\3\2\2\2\u0140\u0141\7\7\2\2\u0141\65"+
+		"\3\2\2\2\u0142\u014c\t\31\2\2\u0143\u014d\7@\2\2\u0144\u0149\7W\2\2\u0145"+
+		"\u0146\7\32\2\2\u0146\u0148\7W\2\2\u0147\u0145\3\2\2\2\u0148\u014b\3\2"+
+		"\2\2\u0149\u0147\3\2\2\2\u0149\u014a\3\2\2\2\u014a\u014d\3\2\2\2\u014b"+
 		"\u0149\3\2\2\2\u014c\u0143\3\2\2\2\u014c\u0144\3\2\2\2\u014d\u014e\3\2"+
-		"\2\2\u014e\u014f\t\21\2\2\u014f\u0152\7U\2\2\u0150\u0151\t\27\2\2\u0151"+
+		"\2\2\u014e\u014f\t\21\2\2\u014f\u0152\7W\2\2\u0150\u0151\t\27\2\2\u0151"+
 		"\u0153\5N(\2\u0152\u0150\3\2\2\2\u0152\u0153\3\2\2\2\u0153\u015a\3\2\2"+
 		"\2\u0154\u0155\t\32\2\2\u0155\u0158\t\33\2\2\u0156\u0159\t\34\2\2\u0157"+
 		"\u0159\t\35\2\2\u0158\u0156\3\2\2\2\u0158\u0157\3\2\2\2\u0159\u015b\3"+
 		"\2\2\2\u015a\u0154\3\2\2\2\u015a\u015b\3\2\2\2\u015b\u015c\3\2\2\2\u015c"+
-		"\u015d\7\7\2\2\u015d\67\3\2\2\2\u015e\u0163\7U\2\2\u015f\u0160\7\32\2"+
-		"\2\u0160\u0162\7U\2\2\u0161\u015f\3\2\2\2\u0162\u0165\3\2\2\2\u0163\u0161"+
+		"\u015d\7\7\2\2\u015d\67\3\2\2\2\u015e\u0163\7W\2\2\u015f\u0160\7\32\2"+
+		"\2\u0160\u0162\7W\2\2\u0161\u015f\3\2\2\2\u0162\u0165\3\2\2\2\u0163\u0161"+
 		"\3\2\2\2\u0163\u0164\3\2\2\2\u01649\3\2\2\2\u0165\u0163\3\2\2\2\u0166"+
 		"\u016b\5<\37\2\u0167\u0168\7\32\2\2\u0168\u016a\5<\37\2\u0169\u0167\3"+
 		"\2\2\2\u016a\u016d\3\2\2\2\u016b\u0169\3\2\2\2\u016b\u016c\3\2\2\2\u016c"+
 		";\3\2\2\2\u016d\u016b\3\2\2\2\u016e\u0173\5> \2\u016f\u0173\5@!\2\u0170"+
 		"\u0173\5B\"\2\u0171\u0173\5D#\2\u0172\u016e\3\2\2\2\u0172\u016f\3\2\2"+
 		"\2\u0172\u0170\3\2\2\2\u0172\u0171\3\2\2\2\u0173=\3\2\2\2\u0174\u0175"+
-		"\7V\2\2\u0175?\3\2\2\2\u0176\u0177\7W\2\2\u0177A\3\2\2\2\u0178\u0179\7"+
-		"Y\2\2\u0179C\3\2\2\2\u017a\u017b\7X\2\2\u017bE\3\2\2\2\u017c\u0183\7I"+
+		"\7X\2\2\u0175?\3\2\2\2\u0176\u0177\7Y\2\2\u0177A\3\2\2\2\u0178\u0179\7"+
+		"[\2\2\u0179C\3\2\2\2\u017a\u017b\7Z\2\2\u017bE\3\2\2\2\u017c\u0183\7I"+
 		"\2\2\u017d\u0183\7J\2\2\u017e\u0183\7K\2\2\u017f\u0183\7L\2\2\u0180\u0183"+
 		"\79\2\2\u0181\u0183\7M\2\2\u0182\u017c\3\2\2\2\u0182\u017d\3\2\2\2\u0182"+
 		"\u017e\3\2\2\2\u0182\u017f\3\2\2\2\u0182\u0180\3\2\2\2\u0182\u0181\3\2"+
@@ -4352,29 +4387,30 @@ public class SqlParser extends Parser {
 		"\7I\2\2\u018d\u0193\7J\2\2\u018e\u0193\7K\2\2\u018f\u0193\7L\2\2\u0190"+
 		"\u0193\79\2\2\u0191\u0193\7M\2\2\u0192\u018c\3\2\2\2\u0192\u018d\3\2\2"+
 		"\2\u0192\u018e\3\2\2\2\u0192\u018f\3\2\2\2\u0192\u0190\3\2\2\2\u0192\u0191"+
-		"\3\2\2\2\u0193K\3\2\2\2\u0194\u0197\7N\2\2\u0195\u0197\7O\2\2\u0196\u0194"+
-		"\3\2\2\2\u0196\u0195\3\2\2\2\u0197M\3\2\2\2\u0198\u0199\b(\1\2\u0199\u019a"+
-		"\5P)\2\u019a\u01a1\3\2\2\2\u019b\u019c\f\4\2\2\u019c\u019d\5L\'\2\u019d"+
-		"\u019e\5P)\2\u019e\u01a0\3\2\2\2\u019f\u019b\3\2\2\2\u01a0\u01a3\3\2\2"+
-		"\2\u01a1\u019f\3\2\2\2\u01a1\u01a2\3\2\2\2\u01a2O\3\2\2\2\u01a3\u01a1"+
-		"\3\2\2\2\u01a4\u01a5\b)\1\2\u01a5\u01a6\5R*\2\u01a6\u01ad\3\2\2\2\u01a7"+
-		"\u01a8\f\4\2\2\u01a8\u01a9\5L\'\2\u01a9\u01aa\5R*\2\u01aa\u01ac\3\2\2"+
-		"\2\u01ab\u01a7\3\2\2\2\u01ac\u01af\3\2\2\2\u01ad\u01ab\3\2\2\2\u01ad\u01ae"+
-		"\3\2\2\2\u01aeQ\3\2\2\2\u01af\u01ad\3\2\2\2\u01b0\u01b1\b*\1\2\u01b1\u01b7"+
-		"\5T+\2\u01b2\u01b3\5<\37\2\u01b3\u01b4\5J&\2\u01b4\u01b5\5R*\3\u01b5\u01b7"+
-		"\3\2\2\2\u01b6\u01b0\3\2\2\2\u01b6\u01b2\3\2\2\2\u01b7\u01c2\3\2\2\2\u01b8"+
-		"\u01b9\f\6\2\2\u01b9\u01ba\5F$\2\u01ba\u01bb\5T+\2\u01bb\u01c1\3\2\2\2"+
-		"\u01bc\u01bd\f\4\2\2\u01bd\u01be\5H%\2\u01be\u01bf\5<\37\2\u01bf\u01c1"+
-		"\3\2\2\2\u01c0\u01b8\3\2\2\2\u01c0\u01bc\3\2\2\2\u01c1\u01c4\3\2\2\2\u01c2"+
-		"\u01c0\3\2\2\2\u01c2\u01c3\3\2\2\2\u01c3S\3\2\2\2\u01c4\u01c2\3\2\2\2"+
-		"\u01c5\u01c6\7P\2\2\u01c6\u01c9\5V,\2\u01c7\u01c9\5V,\2\u01c8\u01c5\3"+
-		"\2\2\2\u01c8\u01c7\3\2\2\2\u01c9U\3\2\2\2\u01ca\u01cb\7\n\2\2\u01cb\u01cc"+
-		"\5N(\2\u01cc\u01cd\7\13\2\2\u01cd\u01d3\3\2\2\2\u01ce\u01d3\7U\2\2\u01cf"+
-		"\u01d0\7U\2\2\u01d0\u01d1\13\2\2\2\u01d1\u01d3\7U\2\2\u01d2\u01ca\3\2"+
-		"\2\2\u01d2\u01ce\3\2\2\2\u01d2\u01cf\3\2\2\2\u01d3W\3\2\2\2*[_cgs\u0083"+
-		"\u00a6\u00ae\u00b2\u00b4\u00bc\u00c9\u00d6\u00e1\u00eb\u0103\u0113\u011c"+
-		"\u0130\u0135\u013e\u0149\u014c\u0152\u0158\u015a\u0163\u016b\u0172\u0182"+
-		"\u018a\u0192\u0196\u01a1\u01ad\u01b6\u01c0\u01c2\u01c8\u01d2";
+		"\3\2\2\2\u0193K\3\2\2\2\u0194\u0199\7N\2\2\u0195\u0199\7O\2\2\u0196\u0199"+
+		"\7P\2\2\u0197\u0199\7Q\2\2\u0198\u0194\3\2\2\2\u0198\u0195\3\2\2\2\u0198"+
+		"\u0196\3\2\2\2\u0198\u0197\3\2\2\2\u0199M\3\2\2\2\u019a\u019b\b(\1\2\u019b"+
+		"\u019c\5P)\2\u019c\u01a3\3\2\2\2\u019d\u019e\f\4\2\2\u019e\u019f\5L\'"+
+		"\2\u019f\u01a0\5P)\2\u01a0\u01a2\3\2\2\2\u01a1\u019d\3\2\2\2\u01a2\u01a5"+
+		"\3\2\2\2\u01a3\u01a1\3\2\2\2\u01a3\u01a4\3\2\2\2\u01a4O\3\2\2\2\u01a5"+
+		"\u01a3\3\2\2\2\u01a6\u01a7\b)\1\2\u01a7\u01a8\5R*\2\u01a8\u01af\3\2\2"+
+		"\2\u01a9\u01aa\f\4\2\2\u01aa\u01ab\5L\'\2\u01ab\u01ac\5R*\2\u01ac\u01ae"+
+		"\3\2\2\2\u01ad\u01a9\3\2\2\2\u01ae\u01b1\3\2\2\2\u01af\u01ad\3\2\2\2\u01af"+
+		"\u01b0\3\2\2\2\u01b0Q\3\2\2\2\u01b1\u01af\3\2\2\2\u01b2\u01b3\b*\1\2\u01b3"+
+		"\u01b9\5T+\2\u01b4\u01b5\5<\37\2\u01b5\u01b6\5J&\2\u01b6\u01b7\5R*\3\u01b7"+
+		"\u01b9\3\2\2\2\u01b8\u01b2\3\2\2\2\u01b8\u01b4\3\2\2\2\u01b9\u01c4\3\2"+
+		"\2\2\u01ba\u01bb\f\6\2\2\u01bb\u01bc\5F$\2\u01bc\u01bd\5T+\2\u01bd\u01c3"+
+		"\3\2\2\2\u01be\u01bf\f\4\2\2\u01bf\u01c0\5H%\2\u01c0\u01c1\5<\37\2\u01c1"+
+		"\u01c3\3\2\2\2\u01c2\u01ba\3\2\2\2\u01c2\u01be\3\2\2\2\u01c3\u01c6\3\2"+
+		"\2\2\u01c4\u01c2\3\2\2\2\u01c4\u01c5\3\2\2\2\u01c5S\3\2\2\2\u01c6\u01c4"+
+		"\3\2\2\2\u01c7\u01c8\7R\2\2\u01c8\u01cb\5V,\2\u01c9\u01cb\5V,\2\u01ca"+
+		"\u01c7\3\2\2\2\u01ca\u01c9\3\2\2\2\u01cbU\3\2\2\2\u01cc\u01cd\7\n\2\2"+
+		"\u01cd\u01ce\5N(\2\u01ce\u01cf\7\13\2\2\u01cf\u01d5\3\2\2\2\u01d0\u01d5"+
+		"\7W\2\2\u01d1\u01d2\7W\2\2\u01d2\u01d3\13\2\2\2\u01d3\u01d5\7W\2\2\u01d4"+
+		"\u01cc\3\2\2\2\u01d4\u01d0\3\2\2\2\u01d4\u01d1\3\2\2\2\u01d5W\3\2\2\2"+
+		"*[_cgs\u0083\u00ac\u00b0\u00b2\u00ba\u00c8\u00d5\u00e0\u00ea\u00f9\u0103"+
+		"\u0113\u011c\u0130\u0135\u013e\u0149\u014c\u0152\u0158\u015a\u0163\u016b"+
+		"\u0172\u0182\u018a\u0192\u0198\u01a3\u01af\u01b8\u01c2\u01c4\u01ca\u01d4";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

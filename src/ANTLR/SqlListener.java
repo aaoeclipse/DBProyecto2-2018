@@ -1,5 +1,5 @@
-// Generated from .\Sql.g4 by ANTLR 4.5.3
-package  ANTLR;
+// Generated from Sql.g4 by ANTLR 4.5.3
+package ANTLR;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -703,6 +703,30 @@ public interface SqlListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCond_op2(SqlParser.Cond_op2Context ctx);
+	/**
+	 * Enter a parse tree produced by the {@code logic1}
+	 * labeled alternative in {@link SqlParser#cond_op}.
+	 * @param ctx the parse tree
+	 */
+	void enterLogic1(SqlParser.Logic1Context ctx);
+	/**
+	 * Exit a parse tree produced by the {@code logic1}
+	 * labeled alternative in {@link SqlParser#cond_op}.
+	 * @param ctx the parse tree
+	 */
+	void exitLogic1(SqlParser.Logic1Context ctx);
+	/**
+	 * Enter a parse tree produced by the {@code logic2}
+	 * labeled alternative in {@link SqlParser#cond_op}.
+	 * @param ctx the parse tree
+	 */
+	void enterLogic2(SqlParser.Logic2Context ctx);
+	/**
+	 * Exit a parse tree produced by the {@code logic2}
+	 * labeled alternative in {@link SqlParser#cond_op}.
+	 * @param ctx the parse tree
+	 */
+	void exitLogic2(SqlParser.Logic2Context ctx);
 	/**
 	 * Enter a parse tree produced by the {@code expression2}
 	 * labeled alternative in {@link SqlParser#expression}.

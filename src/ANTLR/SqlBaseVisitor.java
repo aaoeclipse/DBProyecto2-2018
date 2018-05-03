@@ -1,7 +1,6 @@
-// Generated from .\Sql.g4 by ANTLR 4.5.3
-package  ANTLR;
+// Generated from Sql.g4 by ANTLR 4.5.3
+package ANTLR;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
-import org.json.JSONException;
 
 /**
  * This class provides an empty implementation of {@link SqlVisitor},
@@ -11,7 +10,6 @@ import org.json.JSONException;
  * @param <T> The return type of the visit operation. Use {@link Void} for
  * operations with no return type.
  */
-
 public class SqlBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements SqlVisitor<T> {
 	/**
 	 * {@inheritDoc}
@@ -68,7 +66,7 @@ public class SqlBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Sq
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitTable_definition(SqlParser.Table_definitionContext ctx) throws JSONException { return visitChildren(ctx); }
+	@Override public T visitTable_definition(SqlParser.Table_definitionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -243,7 +241,7 @@ public class SqlBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Sq
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitInsert_value(SqlParser.Insert_valueContext ctx) throws JSONException { return visitChildren(ctx); }
+	@Override public T visitInsert_value(SqlParser.Insert_valueContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -454,6 +452,20 @@ public class SqlBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Sq
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitCond_op2(SqlParser.Cond_op2Context ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitLogic1(SqlParser.Logic1Context ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitLogic2(SqlParser.Logic2Context ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -1,5 +1,5 @@
-// Generated from .\Sql.g4 by ANTLR 4.5.3
-package  ANTLR;
+// Generated from Sql.g4 by ANTLR 4.5.3
+package ANTLR;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
@@ -766,6 +766,30 @@ public class SqlBaseListener implements SqlListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCond_op2(SqlParser.Cond_op2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLogic1(SqlParser.Logic1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLogic1(SqlParser.Logic1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLogic2(SqlParser.Logic2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLogic2(SqlParser.Logic2Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

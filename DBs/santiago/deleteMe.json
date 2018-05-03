@@ -1,5 +1,4 @@
 {"header":{"carne": "INT", "nombre":"CHAR", "estatura": "FLOAT", "nacimiento": "DATE","primaryKey":"carne"}}
 {"carne":"1","nombre":"'Luisa'","estatura":"1.64","nacimiento":"1995-02-03"}
 {"carne":"2","nombre":"'Luisa1'","estatura":"1.20","nacimiento":"1995-02-03"}
-{"carne":"3","nombre":"'Luisa1'","estatura":"1.64","nacimiento":"1995-02-03"}
-{"carne":"4","nombre":"","estatura":"1.64","nacimiento":"1995-02-03"}
+{"carne":"3","nombre":"'Luisa2'","estatura":"1.64","nacimiento":"1995-02-03"}

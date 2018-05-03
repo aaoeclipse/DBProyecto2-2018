@@ -97,7 +97,7 @@ alter_database_statement: ('ALTER'|'alter') ('DATABASE'|'database') ID ('RENAME'
 
  show_schema_statement: ('SHOW'|'show') ('DATABASES'|'databases') ';';
 
-use_schema_statement: ('USE'|'use') ('DATABASE'|'database')? ID ';';
+use_schema_statement: ('USE'|'use') ('DATABASE'|'database') ID ';';
 
 
 column: ID  tipo_literal(',')?          #defcolumna
@@ -111,7 +111,7 @@ tipo_literal:
 				| 'DATE' 		   #tipoDate
 				;
 
-constraint: constraintType;
+constraint: 'CONSTRAINT' constraintType;
 
 constraintType:
             ID 'PRIMARY' 'KEY' '(' ID (',' ID)*')'                                           #primaryK
@@ -122,7 +122,7 @@ constraintType:
 rename_table_statement: ('ALTER'|'alter') ('TABLE'|'table') ID ('RENAME'|'rename') ('TO'|'to') ID ';';
 
 accion:
-          ('ADD'|'add') ('COLUMN'|'column') ID tipo_literal (constraint)					#addColumn
+          ('ADD'|'add') ('COLUMN'|'column') ID tipo_literal (constraint)?					#addColumn
         | ('ADD'|'add') constraint												#addConstraint
         | ('DROP'|'drop') ('COLUMN'|'column') ID 											#dropColumn
         | ('DROP'|'drop') ('CONSTRAINT'|'constraint') ID										#dropConstraint
@@ -195,6 +195,8 @@ rel_op2
 cond_op
 	:	'AND'   #cond_op1
 	|  'OR' # cond_op2
+	|  'IS NULL' #logic1
+	|  'IS NOT NULL' #logic2
 	;
 
 

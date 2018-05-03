@@ -347,8 +347,8 @@ public class Main {
         conv = new BD2Visitor();
 
         //type.visit(tree);
-        conv.visit(tree);
-        conv.toString();
+//        conv.visit(tree);
+//        conv.toString();
         /**System.out.println(">>"+conv.visitProgram((SqlParser.ProgramContext) tree));*/
         //type.aString();
         //conv.aString();
