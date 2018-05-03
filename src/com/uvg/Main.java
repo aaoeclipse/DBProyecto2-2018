@@ -42,7 +42,6 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import sun.security.action.OpenFileInputStreamAction;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -361,8 +360,8 @@ public class Main {
         conv = new BD2Visitor();
 
         //type.visit(tree);
-        conv.visit(tree);
-        conv.toString();
+        //conv.visit(tree);
+        //conv.toString();
         /**System.out.println(">>"+conv.visitProgram((SqlParser.ProgramContext) tree));*/
         //type.aString();
         //conv.aString();
@@ -378,7 +377,7 @@ public class Main {
             }
         }
         catch ( IOException e ) {
-            textArea3.setText("Succes");
+            //textArea3.setText("Succes");
             textArea3.setText(conv.visitProgram((SqlParser.ProgramContext) tree));
 
         }

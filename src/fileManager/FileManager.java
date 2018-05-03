@@ -1,5 +1,6 @@
 package fileManager;
 
+
 public interface FileManager {
     /** TODO LIST
      *      1. CREATE DB
@@ -38,7 +39,10 @@ public interface FileManager {
     public String[] showDatabases();
     public boolean useDatabase(String nombreDeBaseDeDatos);
     public String[] listTables();
-
-
+    public boolean renameTable(String nombreTablaViejo, String nombreTablaNuevo);
+    public boolean alterAddColumn();
+    public boolean alterDeleteColumn();
+    public boolean alterDropColumn();
+    public boolean alterDropConstraint();
 
 }

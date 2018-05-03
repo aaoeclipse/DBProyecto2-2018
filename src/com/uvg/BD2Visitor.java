@@ -5,6 +5,7 @@ import ANTLR.SqlParser;
 import ANTLR.SqlVisitor;
 import fileManager.FileManager;
 import fileManager.FileManagerImpl;
+import fileManager.globalVariables;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -232,7 +233,11 @@ public class BD2Visitor extends SqlBaseVisitor<String>{
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
-    @Override public String visitRename_table_statement(@NotNull SqlParser.Rename_table_statementContext ctx) { return visitChildren(ctx); }
+    @Override public String visitRename_table_statement(@NotNull SqlParser.Rename_table_statementContext ctx) {
+        if (!fileManager.renameTable(ctx.getChild(2).getText(), ctx.getChild(5).getText())){
+            return globalVariables.printError();
+        }
+        return "Exito!"; }
     /**
      * {@inheritDoc}
      *

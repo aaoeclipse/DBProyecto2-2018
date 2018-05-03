@@ -227,7 +227,9 @@ public class SqlBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Sq
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitRename_table_statement(@NotNull SqlParser.Rename_table_statementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitRename_table_statement(@NotNull SqlParser.Rename_table_statementContext ctx) {
+
+	    return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -24,7 +24,7 @@ public class FileManagerImpl implements FileManager {
                 return new File(current, name).isDirectory();
             }
         });
-        System.out.println(Arrays.toString(directories));
+        // System.out.println(Arrays.toString(directories));
         return directories;
     }
 
@@ -58,5 +58,52 @@ public class FileManagerImpl implements FileManager {
         }
         return arrayToReturn;
     }
+
+    @Override
+    public boolean renameTable(String nombreTablaViejo, String nombreTablaNuevo) {
+
+        if (!globalVariables.getUtilizandoBaseDeDatos()) {
+            globalVariables.addErrorMessage("No se ha seleccionado una db");
+            return false;
+        }
+        File directory = new File("DBs/"+ globalVariables.getBaseDeDatosEnUso() +"/"+nombreTablaViejo);
+        if (!directory.exists()) {
+            globalVariables.addErrorMessage("No existe la tabla");
+            return false;
+        }
+        File nuevodirectory = new File("DBs/"+ globalVariables.getBaseDeDatosEnUso() +"/"+nombreTablaNuevo);
+        if (nuevodirectory.exists()) {
+            globalVariables.addErrorMessage("Ya hay una tabla con ese nombre");
+            return false;
+        }
+        boolean success = directory.renameTo(nuevodirectory);
+        if(!success) {
+            globalVariables.addErrorMessage("Error con el cambio de nombre");
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean alterAddColumn() {
+
+        return false;
+    }
+
+    @Override
+    public boolean alterDeleteColumn() {
+        return false;
+    }
+
+    @Override
+    public boolean alterDropColumn() {
+        return false;
+    }
+
+    @Override
+    public boolean alterDropConstraint() {
+        return false;
+    }
+
 
 }

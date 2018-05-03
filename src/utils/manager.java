@@ -11,6 +11,7 @@ public class manager {
     public String[][] toTable(Tabla table){
         columnas = table.getColumnas();
         String[][] columnsByRow;
-        columnsByRow = new String [columnas.getSize()][];
+        // columnsByRow = new String [columnas.getSize()][];
+        return null;
     }
 }
