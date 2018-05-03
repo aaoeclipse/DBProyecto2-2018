@@ -1,16 +1,22 @@
 package fileManager;
 
 import objects.Tabla;
+import org.antlr.runtime.tree.ParseTree;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.*;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 
 public class FileManagerImpl implements FileManager {
     private static String Databases = "DBs/";
+    private String[] constraints = {"primaryKey", "foreignKey", "check","unique"};
     @Override
     public boolean createDB(String nombre) {
         new File("DBs/"+nombre).mkdirs();
@@ -184,14 +190,22 @@ public class FileManagerImpl implements FileManager {
             globalVariables.addErrorMessage("ERROR: problema con el JSON");
             return false;
         }
-
-
         return true;
     }
 
     @Override
     public boolean alterAddConstraint(String nombreDeTabla, String nombreDeconstraint, String tipoDeConstraint, String columna) {
-        return false;
+        switch (nombreDeconstraint){
+            case "PK":
+                break;
+            case "FK":
+                break;
+            case "CHECK":
+                break;
+            case "UNIQUE":
+                break;
+        }
+        return true;
     }
 
     @Override
@@ -300,14 +314,28 @@ public class FileManagerImpl implements FileManager {
     @Override
     public boolean alterDropConstraint(String nombreDeTabla, String nombreDeConstraintParaBotar) {
         boolean columnaEncontrada = false;
+        boolean esConstraint = false;
+        for (String s: constraints) {
+            if (nombreDeConstraintParaBotar.equals(s)){
+                esConstraint = true;
+            }
+        }
+        if(!esConstraint){
+            globalVariables.addErrorMessage("ERROR: Contraint Invalido");
+            return false;
+        }
         FileReader tablaFile = null;
         try {
             tablaFile = new FileReader("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla);
             BufferedReader bufferedReader = new BufferedReader(tablaFile);
             // Read line
-            String line = bufferedReader.readLine();
+            String temporal = bufferedReader.readLine();
+            if (temporal == null){
+                globalVariables.addErrorMessage("ERROR: Tabla vacia");
+                return false;
+            }
             // Object
-            JSONObject raw = new JSONObject(line);
+            JSONObject raw = new JSONObject(temporal);
             JSONObject tableHeader = (JSONObject) raw.get("header");
             Iterator<?> iterator = tableHeader.keys();
 
@@ -316,19 +344,59 @@ public class FileManagerImpl implements FileManager {
 
             while (iterator.hasNext()) {
                 String key = (String) iterator.next();
-                row.put(key, tableHeader.get(key).toString());
+                if (key.equals(nombreDeConstraintParaBotar))
+                    columnaEncontrada = true;
+                else
+                    row.put(key, tableHeader.get(key).toString());
+            }
+            if (!columnaEncontrada){
+                globalVariables.addErrorMessage("ERROR: No existe el constraint");
+                return false;
             }
             tabla.addRow(row);
-            JSONObject jsonFinal = new JSONObject(tabla.getRow(0));
-            String output = jsonFinal.toString();
-            System.out.println(output);
-            bufferedReader.close();
 
-            FileWriter writeToFile = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/");
-            writeToFile.write(output);
-            writeToFile.append("\n");
-            writeToFile.append("Done!");
-            writeToFile.close();
+            while ((temporal = bufferedReader.readLine()) != null){
+                // Borra el row
+                row = new HashMap<>();
+
+                // Read Next Line
+                raw = new JSONObject(temporal);
+                iterator = raw.keys();
+
+                while (iterator.hasNext()) {
+                    String key = (String) iterator.next();
+                    // Solo agrega las que no son igual a la columna
+                    row.put(key, raw.get(key).toString());
+                }
+                // Agrega a tabla el row
+                tabla.addRow(row);
+            }
+            // Escribir
+
+            // Borramos primero el file
+            //globalVariables.getBaseDeDatosEnUso()
+            FileWriter writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla);
+            writer.write("");
+            writer.close();
+
+            // Lo abrimos de forma append
+            //globalVariables.getBaseDeDatosEnUso()
+            writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla, true);
+            writer.append("{\"header\":");
+            boolean isHeader = true;
+
+            for (int i = 0; i < tabla.getLines(); i++){
+                JSONObject rowToWrite = new JSONObject(tabla.getRow(i));
+                //System.out.println("COUNT: " + i + "\n"+"Writing... " + rowToWrite.toString()+"\nsize of array: "+ tabla.getLines());
+                writer.append(rowToWrite.toString());
+                if (isHeader) {
+                    writer.append("}\n");
+                    isHeader = false;
+                } else {
+                    writer.append("}\n");
+                }
+            }
+            writer.close();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -337,7 +405,7 @@ public class FileManagerImpl implements FileManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return false;
+        return true;
     }
 
     @Override
@@ -428,6 +496,147 @@ public class FileManagerImpl implements FileManager {
         }
 
         return true;
+    }
+
+    @Override
+    public boolean updateConWhere() {
+        return false;
+    }
+
+    public boolean evaluateWhereClause(ParseTree whereClause, JSONObject row, ArrayList<String> columns) throws ParseException, JSONException {
+        //Checking that the tree is the main one
+        while (whereClause.getChildCount()==1)
+            whereClause = (ParseTree) whereClause.getChild(0);
+        // Getting the values from the parse tree: left and right operator and the operation itself
+        String left = whereClause.getChild(0).getText();
+        String operator = whereClause.getChild(1).getText();
+        String right = whereClause.getChild(2).getText();
+        // Either obtaining the actual value or keeping it for left operator
+        String leftTest= isValueAColumn(left,columns);
+        if(!leftTest.equals("")){
+            left = row.getString(leftTest);
+        }
+        // Either obtaining the actual value or keeping it for right operator
+        String rightTest= isValueAColumn(right,columns);
+        if(!rightTest.equals("")){
+            right = row.getString(rightTest);
+        }
+        String type = getType(right);
+        // Converting and operating according to the operator
+        if(operator.equals("<")){
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) < Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) < Float.parseFloat(right));
+            }else{
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return dateLeft.before(dateRight);
+            }
+        }else if(operator.equals("<=")){
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) <= Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) <= Float.parseFloat(right));
+            }else {
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return dateLeft.before(dateRight) || dateLeft.equals(dateRight);
+            }
+        }else if(operator.equals(">")){
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) > Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) > Float.parseFloat(right));
+            }else{
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return dateLeft.after(dateRight);
+            }
+        }else if(operator.equals(">=")){
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) >= Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) >= Float.parseFloat(right));
+            }else{
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return dateLeft.after(dateRight) || dateLeft.equals(dateRight);
+            }
+        }else if(operator.equals("<>")){
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) != Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) != Float.parseFloat(right));
+            }else if (type.equals("DATE")){
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return !dateLeft.equals(dateRight);
+            }else{
+                return !left.equals(right);
+            }
+        }else if(operator.equals("=")){
+            if(type.equals("INT")){
+                return (Integer.parseInt(left) == Integer.parseInt(right));
+            }else if (type.equals("FLOAT")){
+                return (Float.parseFloat(left) == Float.parseFloat(right));
+            }else if (type.equals("DATE")){
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                Date dateLeft = format.parse(left);
+                Date dateRight = format.parse(right);
+                return dateLeft.equals(dateRight);
+            }else{
+                return left.equals(right);
+            }
+            // In case of a composed evaluation recursion will be taken
+        }else if(operator.equals("AND")){
+            return evaluateWhereClause((ParseTree) whereClause.getChild(0), row, columns) && evaluateWhereClause((ParseTree) whereClause.getChild(2), row, columns);
+        }else{
+            return  evaluateWhereClause((ParseTree) whereClause.getChild(0), row, columns) || evaluateWhereClause((ParseTree) whereClause.getChild(2), row, columns);
+        }
+    }
+
+    public String isValueAColumn(String value, ArrayList<String> keys){
+        if(value.indexOf("'") > 0)
+            return "";
+        if(getType(value).equals("CHAR")){
+            String column = "";
+            for(String t : keys){
+                if (value.equals(t)) {
+                    column = t;
+                }
+            }
+            return  column;
+        }else{
+            return "";
+        }
+    }
+
+    public String getType(String value){
+        try{
+            int temop = Integer.parseInt(value );
+            return "INT";
+        }catch (Exception e){
+//            e.printStackTrace();
+            try {
+                float temp = Float.parseFloat(value);
+                return "FLOAT";
+            }catch (Exception e1){
+//                e.printStackTrace();
+                try {
+                    DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                    Date date = format.parse(value);
+                    return "DATE";
+                } catch (Exception e2){
+                    return "CHAR";
+                }
+            }
+        }
     }
 
 }

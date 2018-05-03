@@ -30,5 +30,6 @@ public interface FileManager {
     public boolean alterDropColumn(String nombreDeTabla, String nombreDeColumnaParaDrop);
     public boolean alterDropConstraint(String nombreDeTabla, String nombreDeConstraintParaBotar);
     public boolean updateNoWhere(String nombreDeTabla, String nombreDecolumna, String nuevoValor);
+    public boolean updateConWhere();
 
 }

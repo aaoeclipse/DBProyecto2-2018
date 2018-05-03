@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0239b1cf-7bb3-4314-b030-4f3a716aad97" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBs/santiago/table1" beforeDir="false" afterPath="$PROJECT_DIR$/DBs/santiago/table1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/Sql.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/Sql.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/SqlBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/SqlBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/SqlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/SqlParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANTLR/SqlVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANTLR/SqlVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fileManager/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileManager/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/Tabla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Tabla.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +20,8 @@
       <file leaf-file-name="BD2Visitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="535" column="23" selection-start-line="535" selection-start-column="23" selection-end-line="535" selection-end-column="23" />
+            <state relative-caret-position="315">
+              <caret line="96" column="60" lean-forward="true" selection-start-line="96" selection-start-column="60" selection-end-line="96" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -35,12 +29,14 @@
       <file leaf-file-name="FileManagerImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-314">
-              <caret line="370" selection-start-line="370" selection-end-line="370" />
+            <state relative-caret-position="135">
+              <caret line="321" column="9" lean-forward="true" selection-start-line="321" selection-start-column="9" selection-end-line="321" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#671#672#0" expanded="true" />
-                <element signature="e#747#748#0" expanded="true" />
+                <element signature="e#832#833#0" expanded="true" />
+                <element signature="e#908#909#0" expanded="true" />
+                <element signature="e#16351#16352#0" expanded="true" />
+                <element signature="e#16379#16380#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,8 +45,8 @@
       <file leaf-file-name="FileManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="98" selection-start-line="31" selection-start-column="98" selection-end-line="31" selection-end-column="98" />
+            <state relative-caret-position="430">
+              <caret line="30" column="38" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -69,6 +65,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="table1" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DBs/santiago/table1">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="table2" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DBs/santiago/table2">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="63" selection-end-line="4" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -82,8 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>show_table_statement</find>
-      <find>QueryText</find>
       <find>CREA</find>
       <find>visit(</find>
       <find>conv</find>
@@ -112,6 +124,8 @@
       <find>alter_table</find>
       <find>ALTER</find>
       <find>update</find>
+      <find>alterAddConstraint</find>
+      <find>alter</find>
     </findStrings>
     <replaceStrings>
       <replace>String</replace>
@@ -152,8 +166,8 @@
         <option value="$PROJECT_DIR$/src/com/uvg/Main.java" />
         <option value="$PROJECT_DIR$/src/objects/Tabla.java" />
         <option value="$PROJECT_DIR$/src/fileManager/FileManager.java" />
-        <option value="$PROJECT_DIR$/DBs/santiago/table1" />
         <option value="$PROJECT_DIR$/src/com/uvg/BD2Visitor.java" />
+        <option value="$PROJECT_DIR$/DBs/santiago/table1" />
         <option value="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" />
       </list>
     </option>
@@ -482,12 +496,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286638" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286638" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3297414" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.31896552" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28815368" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28815368" />
       <window_info anchor="bottom" id="ANTLR Preview" weight="0.3297414" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -504,6 +518,32 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297414" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -592,8 +632,10 @@
           <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#16351#16352#0" expanded="true" />
+            <element signature="e#16379#16380#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -636,8 +678,10 @@
           <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#16351#16352#0" expanded="true" />
+            <element signature="e#16379#16380#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -743,34 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DBs/santiago/table1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="52" lean-forward="true" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBs/santiago/table2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="63" selection-end-line="4" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="535" column="23" selection-start-line="535" selection-start-column="23" selection-end-line="535" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="98" selection-start-line="31" selection-start-column="98" selection-end-line="31" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/Tabla.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -783,14 +799,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/fileManager/FileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="30" column="38" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBs/santiago/table2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="63" selection-end-line="4" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBs/santiago/table1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/uvg/BD2Visitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="96" column="60" lean-forward="true" selection-start-line="96" selection-start-column="60" selection-end-line="96" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/fileManager/FileManagerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-314">
-          <caret line="370" selection-start-line="370" selection-end-line="370" />
+        <state relative-caret-position="135">
+          <caret line="321" column="9" lean-forward="true" selection-start-line="321" selection-start-column="9" selection-end-line="321" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#16351#16352#0" expanded="true" />
+            <element signature="e#16379#16380#0" expanded="true" />
           </folding>
         </state>
       </provider>

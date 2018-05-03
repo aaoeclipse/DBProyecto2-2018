@@ -74,16 +74,30 @@ public class BD2Visitor extends SqlBaseVisitor<String> {
      * {@link #visitChildren} on {@code ctx}.</p>
      */
     @Override public String visitAlter_table_statement(@NotNull SqlParser.Alter_table_statementContext ctx) {
-        switch (ctx.getChild(3).getChild(0).toString()){
+        switch (ctx.getChild(3).getChild(0).getText()){
             case "ADD":
-                if (! fileManager.alterAddColumn(ctx.getChild(2).getText(), ctx.getChild(3).getChild(2).getText(),ctx.getChild(3).getChild(3).getChild(0).getText())){
-                    return globalVariables.printError();
+                if (ctx.getChild(3).getChild(1).getText().equals("COLUMN")){
+                    if (! fileManager.alterAddColumn(ctx.getChild(2).getText(), ctx.getChild(3).getChild(2).getText(),ctx.getChild(3).getChild(3).getChild(0).getText())){
+                        return globalVariables.printError();
+                    }
+                } else { // CONSTRAINT
+                    //if (! fileManager.alterAddConstraint(ctx.getChild(2).getText(), ctx.getChild(3).getChild(2).getText())){
+                    //    return globalVariables.printError();
+                    //}
                 }
+
                 break;
             case "DROP":
-                if (! fileManager.alterDropColumn(ctx.getChild(2).getText(), ctx.getChild(3).getChild(2).getText())){
-                    return globalVariables.printError();
+                if (ctx.getChild(3).getChild(1).getText().equals("COLUMN")){
+                    if (! fileManager.alterDropColumn(ctx.getChild(2).getText(), ctx.getChild(3).getChild(2).getText())){
+                        return globalVariables.printError();
+                    }
+                } else { // CONSTRAINT
+                    if (! fileManager.alterDropConstraint(ctx.getChild(2).getText(), ctx.getChild(3).getChild(2).getText())){
+                        return globalVariables.printError();
+                    }
                 }
+
                 break;
         }
         return "Modificacion completa";
