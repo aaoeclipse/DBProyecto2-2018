@@ -1,7 +1,7 @@
 package fileManager;
 
 import objects.Tabla;
-import org.antlr.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -608,8 +608,99 @@ public class FileManagerImpl implements FileManager {
     }
 
     @Override
-    public boolean updateConWhere() {
-        return false;
+    public boolean updateConWhere(String nombreDeTabla, String nombreDeColuma, String nuevoValor, ParseTree whereClause) {
+        try {
+            if (!globalVariables.utilizandoBaseDeDatos) {
+                globalVariables.addErrorMessage("ERROR: DB No Seleccionado");
+                return false;
+            }
+            FileReader tablaFile = new FileReader("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla);
+            BufferedReader bufferedReader = new BufferedReader(tablaFile);
+
+            // Read line
+            String temporal = bufferedReader.readLine();
+            if (temporal == null) {
+                globalVariables.addErrorMessage("ERROR: Tabla vacia");
+                return false;
+            }
+
+            JSONObject raw = new JSONObject(temporal);
+
+            // head
+            JSONObject tableHeader = (JSONObject) raw.get("header");
+            Iterator<?> iterator = tableHeader.keys();
+
+            Tabla tabla = new Tabla();
+            HashMap<String, String> row = new HashMap<>();
+            //HEADER
+            while (iterator.hasNext()) {
+                String key = (String) iterator.next();
+                tabla.addColumnas(key);
+                row.put(key, tableHeader.get(key).toString());
+            }
+            // Agrega a tabla el row
+            tabla.addRow(row);
+            // DATA
+            while ((temporal = bufferedReader.readLine()) != null) {
+                // Borra el row
+                row = new HashMap<>();
+
+                // Read Next Line
+                raw = new JSONObject(temporal);
+                iterator = raw.keys();
+
+                while (iterator.hasNext()) {
+                    String key = (String) iterator.next();
+                    if (evaluateWhereClause(whereClause, raw, tabla.getColumnas())){
+                        row.put(key, nuevoValor);
+
+                    }else{
+                        row.put(key, raw.get(key).toString());
+                    }
+
+                }
+                // Agrega a tabla el row
+                tabla.addRow(row);
+            }
+            // Escribir
+            // Borramos primero el file
+            //globalVariables.getBaseDeDatosEnUso()
+            FileWriter writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla);
+            writer.write("");
+            writer.close();
+
+            // Lo abrimos de forma append
+            //globalVariables.getBaseDeDatosEnUso()
+            writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla, true);
+            writer.append("{\"header\":");
+            boolean isHeader = true;
+
+            for (int i = 0; i < tabla.getLines(); i++){
+                JSONObject rowToWrite = new JSONObject(tabla.getRow(i));
+                writer.append(rowToWrite.toString());
+                if (isHeader) {
+                    writer.append("}\n");
+                    isHeader = false;
+                } else {
+                    writer.append("}\n");
+                }
+            }
+            writer.close();
+        } catch (FileNotFoundException e) {
+            globalVariables.addErrorMessage("ERROR: Tabla No Existe");
+            return false;
+        } catch (IOException e) {
+            globalVariables.addErrorMessage("ERROR: Lectura del archivo");
+            return false;
+
+        } catch (JSONException e) {
+            globalVariables.addErrorMessage("ERROR: problema con el JSON");
+            return false;
+        } catch (ParseException e) {
+            globalVariables.addErrorMessage("ERROR: Problemas interpretando el WHERE");
+            return false;
+        }
+        return true;
     }
 
     public boolean evaluateWhereClause(ParseTree whereClause, JSONObject row, ArrayList<String> columns) throws ParseException, JSONException {
@@ -747,5 +838,12 @@ public class FileManagerImpl implements FileManager {
             }
         }
     }
+
+
+
+
+
+
+
 
 }

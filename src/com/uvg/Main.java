@@ -128,7 +128,6 @@ public class Main {
 
 
         aFrameYourePositioning.setLocation(p);
-        // TODO Auto-generated method stub
         int c = e.getKeyCode ();
         if (c==KeyEvent.VK_UP) {                
         p.y -= QueryText.getLocationOnScreen().y;  
@@ -145,7 +144,6 @@ public class Main {
 
         @Override
         public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
 
         }
 
@@ -157,7 +155,6 @@ public class Main {
 
 
         aFrameYourePositioning.setLocation(p);
-        // TODO Auto-generated method stub
         int c = e.getKeyCode ();
         if (c==KeyEvent.VK_UP) {                
         p.y -= QueryText.getLocationOnScreen().y;  

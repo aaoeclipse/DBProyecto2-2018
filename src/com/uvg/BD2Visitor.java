@@ -5,6 +5,7 @@ import fileManager.FileManager;
 import fileManager.FileManagerImpl;
 import fileManager.globalVariables;
 import org.antlr.v4.runtime.misc.NotNull;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 /**
  * Created by luisa on 17/04/18.
@@ -518,8 +519,6 @@ public class BD2Visitor extends SqlBaseVisitor<String> {
      * {@link #visitChildren} on {@code ctx}.</p>
      */
     @Override public String visitSchema_definition(@NotNull SqlParser.Schema_definitionContext ctx) {
-        System.out.println("visitvisitUse_schema_statement");
-        System.out.println(ctx.getChild(2));
         String created = "No se logro crear";
         if(fileManager.createDB(ctx.getChild(2).getText()))
             created = "Si se logro crear";
@@ -552,13 +551,21 @@ public class BD2Visitor extends SqlBaseVisitor<String> {
      * <p>The default implementation returns the result of calling
      * {@link #visitChildren} on {@code ctx}.</p>
      */
+    //String nombreDeTabla, String nombreDeColuma, String nuevoValor, ParseTree whereClause)
     @Override public String visitUpdate_value(@NotNull SqlParser.Update_valueContext ctx) {
+        ParseTree WhereClause = null;
+
         if (ctx.getChild(6).getText().equalsIgnoreCase("WHERE")) {
-            return "UNDER CONSTRUCTION";
+            WhereClause = ctx.getChild(7);
+            if (! fileManager.updateConWhere(ctx.getChild(1).getText(),ctx.getChild(3).getText(),ctx.getChild(5).getChild(0).getChild(0).getText(),WhereClause)){
+                return globalVariables.printError();
+
+            }
         }else {
-            if (! fileManager.updateNoWhere(ctx.getChild(1).getText(),ctx.getChild(3).getText(),ctx.getChild(5).getChild(0).getChild(0).getText())){
+            if (! fileManager.updateNoWhere(ctx.getChild(1).getText(),ctx.getChild(3).getText(),ctx.getChild(5).getChild(0).getText())){
                 return globalVariables.printError();
             }
+
         }
         return "Tabla "+ ctx.getChild(1).getText() + " Modificada"; }
     /**

@@ -6,13 +6,13 @@ import java.util.Iterator;
 
 public class Tabla {
     ArrayList<HashMap<String, String>> tabla;
+    private ArrayList<String> columnas;
 
     public Tabla (){
         this.tabla = new ArrayList<>();
+        this.columnas = new ArrayList<>();
     }
-    public Tabla(ArrayList<HashMap<String, String>> tabla) {
-        this.tabla = tabla;
-    }
+    public void addColumnas(String columnaParaAdd){columnas.add(columnaParaAdd);}
     public int getLines(){
         return tabla.size();
     }
@@ -44,7 +44,7 @@ public class Tabla {
         }
         return false;
     }
-
+    public ArrayList<String> getColumnas(){return columnas;}
     @Override
     public String toString() {
         return "Tabla{" +
