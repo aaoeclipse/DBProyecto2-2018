@@ -567,7 +567,7 @@ public class BD2Visitor extends SqlBaseVisitor<String> {
             }
 
         }
-        return "Tabla "+ ctx.getChild(1).getText() + " Modificada"; }
+        return globalVariables.printError(); }
     /**
      * {@inheritDoc}
      *

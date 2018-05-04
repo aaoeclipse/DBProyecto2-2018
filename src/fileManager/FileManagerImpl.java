@@ -519,7 +519,9 @@ public class FileManagerImpl implements FileManager {
 
     @Override
     public boolean updateNoWhere(String nombreDeTabla, String nombreDecolumna, String nuevoValor) {
+        int counter = 0;
         try {
+
             if (!globalVariables.utilizandoBaseDeDatos) {
                 globalVariables.addErrorMessage("ERROR: DB No Seleccionado");
                 return false;
@@ -560,9 +562,10 @@ public class FileManagerImpl implements FileManager {
 
                 while (iterator.hasNext()) {
                     String key = (String) iterator.next();
-                    if (key.equals(nombreDecolumna))
+                    if (key.equals(nombreDecolumna)) {
+                        counter++;
                         row.put(key, nuevoValor);
-                    else
+                    }else
                         row.put(key, raw.get(key).toString());
                 }
                 // Agrega a tabla el row
@@ -603,12 +606,13 @@ public class FileManagerImpl implements FileManager {
             globalVariables.addErrorMessage("ERROR: problema con el JSON");
             return false;
         }
-
+        globalVariables.addErrorMessage("Tuplas Modificadas: " + counter);
         return true;
     }
 
     @Override
     public boolean updateConWhere(String nombreDeTabla, String nombreDeColuma, String nuevoValor, ParseTree whereClause) {
+        int counter = 0;
         try {
             if (!globalVariables.utilizandoBaseDeDatos) {
                 globalVariables.addErrorMessage("ERROR: DB No Seleccionado");
@@ -652,8 +656,12 @@ public class FileManagerImpl implements FileManager {
                 while (iterator.hasNext()) {
                     String key = (String) iterator.next();
                     if (evaluateWhereClause(whereClause, raw, tabla.getColumnas())){
-                        row.put(key, nuevoValor);
-
+                        if(key.equals(nombreDeColuma)){
+                            counter++;
+                            row.put(key, nuevoValor);
+                        }else{
+                            row.put(key, raw.get(key).toString());
+                        }
                     }else{
                         row.put(key, raw.get(key).toString());
                     }
@@ -700,6 +708,7 @@ public class FileManagerImpl implements FileManager {
             globalVariables.addErrorMessage("ERROR: Problemas interpretando el WHERE");
             return false;
         }
+        globalVariables.addErrorMessage("Tuplas Modificadas: " + counter);
         return true;
     }
 
