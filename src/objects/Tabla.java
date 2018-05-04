@@ -2,6 +2,7 @@ package objects;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Tabla {
     ArrayList<HashMap<String, String>> tabla;
@@ -29,6 +30,19 @@ public class Tabla {
             tabla.get(i).put(keyColumnName, newValue);
         }
         return true;
+    }
+    public boolean checkIfValuesRepeat(String columnName){
+        ArrayList<String> listForRepeat = new ArrayList<>();
+        Iterator<?> iterator;
+        for (HashMap<String, String> hash : tabla){
+            for (String s: listForRepeat)
+                if (hash.get(columnName).equals(s)){
+                    return true;
+                } else {
+                    listForRepeat.add(hash.get(columnName));
+                }
+        }
+        return false;
     }
 
     @Override

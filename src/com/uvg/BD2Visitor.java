@@ -81,9 +81,15 @@ public class BD2Visitor extends SqlBaseVisitor<String> {
                         return globalVariables.printError();
                     }
                 } else { // CONSTRAINT
-                    //if (! fileManager.alterAddConstraint(ctx.getChild(2).getText(), ctx.getChild(3).getChild(2).getText())){
-                    //    return globalVariables.printError();
-                    //}
+                    if (ctx.getChild(3).getChild(1).getChild(1).getChild(1).getText().equals("PRIMARY") || ctx.getChild(3).getChild(1).getChild(1).getChild(1).getText().equals("FOREIGN")) {
+                        if (!fileManager.alterAddConstraint(ctx.getChild(2).getText(), ctx.getChild(3).getChild(1).getChild(1).getChild(1).getText() + "" + ctx.getChild(3).getChild(1).getChild(1).getChild(2).getText(), ctx.getChild(3).getChild(1).getChild(1).getChild(4).getText())) {
+                            return globalVariables.printError();
+                        }
+                    }else {
+                        if (!fileManager.alterAddConstraint(ctx.getChild(2).getText(), ctx.getChild(3).getChild(1).getChild(1).getChild(1).getText(), ctx.getChild(3).getChild(1).getChild(1).getChild(3).getChild(0).getChild(0).getChild(0).getChild(0).getChild(0).getText())) {
+                            return globalVariables.printError();
+                        }
+                    }
                 }
 
                 break;

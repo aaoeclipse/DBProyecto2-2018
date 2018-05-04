@@ -194,16 +194,125 @@ public class FileManagerImpl implements FileManager {
     }
 
     @Override
-    public boolean alterAddConstraint(String nombreDeTabla, String nombreDeconstraint, String tipoDeConstraint, String columna) {
-        switch (nombreDeconstraint){
-            case "PK":
-                break;
-            case "FK":
-                break;
-            case "CHECK":
-                break;
-            case "UNIQUE":
-                break;
+    public boolean alterAddConstraint(String nombreDeTabla, String tipoDeConstraint, String columna) {
+        try {
+            boolean repetido = false;
+            if (! globalVariables.utilizandoBaseDeDatos){
+                globalVariables.addErrorMessage("ERROR: DB No Seleccionado");
+                return false;
+            }
+            FileReader tablaFile = new FileReader("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla);
+            BufferedReader bufferedReader = new BufferedReader(tablaFile);
+
+            // Read line
+            String temporal = bufferedReader.readLine();
+            if (temporal == null){
+                globalVariables.addErrorMessage("ERROR: Tabla vacia");
+                return false;
+            }
+
+            JSONObject raw = new JSONObject(temporal);
+
+            // head
+            JSONObject tableHeader = (JSONObject) raw.get("header");
+            Iterator<?> iterator = tableHeader.keys();
+
+            Tabla tabla = new Tabla();
+            HashMap<String, String> row = new HashMap<>();
+
+
+
+            //HEADER
+            while (iterator.hasNext()) {
+                String key = (String) iterator.next();
+                if (!key.equals("primaryKey")) {
+                    row.put(key, tableHeader.get(key).toString());
+                } else {
+                    repetido = true;
+                }
+            }
+
+            // Agrega a tabla el row
+            tabla.addRow(row);
+
+            boolean uniqueRepeats = false;
+            // DATA
+            while ((temporal = bufferedReader.readLine()) != null) {
+                // Borra el row
+                row = new HashMap<>();
+                // Read Next Line
+                raw = new JSONObject(temporal);
+                iterator = raw.keys();
+                while (iterator.hasNext()) {
+                    String key = (String) iterator.next();
+                    row.put(key, raw.get(key).toString());
+                }
+                // Agrega a tabla el row
+                tabla.addRow(row);
+            }
+
+
+            switch (tipoDeConstraint){
+                case "PRIMARYKEY":
+                    if (repetido){
+                        globalVariables.addErrorMessage("ERROR: Solo 1 PK por tabla");
+                        return false;
+                    }
+                    // agregar la nueva columna
+                    tabla.getRow(0).put("primaryKey", columna);
+                    break;
+                case "FOREIGNKEY":
+                    // agregar la nueva columna
+                    tabla.getRow(0).put("foreignKey", columna);
+                    break;
+                case "CHECK":
+                    // agregar la nueva columna
+                    tabla.getRow(0).put("check", columna);
+                    break;
+                case "UNIQUE":
+                    if (tabla.checkIfValuesRepeat(columna)){
+                        globalVariables.addErrorMessage("ERROR: Hay repeticiones en el UNIQUE");
+                        return false;
+                    }
+                    // agregar la nueva columna
+                    tabla.getRow(0).put("unique", columna);
+                    break;
+            }
+
+
+            // Escribir
+            // Borramos primero el file
+            FileWriter writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla);
+            writer.write("");
+            writer.close();
+
+            // Lo abrimos de forma append
+            writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla, true);
+            writer.append("{\"header\":");
+            boolean isHeader = true;
+
+            for (int i = 0; i < tabla.getLines(); i++) {
+                JSONObject rowToWrite = new JSONObject(tabla.getRow(i));
+                writer.append(rowToWrite.toString());
+                if (isHeader) {
+                    writer.append("}\n");
+                    isHeader = false;
+                } else {
+                    writer.append("}\n");
+                }
+            }
+            writer.close();
+
+
+        }catch (FileNotFoundException e) {
+            globalVariables.addErrorMessage("ERROR: No existe la tabla");
+            return false;
+        } catch (IOException e) {
+            globalVariables.addErrorMessage("ERROR: Lectura del archivo");
+            return false;
+        } catch (JSONException e) {
+            globalVariables.addErrorMessage("ERROR: problema con el JSON");
+            return false;
         }
         return true;
     }
@@ -458,33 +567,33 @@ public class FileManagerImpl implements FileManager {
                 }
                 // Agrega a tabla el row
                 tabla.addRow(row);
-                }
-                // Escribir
-                // Borramos primero el file
-                //globalVariables.getBaseDeDatosEnUso()
-                FileWriter writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla);
-                writer.write("");
-                writer.close();
+            }
+            // Escribir
+            // Borramos primero el file
+            //globalVariables.getBaseDeDatosEnUso()
+            FileWriter writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla);
+            writer.write("");
+            writer.close();
 
-                // Lo abrimos de forma append
-                //globalVariables.getBaseDeDatosEnUso()
-                writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla, true);
-                writer.append("{\"header\":");
-                boolean isHeader = true;
+            // Lo abrimos de forma append
+            //globalVariables.getBaseDeDatosEnUso()
+            writer = new FileWriter("DBs/" + globalVariables.getBaseDeDatosEnUso() + "/" + nombreDeTabla, true);
+            writer.append("{\"header\":");
+            boolean isHeader = true;
 
-                for (int i = 0; i < tabla.getLines(); i++){
-                    JSONObject rowToWrite = new JSONObject(tabla.getRow(i));
-                    writer.append(rowToWrite.toString());
-                    if (isHeader) {
-                        writer.append("}\n");
-                        isHeader = false;
-                    } else {
-                        writer.append("}\n");
-                    }
+            for (int i = 0; i < tabla.getLines(); i++){
+                JSONObject rowToWrite = new JSONObject(tabla.getRow(i));
+                writer.append(rowToWrite.toString());
+                if (isHeader) {
+                    writer.append("}\n");
+                    isHeader = false;
+                } else {
+                    writer.append("}\n");
                 }
-                writer.close();
+            }
+            writer.close();
         } catch (FileNotFoundException e) {
-            globalVariables.addErrorMessage("ERROR: No existe la tabla");
+            globalVariables.addErrorMessage("ERROR: Tabla No Existe");
             return false;
         } catch (IOException e) {
             globalVariables.addErrorMessage("ERROR: Lectura del archivo");
